@@ -1,0 +1,587 @@
+// @import '../../../const';
+@import '../../globals.scss';
+
+
+.cover {
+    width: 100%;
+    height: 100vh;
+
+    & .cover__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+
+        & div {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        & .vid {
+            width: 100%;
+            height: 100%;
+
+            & video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+            
+    }
+
+    &__logo {
+        position: absolute;
+        top: 35%;
+        left: calc(50% - 125px);
+        width: 250px;
+        height: 250px;
+        @media (max-width: map-get($breakpoints, lg)) {
+            top: 35%;
+            width: 220px;
+            height: 220px;
+            left: calc(50% - 110px);
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            top: 30%;
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            top: 30%;
+            width: 180px;
+            height: 180px;
+            left: calc(50% - 90px);
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            top: 25%;
+            width: 180px;
+            height: 180px;
+            left: calc(50% - 90px);
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            top: 25%;
+            width: 150px;
+            height: 150px;
+            left: calc(50% - 75px);
+        } 
+    }
+}
+
+
+
+.text-word {
+    width: 100%;
+    position: relative; 
+    @include blockVPadding;
+    @include blockHPadding;
+    background-color: $secondary-background-color;
+    // background-color: $main-blue;
+
+    &__text {
+        width: 70%;
+        margin: 0 auto;
+
+        & p {
+            // color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            // font-weight: 500;
+        }
+    }
+
+    &__word {
+        position: absolute;
+        right: 19%;
+        bottom: 23%;
+        z-index: 1;
+        
+        & span {
+            @include font-big-size-adaptive(150px, 1.53);
+            color: rgb(207, 207, 207, 0);
+            // color: darken(#4d95be, 10%);
+            // opacity: 0;
+            transition: color 1s ease;
+            @media (max-width: map-get($breakpoints, sm)) {
+                color: rgb(207, 207, 207, 1);
+                // color: darken(#4d95be, 10%);
+                opacity: 1;
+            }
+        }
+    }
+    &:hover {
+        .text-word__word span {
+            color: rgb(207, 207, 207, 1);
+            // opacity: (1);
+        }
+        .text-word__text p {
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+
+.cards-block {
+    background-color: $primary-background-color;
+    @include space-btw(column); 
+    @include blockVPadding;
+    @include blockMaxWidth;
+    margin: 0 auto;
+    z-index: 0;
+
+
+    &__title {
+        width: 100%;
+        align-self: flex-start;
+        @include space-btw(column);
+        z-index: 1;
+
+        & h1 {
+            & span {
+                font-weight: 750;
+            }
+            margin-bottom: 0.2em;
+        }
+
+        & p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__card-container {        
+        @include blockInternalMarginTop;       
+        z-index: 1;
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        a {
+            display: block;
+            @include font-size-adaptive(24px);
+            padding-top: 2em;
+            color: #929292;
+            text-decoration: none;
+
+            &:hover {
+                color: darken($color: #929292, $amount: 20%);
+            }
+        }
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;  
+    
+    @media (max-width: map-get($breakpoints, sm)) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: map-get($breakpoints, vs)) {
+        display: flex;
+        flex-direction: column;        
+    }   
+
+    &__card {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        height: 400px;
+
+        @media (max-width: map-get($breakpoints, lg)) {
+            height: 350px;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            height: 250px;
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            height: 200px;
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            height: 180px;
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            height: 150px;
+        }
+
+        &:hover {
+
+          .card-container__text-container {
+                background-color: rgba(100, 100, 100, 0);
+                box-shadow: #949494 4px 4px 4px;
+                text-shadow: #000000 1px 1px 1px;
+            }
+
+            .card-container__bg {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        z-index: -1;
+        transform: scale(1); 
+        transition: transform 0.4s ease-out 0.1s;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text-container {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(100, 100, 100, 0.3);
+        width: 100%;
+        height: 100%;
+        @include space-btw(column);        
+        color: #fff;
+        transition: all 0.3s ease;
+        box-shadow: #ffffff 4px 4px 4px;
+        padding: 30px;
+        @media (max-width: map-get($breakpoints, lg)) {
+            padding: 20px;
+        }
+        @media (max-width: map-get($breakpoints, md)) {
+            padding: 20px;
+        }
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding: 10px;
+        }
+        @media (max-width: map-get($breakpoints, xs)) {
+            padding: 5px;
+        }
+        @media (max-width: map-get($breakpoints, vs)) {
+            padding: 15px;
+        }  
+    }
+
+    &__top-text {
+        align-self: flex-start;
+    }
+    &__season {
+        text-transform: uppercase;
+        @include font-size-adaptive(20px);
+        letter-spacing: 0.2em;
+    }
+    &__title {
+        @include font-size-adaptive(30px);
+        font-weight: 600;
+
+        & a {
+            color: #fff;
+        }
+    }
+    &__bottom-text {
+        // align-self: flex-end;
+        width: 100%
+    }
+    &__days {
+        @include font-size-adaptive(18px);
+        letter-spacing: 0.05em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__price {
+        @include font-size-adaptive(18px);        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        & span:last-child{
+            font-weight: 600;
+        }
+    }
+
+    @media (max-width: map-get($breakpoints, lg)) {
+       &__price span:first-child, &__days span:first-child{
+            display: none;
+       }
+    }
+}
+
+
+.bg-container {
+    background-color: $secondary-background-color;
+    // background-color: $main-blue;
+}
+.txt-oimg {
+    width: 100%;
+    height: 100%;
+    @include blockVPadding;
+    @include blockMaxWidth;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+
+    &__text-block {
+        text-align: right;
+        flex-grow: 2;
+    }
+
+    &__title {
+        & h2 {
+            // color: #fff;
+        }
+        text-align: center;
+        & h3 {
+            // color: #fff;
+            margin-block-end: 1.5em;
+        }
+    }
+
+    &__text {
+        p {
+            // color: #fff;
+            text-align: justify;
+            padding-right: 2em;
+        }
+        
+        & p:last-child {
+            font-style: italic;
+        }
+
+        & p:nth-last-child(2) {
+            font-weight: 700;
+        }
+    }
+
+    &__img {
+        flex-grow: 1;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+.txt-fimg {
+    @include space-btw(row);
+    width: 100%;
+    height: 100%;
+    @include blockVPadding;
+    @include blockMaxWidth;
+    margin: 0 auto;
+    background-color: $primary-background-color;
+
+    @media (max-width: map-get($breakpoints, sm)) {
+        flex-direction: column-reverse;
+    }
+
+    &__ph-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            display: block;
+            & .txt-fimg__photo:nth-child(n+2) {
+                display: none;
+            }            
+        }
+    }
+
+    &__photo {
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease;
+
+        &:nth-child(1) {
+            grid-column: 1/4;
+        }
+        &:nth-child(2) {
+            grid-column: 4/6;
+        }
+        &:nth-child(3) {
+            grid-column: 1/3;
+        }
+        &:nth-child(4) {
+            grid-column: 3/6;
+        }
+
+        &:hover {
+            box-shadow: 2px 2px 2px #363636;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        padding-left: 5%;
+        display: flex;
+        flex-direction: column;
+
+        & h3 {
+            margin-block-end: 1.5em;
+        }
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            padding: 0;
+            text-align: center;
+            & p{
+                text-align: justify;
+            }
+        }
+    }
+}
+
+
+.txt-oimg2 {
+    width: 100%;
+    height: 100%;
+    @include blockVPadding;
+    @include blockMaxWidth;
+    margin: 0 auto;
+    background-color: $secondary-background-color;
+
+    &__title {
+        text-align: center;
+        align-self: center; 
+        & h2 {
+            // color: #fff;
+        }
+
+        & h3 {
+            // color: #fff;
+            margin-block-end: 1.5em
+        }
+    }
+
+    &__content {
+        @include space-btw(row);
+        width: 100%;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            flex-direction: column;
+        }
+
+        p {
+            // color: #fff;
+            font-weight: 400;
+            text-align: justify;
+            width: 45%;
+            @media (max-width: map-get($breakpoints, sm)) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__img{
+        width: 50%;
+
+        @media (max-width: map-get($breakpoints, sm)) {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+    }
+}
+
+
+.txt-title {
+    width: 100%;
+    height: 100%;
+    @include blockHPadding;
+    @include blockVPadding;
+    background-color: $secondary-background-color;
+    &.light-back {
+        background-color: $primary-background-color;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    & h2 {
+        font-weight: 500;
+        margin-block-end: .5em;
+    }
+
+    & p {
+        text-align: right;
+        width: 70%;
+    }
+
+    @media (max-width: map-get($breakpoints, sm)) {
+        & h2 {
+            align-self: center;
+        }
+
+        & p {
+            text-align: justify;
+            width: 100%;
+        }
+    }
+
+    & ul {
+        align-self: flex-start;
+        @include font-size-adaptive(22px);
+        margin-bottom: 2em;
+
+        & li {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+    }
+
+    & img {
+        width: 100%;
+
+    }
+}
+
+.video-clip {
+    @include blockVPadding;
+    @include blockHPadding;
+    background-color: $secondary-background-color;
+    width: 100%;
+    margin: 0 auto;
+
+    & video {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    & h2 {
+        text-align: center;
+        margin-block-start: 0.5em;
+        margin-block-end: 1.5em;
+    }
+}
