@@ -1,95 +1,82 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+const textWord = {
+  text: 'Плато Путорана — одно из самых удивительных мест России и объект Всемирного наследия ЮНЕСКО. Край бездонных каньонов, уникальных гор без вершин и тысячи озер. Здесь бурные реки, срываясь со скал, образуют высочайшие в России водопады. Здесь нет дорог, и не ходят поезда. Побывать в этих труднодоступных местах посчастливилось совсем небольшому числу людей. Но чем сложнее добраться, тем сильнее восторг от покорения!',
+  word: 'путорана'
+}
+
+const textOneImage = {
+  title_h2: 'Территория Путорана',
+  title_h3: 'Покори Север с нами!',
+  text: [
+    'Туры на плато Путорана - Более 10 лет мы занимаемся развитием туризма на плато Путорана. Это наше любимое дело, увлечение и постоянные открытия! Все члены нашей команды родились и выросли на Таймыре, и мы знаем, чем удивить самого искушенного путешественника. Мы покажем вам самые известные достопримечательности и места, где практически не ступала нога человека.',
+    'Каждый сезон наша команда разрабатывает новые зимние и летние маршруты, уделяя особое внимание вопросам комфорта и безопасности туристов. Мы лично проходим намеченные маршруты, поэтому уверены в них, и с удовольствием рекомендуем своим гостям.',
+    'Нашa цель – создать для вас настоящее приключение, которое подарит самые яркие эмоции и запомнится надолго.',
+    'Антон Лысов',
+    'Основатель и руководитель компании «Территория Путорана»'
+  ],
+  img: "./img/lysov.jpg"
+}
+
+
+const textFewImages = {
+  photo: [
+    './img/mp_sr001.jpg',
+    './img/mp_sr002.jpg',
+    './img/mp_sr003.jpg',
+    './img/mp_sr004.jpg'
+  ],
+  title_h2: 'SNOW RIDE Putorana',
+  title_h3: 'Снегоходная гонка за полярным кругом!',
+  text: 'Когда везде зимний сезон заканчивается, у нас в Заполярье он только начинается! С 2022 года в марте-апреле «Территория Путорана» совместно с «Лама тур» организует снегоходную гонку в предгорье знаменитого ущелья Красные камни.'
+}
+
+
+
+
+
+
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className='main-page'>      
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* <Helmet>
+        <link rel="canonical" href={`https://territoryputorana.ru${pathname}`} />
+        <title>Плато Путорана Туры | Цены на туры 2023 – 2024 | Плато Путорана маршруты и туры</title>
+        <meta name="description" content="Плато Путорана Туры - Цена – Туристические маршруты на Плато Путорана смотрите на сайте или узнавайте по телефону 8 (903) 929-93-83. Плато Путорана туры и цены на 2023 – 2024 год вылет на Плато из Красноярска или Москвы. Бронируйте туры на Плато Путорана онлайн на сайте."/>
+      </Helmet> */}
+      {/* <Cover /> */}
+      {/* <TextWord text = {textWord.text} word = {textWord.word} /> */}
+      {/* <CardsBlock tours = {tours}/> */}
+      {/* <TextOneImage textOneImage = {textOneImage}/> */}
+
+      {/* <div className="cards-block">
+            <div className="cards-block__title">
+                <h2><span>Туры</span> партнеров</h2>
+            </div>
+            <div className="cards-block__card-container">
+                <div className="card-container__card" onClick={() => navigate('/partners#weekend')}>
+                    <div className="card-container__bg">
+                        <img src='./img/mp_weekend.jpg'></img>
+                    </div>
+                    <div className="card-container__text-container" >
+                        <div className="card-container__top-text">
+                            <div className="card-container__title">Тур выходного дня на озеро Лама</div>
+                        </div>
+                        <div className="card-container__bottom-text">
+                            <div className="card-container__days">Пт-пн</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="cards-block__link"><Link to = '/partners'> Перейти к турам партнеров </Link></div>
+        </div> */}
+
+      {/* <VideoClip src = './img/main.mp4#t=0.001' h2Text = 'Покори Север с нами!'/> */}
+      {/* <TextFewImages textFewImages = {textFewImages} /> */}
+      {/* <TextOneImage2 /> */}
+      {/* <RequestBlock bgImage = {'./img/main_opt.jpg'} h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} /> */}
+    </main>
   );
 }
+
