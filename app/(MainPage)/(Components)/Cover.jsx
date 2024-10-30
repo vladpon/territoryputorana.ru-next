@@ -10,7 +10,7 @@ const isSafari = () => {
 
 const Cover = () => {
     const [shouldUseImage, setShouldUseImage] = useState(false);
-    const pathToVideo = './public/wf.mp4';
+    const pathToVideo = './wf.mp4';
     
     useEffect( () => {
         const vid = document.querySelector('.vid');
