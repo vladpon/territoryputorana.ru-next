@@ -42,7 +42,7 @@ const textFewImages = {
 
 export default function Home() {
   return (
-    <main className='main-page'>      
+    <main className='main-page'>
 
       <Cover />
       {/* <TextWord text = {textWord.text} word = {textWord.word} /> */}
