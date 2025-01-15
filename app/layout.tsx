@@ -1,4 +1,5 @@
 import './globals.scss'
+import Header from './Components/Header/Header'
 
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
+      <Header />
       <body>{children}</body>
     </html>
   )
