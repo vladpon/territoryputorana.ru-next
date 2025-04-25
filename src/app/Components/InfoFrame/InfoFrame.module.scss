@@ -1,0 +1,115 @@
+@use '../../const.scss';
+@use 'sass:map';
+
+
+.infoframe {
+        padding: 2em;
+        background-color: #d6d6d6;
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        & h3 {
+            text-align: center;
+            color: const.$main-blue;
+            font-weight: 700;
+        }
+
+        & p {
+            line-height: 1.35;
+            & span {
+                // @include font-size-adaptive(20px);
+            }
+            & span:first-child {
+                font-weight: 700;
+            }
+            margin-block-end: 0em;
+            
+        }
+
+        &:hover {
+            background-color: #e4e3e3;
+            box-shadow: 2px 2px 2px #d6d6d6;
+        }
+
+        & a {
+            text-decoration: underline;
+            font-style: italic;
+        }
+       
+    &__price {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    
+
+    
+
+    &__note {
+        & span {
+            font-style: italic;
+            font-size: 0.8rem; 
+        }
+        
+        &_included {
+            span {
+                border-bottom: 1px dotted;
+                cursor: pointer; 
+                // line-height: 2.35;  
+            }
+        }
+                     
+    }
+
+    &__modal {
+        position: fixed;
+        right: calc(50vw - 150px);
+        top: 10vh;
+        max-width: 450px;
+        background-color: const.$secondary-background-color;
+        border-radius: 2%;
+        z-index: 11;
+
+        & ul > li {
+            // @include font-size-adaptive(17px);
+            font-size: 1.7rem;
+        }
+    }
+
+    &__note_included:hover &__modal.display-switch {
+        display: block;
+    }
+
+    & .display-switch {
+        display: none;
+    }
+
+    & details {
+        font-size: 0.75rem;
+    }
+    
+    
+}
+
+
+    
+.modal__text {
+    padding: 10%;
+    color: darken(const.$main-blue, 20);
+    text-align: left;
+
+    & p {
+        margin: 0.4em;
+    }
+
+    & ul > li {
+        list-style: circle;
+    }
+
+    & ol > li {
+        list-style: decimal;
+    }
+}
+
+

@@ -1,0 +1,291 @@
+@use './const.scss';
+@use 'sass:math';
+@use "sass:map";
+
+@mixin fluid-text($max: 48, $min: 14) {
+  $maxViewportWidth: 1800;
+  $minViewportWidth: 320;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  font-size: clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+
+
+
+
+// @mixin blockVPadding {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//     @media (max-width: const.$lg) {
+//         padding-top: 80px;
+//         padding-bottom: 80px;
+//     }
+//     @media (max-width: const.$md) {
+//         padding-top: 65px;
+//         padding-bottom: 65px;
+//     }
+//     @media (max-width: const.$sm) {
+//         padding-top: 47px;
+//         padding-bottom: 47px;
+//     }
+//     @media (max-width: const.$xs) {
+//         padding-top: 35px;
+//         padding-bottom: 35px;
+//     }
+//     @media (max-width: const.$vs) {
+//         padding-top: 25px;
+//         padding-bottom: 25px;
+//     }    
+// }
+
+// @mixin blockHPadding {
+//     padding-left: 270px;
+//     padding-right: 270px;
+//     @media (max-width: const.$lg) {
+//         padding-left: 200px;
+//         padding-right: 200px;
+//     }
+//     @media (max-width: const.$md) {
+//         padding-left: 100px;
+//         padding-right: 100px;
+//     }
+//     @media (max-width: const.$sm) {
+//         padding-left: 50px;
+//         padding-right: 50px;
+//     }
+//     @media (max-width: const.$xs) {
+//         padding-left: 35px;
+//         padding-right: 35px;
+//     }
+//     @media (max-width: const.$vs) {
+//         padding-left: 18px;
+//         padding-right: 18px;
+//     }    
+// }
+
+// @mixin blockPadding {
+//     @include blockHPadding;
+//     @include blockVPadding;
+// }
+
+// @mixin blockMaxWidth {
+//     max-width: 1280px;
+//     @media (max-width: const.$lg) {
+//         max-width: 920px;
+//     }
+//     @media (max-width: const.$md) {
+//         max-width: 700px;
+//     }
+//     @media (max-width: const.$sm) {
+//         max-width: 400px;
+//     }
+//     @media (max-width: const.$xs) {
+//         max-width: 350px;
+//     }
+//     @media (max-width: const.$vs) {
+//         max-width: 315px;
+//     }    
+// }
+
+// @mixin blockInternalMarginTop {
+//     margin-top: 75px;
+//     @media (max-width: const.$lg) {
+//         margin-top: 60px;
+//     }
+//     @media (max-width: const.$md) {
+//         margin-top: 50px;
+//     }
+//     @media (max-width: const.$sm) {
+//         margin-top: 35px;
+//     }
+//     @media (max-width: const.$xs) {
+//         margin-top: 25px;
+//     }
+//     @media (max-width: const.$vs) {
+//         margin-top: 15px;
+//     }    
+// }
+
+// @mixin space-btw($direction) {
+//     display: flex;
+//     flex-direction: $direction;
+//     justify-content: space-between;
+// }
+
+// @function footer-img-margin($img-width) {
+//     @return calc($img-width / 4);
+// }
+
+// @mixin footer-img-params($img-width) {
+//     height: $img-width;
+//     width: $img-width;
+//     margin-left: footer-img-margin($img-width);
+// }
+
+// @function font-size-calc($base-size, $ratio) {
+//     @return calc($base-size * $ratio);
+// }
+
+
+
+
+html, body, #app, #root {
+    height: 100%;
+    width: 100%;
+    font-size: 26px;
+    @media (max-width: const.$lg) {font-size: 22px;}
+    @media (max-width: const.$md) {font-size: 18px;}
+    @media (max-width: const.$sm) {font-size: 16px;}
+    @media (max-width: const.$xs) {font-size: 15px;}
+    @media (max-width: const.$vs) {font-size: 14px;}
+}
+
+h2 { @include fluid-text(38, 28) }
+h3 { @include fluid-text(28, 22) }
+h4 { @include fluid-text(28, 22) }
+h5 { @include fluid-text(24, 20) }
+h6 { @include fluid-text(20, 18) }
+
+body {
+    padding: 0;
+    margin: 0;
+    @include fluid-text(18, 16)
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    transition: all 0.3s ease 0s;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h1 {    
+    font-weight: 400;
+    margin-block-start: 0;
+    margin-block-end: 0.3em;
+    @include fluid-text(45, 30)
+}
+
+h2 {    
+    margin-block-end: 0.2em;
+}
+
+h3 {    
+    font-weight: 400;
+    margin-block-end: 0.1em;
+}
+
+h4 {    
+    font-weight: 500;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+body.lock {
+    overflow: hidden;
+}
+
+
+.container {
+    max-width: 2800px;
+    @media( max-width: map.get(const.$breakpoints, vl)){
+        max-width: 1850px;
+    }
+    @media( max-width: map.get(const.$breakpoints, xl)){
+        max-width: 1280px;
+    }
+    @media( max-width: map.get(const.$breakpoints, lg)){
+        max-width: 920px;
+    }
+    @media( max-width: map.get(const.$breakpoints, md)){
+        max-width: 700px;
+    }
+    @media( max-width: map.get(const.$breakpoints, sm)){
+        max-width: 400px;
+    }
+    @media( max-width: map.get(const.$breakpoints, xs)){
+        max-width: 350px;
+    }
+    @media( max-width: map.get(const.$breakpoints, vs)){
+        max-width: 315px;
+    }
+}
+
+
+
+
+.main-button {
+    position: relative;
+    background-color: const.$main-blue;
+    padding: 0.8em;
+    border: 0;
+    color: #fff;
+    box-shadow: 2px 2px 2px #000000;    
+    font-weight: 700;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(165, 190, 215);
+        color: rgb(40, 65, 110);
+    }
+
+    &:active {
+        box-shadow: none;
+        top: 2px;
+        left: 2px;
+    }
+}
+
+
+#vk_groups {
+    width: 100%;
+    & iframe {
+        width: 100%;
+    }
+}

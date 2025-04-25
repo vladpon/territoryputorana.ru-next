@@ -1,0 +1,84 @@
+@use '../../const.scss';
+@use 'sass:map';
+@use 'sass:color';
+
+
+.tp-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    // @include blockHPadding;
+    
+
+    &:hover {
+        .tp-cover__bg {
+            filter: brightness(0.7);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(0.55);
+        transition: filter 0.7s ease;
+    }
+
+    &__text {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;   
+        align-items: center;
+
+        & h1 {
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-block-end: 2em;
+        }        
+    }
+
+    &__opt-block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;        
+
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            flex-direction: column;
+        }
+    }
+
+    &__opt-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // @include font-size-adaptive(26px);
+        & span {
+            font-weight: 600;
+            color: #fff;            
+            text-transform: uppercase;
+        }
+
+        & img {
+            align-self: baseline;
+            filter: invert(1);
+            height: 2em;
+            width: 2em;
+            margin-right: 2em;
+        }
+    }
+    
+}
+
+
