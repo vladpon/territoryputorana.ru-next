@@ -8,51 +8,37 @@ import Link from 'next/link'
 
 
 const BigCards = (props) => {
-    const { content,  sections} = props
-
-    const router = useRouter()
-    const [cardsType, setCardsType] = useState('noCardTypeClass')
-    // const [filteredContent, setFilteredContent] = useState(content)
-    // const location = useLocation();
-    
-    // let navigate = useNavigate()
-    
-    // const [activeSections, setActiveSections] = useState([])
-
-    // useEffect( () => {
-    //     ((location.pathname === '/partners') || (location.pathname === '/heliski')) ? setCardsType('big-cards__img_partners') : setCardsType('big-cards__img_other')
-    //     if(sections) setActiveSections(sections[0])
-    // }, [] )
-
-    // useEffect( () => {
-    //     if(sections) {
-    //             setFilteredContent(content.filter( (item) => activeSections.includes(item.section)))
-    //             }        
-    // }, [activeSections])
+    const { content,  sections = new Map(), imgFitContain } = props
+    const [filteredContent, setFilteredContent] = useState(content)
+    const [activeSection, setActiveSection] = useState('')
 
 
-    // const handleSectionButton = (section) => 
-    //     // (activeSections.includes(section)) ? setActiveSections(activeSections.filter( item => item !== section))
-    //     //     : setActiveSections([...activeSections, section])
-    //     setActiveSections(section)
+    useEffect( () => {
+        sections && setFilteredContent(content.filter( (item) => activeSection.includes(item.section)))                
+    }, [activeSection])
 
+
+    const handleSectionButton = (section) => 
+        // (activeSections.includes(section)) ? setActiveSections(activeSections.filter( item => item !== section))
+        //     : setActiveSections([...activeSections, section])
+        setActiveSection(section)
 
 
   return (
     <div className = {styles["big-cards"]}>
-        {/* {sections && (
+        {sections && (
                         <div className= {styles['big-cards__sections']}>
-                            {sections.map((section) => (
-                                <button  key={section} onClick={() => handleSectionButton(section)} className = {activeSections.includes(section) ? 'active main-button' : 'main-button'}>{section}</button>
-                                )
+                            {sections.forEach((key, value) => (
+                                <button  key={key} onClick={() => handleSectionButton(key)} className = {activeSection.includes(key) ? 'active main-button' : 'main-button'}>{value}</button>
+                            )
                                 )
                             }
-                        </div>)} */}
-        { content && (
-            content.map( ( item, index ) => 
+                        </div>)}
+        { filteredContent && (
+            filteredContent.map( ( item, index ) => 
                 <div onClick = {() => redirect(item.href)} key = {index}>
                     <div className = {styles["big-cards__card"]}>
-                        <div className = {`${styles["big-cards__img"]} ${cardsType}`}>                                  
+                        <div className = {`${styles["big-cards__img"]} ${imgFitContain && styles['big-cards__img_partners']}`}>                                  
                             <img src={item.smallImg} alt="" />
                         </div>
                         <div className = {styles["big-cards__description"]}>

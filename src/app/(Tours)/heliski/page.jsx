@@ -67,7 +67,7 @@ const Heliski = async () => {
             textAlign = 'center'
             />
         <div className='container' style = {{margin: '0 auto'}}>
-          <BigCards content = {severgrandHotel}/>
+          <BigCards content = {severgrandHotel} imgFitContain = {true}/>
         </div>        
         <RequestBlock bgImage = {'./img/helireqback.JPG'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
