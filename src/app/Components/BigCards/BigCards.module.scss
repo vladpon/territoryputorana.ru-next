@@ -209,3 +209,27 @@
         }
     }
 }
+
+
+.main-button {
+    position: relative;
+    background-color: const.$main-blue;
+    padding: 0.8em;
+    border: 0;
+    color: #fff;
+    box-shadow: 2px 2px 2px #000000;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(165, 190, 215);
+        color: rgb(40, 65, 110);
+    }
+
+    &:active {
+        box-shadow: none;
+        top: 2px;
+        left: 2px;
+    }
+}
