@@ -1,0 +1,219 @@
+@use '../../const.scss';
+@use "sass:color";
+@use "sass:map";
+
+.req-block {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+
+    // @include blockHPadding;
+    // @include blockVPadding;
+    // @include space-btw(row);
+    padding: 4rem 0 4rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        flex-direction: column;
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: blur(0px);
+        transition: all 0.8s ease;
+        background-position: center bottom;
+        background-size: cover;
+    }    
+
+    // &:hover::before {
+    //     filter: blur(2px);
+    // }
+
+    &__text {
+        width: 60%;
+        color: #fff;
+        // text-shadow: #444 2px 2px;
+        text-align: center;
+
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            width: 100%;
+        }
+
+        & h2 {
+            font-weight: 800;
+            text-transform: uppercase;
+            // mix-blend-mode: overlay;
+        }
+
+        & h3 {
+            margin-block-end: 2em;
+            // mix-blend-mode: overlay;
+        }
+    }
+
+    & form {
+        width: 35%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 10px;
+
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            width: 100%;
+        }
+
+        input {
+            // margin-bottom: 2em;
+            padding: 5px;
+            border: 0;
+            border-radius: 0;
+
+            *:focus {
+                border: 0;
+                outline: 0;
+            }
+        }
+
+        select {
+            border-radius: 0;
+            color: black;
+
+            * option {
+                color: black;
+            }
+
+            *:focus {
+                border: 1px solid black ;
+                color: black;
+                outline: 0;
+                box-shadow: 0;
+            }
+        }
+
+        textarea {
+            padding: 0.4em;
+            margin-bottom: 3em;
+            border: 0;
+            border-radius: 0;
+        }
+
+        button {
+            position: relative;
+            background-color: const.$main-blue;
+            padding: 0.8em;
+            border: 0;
+            color: #fff;
+            box-shadow: 2px 2px 2px #000000;
+            // @include font-size-adaptive(18px);
+            font-weight: 700;
+            transition: all 0.4s ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(165, 190, 215);
+                color: rgb(40, 65, 110);
+            }
+
+            &:active {
+                box-shadow: none;
+                top: 2px;
+                left: 2px;
+            }
+        }
+
+        label {
+            color: white;
+            font-size: 0.7rem;
+
+            & a {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.thankyou {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    z-index: 11;
+    background: transparent;
+    border: 1px solid #bbc3d3;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, .5);
+    overflow: hidden;
+    
+    &__close {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 45px;
+        height: 45px;
+        background-color: const.$main-blue;
+        border-bottom-left-radius: 20px; 
+            
+        &:hover {
+            cursor: pointer;
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 80%;
+        height: 80%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+
+        & h3 {
+            color: darken(const.$main-blue, 10);
+            font-weight: 500;
+        }
+    }
+}
+
+.thankyou__close:hover::after, .thankyou__close:hover::before {
+    background-color: const.$main-blue;
+    transition: all 0.3s ease;
+}
+
+.thankyou__close::after {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}
+
+.thankyou__close::before {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
+}
+

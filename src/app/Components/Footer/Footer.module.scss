@@ -1,0 +1,136 @@
+@use '../../const.scss';
+@use 'sass:map';
+@use 'sass:color';
+
+
+.footer {
+
+    width: 100%;
+    padding: 1rem 3rem;
+    background-color: const.$main-blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        padding: 1rem 2rem;
+    }
+
+
+    &__logo-container {
+        // @include space-btw(row);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & img {
+            height: 3.5rem;
+            width: 3.5rem;
+            margin-right: 0.6rem;
+            padding: 0.33rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            // @media (max-width: map.get(const.$breakpoints, lg)) {
+            //     @include footer-img-params(90px)
+            // }
+            // @media (max-width: map-get($breakpoints, md)) {
+            //     @include footer-img-params(75px);
+            //     padding: 8px;
+            // }
+            // @media (max-width: map-get($breakpoints, sm)) {
+            //     @include footer-img-params(50px);
+            //     padding: 5px;
+            // }
+            // @media (max-width: map-get($breakpoints, xs)) {
+            //     @include footer-img-params(35px)
+            // }
+            // @media (max-width: map-get($breakpoints, vs)) {
+            //     @include footer-img-params(35px)
+            // }                          
+        }
+
+        & .footer__logo:first-child img:hover {
+            background-color: rgb(240, 125, 25);
+        }
+        & .footer__logo:nth-child(2) img:hover {
+            background-color: rgb(30, 80, 150);
+        }
+        & .footer__logo:nth-child(3) img:hover {
+            background-color: rgb(0, 150, 220);
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 100%;
+
+        & > a span {
+            font-family: "Open Sans";
+        }
+
+        & span {
+           color: white;
+           font-size: 0.9rem;
+        //    @include font-size-adaptive(24px);          
+        }
+        & > span {
+            @media (max-width: 767px) {
+                display: none;
+           }
+        }
+    }
+
+    &__icons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;        
+        padding: 0.4em;
+    }
+
+   
+
+    #{&}__icon {
+        width: 35px;
+        @media (max-width: map.get(const.$breakpoints, lg)) {
+            margin-left: 23px;
+            width: 32px;
+        }
+        @media (max-width: map.get(const.$breakpoints, md)) {
+            width: 28px;
+        }
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            width: 25px;
+        }
+        @media (max-width: map.get(const.$breakpoints, xs)) {            
+            width: 22px;
+        }
+        @media (max-width: map.get(const.$breakpoints, vs)) {
+            width: 20px;
+        }  
+    }
+
+
+    &__privacy {
+        // @include font-size-adaptive(15px);
+        font-size: 0.6rem;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+
+        & a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        & > span {
+            font-family: "Open Sans";
+        }
+    }
+}

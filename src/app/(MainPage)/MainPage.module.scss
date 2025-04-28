@@ -1,0 +1,182 @@
+
+@use "sass:color";
+@use "sass:map";
+@use '../const.scss';
+
+
+.cover {
+    width: 100%;
+    height: 100vh;
+
+    & .cover__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+
+        & div {
+            width: 100%;
+            height: 100%;
+        }
+
+        & .vid {
+            width: 100%;
+            height: 100%;
+
+            & video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+            
+    }
+
+    &__logo {
+        position: absolute;
+        top: 35%;
+        left: calc(50% - 125px);
+        width: 250px;
+        height: 250px;
+        @media (max-width: map.get(const.$breakpoints, lg)) {
+            top: 35%;
+            width: 220px;
+            height: 220px;
+            left: calc(50% - 110px);
+        }
+        @media (max-width: map.get(const.$breakpoints, md)) {
+            top: 30%;
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
+        }
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            top: 30%;
+            width: 180px;
+            height: 180px;
+            left: calc(50% - 90px);
+        }
+        @media (max-width: map.get(const.$breakpoints, xs)) {
+            top: 25%;
+            width: 180px;
+            height: 180px;
+            left: calc(50% - 90px);
+        }
+        @media (max-width: map.get(const.$breakpoints, vs)) {
+            top: 25%;
+            width: 150px;
+            height: 150px;
+            left: calc(50% - 75px);
+        } 
+    }
+}
+
+
+
+.text-word {
+    width: 100%;
+    position: relative; 
+    background-color: const.$secondary-background-color;
+    padding: 4em 0 4em 0;
+
+    &__text {
+        // width: 80%;
+        margin: 0 auto;
+
+        & p {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__word {
+        position: absolute;
+        right: 11%;
+        bottom: 23%;
+        z-index: 1;
+        
+        & span {
+            font-size: 5em;
+            color: rgb(207, 207, 207, 0);
+            transition: color 1s ease;
+            @media (max-width: map.get(const.$breakpoints, sm)) {
+                color: rgb(207, 207, 207, 1);
+                opacity: 1;
+            }
+        }
+    }
+    &:hover {
+        .text-word__word span {
+            color: rgb(207, 207, 207, 1);
+        }
+        .text-word__text p {
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+
+
+
+
+
+.txt-title {
+    width: 100%;
+    height: 100%;
+    // @include globals.blockHPadding;
+    // @include globals.blockVPadding;
+    background-color: const.$secondary-background-color;
+    &.light-back {
+        background-color: const.$primary-background-color;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    & h2 {
+        font-weight: 500;
+        margin-block-end: .5em;
+    }
+
+    & p {
+        text-align: right;
+        width: 70%;
+    }
+
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        & h2 {
+            align-self: center;
+        }
+
+        & p {
+            text-align: justify;
+            width: 100%;
+        }
+    }
+
+    & ul {
+        align-self: flex-start;
+        // @include const.font-size-adaptive(22px);
+        margin-bottom: 2em;
+
+        & li {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+    }
+
+    & img {
+        width: 100%;
+
+    }
+}
+

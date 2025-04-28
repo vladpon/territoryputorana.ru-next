@@ -1,0 +1,113 @@
+@use '../../const.scss';
+@use 'sass:color';
+@use 'sass:map';
+
+
+.tp-about {
+    &__container {
+        background-color: const.$primary-background-color;
+        width: 100vw;
+    }
+    
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        color: const.$main-blue;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        align-self: flex-start;
+
+        & ul {
+            margin-left: 2em;
+            margin-block-end: 2em;
+
+            & > li {
+                list-style-type: disc;
+                // @include font-size-adaptive(24px);
+            }
+        }
+    }
+
+    &__hit-container {
+        width: 40%;
+        gap: 10px;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    // &__hit {
+
+    //     padding: 2em;
+    //     background-color: #d6d6d6;
+    //     width: 100%;
+    //     text-align: center;
+    //     transition: all 0.3s ease;
+
+    //     & h3 {
+    //         text-align: center;
+    //         color: const.$main-blue;
+    //         font-weight: 700;
+    //     }
+
+    //     & p {
+    //         line-height: 1.35;
+    //         & span {
+    //             // @include font-size-adaptive(20px);              
+    //         }
+    //         & span:first-child {
+    //             font-weight: 700;
+    //         }
+    //         margin-block-end: 0em;
+            
+    //     }
+
+    //     &:hover {
+    //         background-color: #e4e3e3;
+    //         box-shadow: 2px 2px 2px #d6d6d6;
+    //     }
+       
+    // }
+
+    // &__price {
+    //     // @include font-size-adaptive(35px);
+    //     font-size: 1.5rem;
+    // }
+
+    // &__note {
+    //     font-style: italic;
+    //     // @include font-size-adaptive(19px);
+    // }
+
+
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        flex-direction: column;
+        &__main {
+            width: 100%;
+
+            & h2 {
+                text-align: center;
+            }
+
+            & p {
+                text-align: justify;
+            }
+        }
+
+
+        &__hit-container {
+            width: 100%;
+        }
+    }
+}

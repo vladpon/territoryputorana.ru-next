@@ -1,0 +1,75 @@
+$breakpoints: (
+        vs: 376px,
+        xs: 423px,
+        sm: 767px,
+        md: 1023px,
+        lg: 1439px,
+        xl: 2559px,
+        vl: 3839px
+    );
+
+$vs: 376px;
+$xs: 423px;
+$sm: 767px;
+$md: 1023px;
+$lg: 1439px;
+$xl: 1919px;
+$vl: 2559px;
+
+
+$main-blue: #4d95be;
+$white: #fff;
+$black: #000;
+$dark-gray: #282828;
+
+$primary-background-color: #fefefe;
+$secondary-background-color: #eee;
+
+$header-height: (
+    vs: 60px,
+    xs: 70px,
+    sm: 80px,
+    md: 100px,
+    lg: 120px,
+    vl: 120px
+);
+
+
+
+// @mixin font-size-adaptive($base-size) {
+//     font-size: $base-size;
+//     @media (max-width: $lg) {
+//         font-size: calc($base-size / 1.1) ;
+//     }
+//     @media (max-width: $md) {
+//         font-size: calc($base-size / 1.3) ;
+//     }
+//     @media (max-width: $sm) {
+//         font-size: calc($base-size / 1.4) ;
+//     }
+//     @media (max-width: $xs) {
+//         font-size: calc($base-size / 1.6) ;
+//     }
+//     @media (max-width: $vs) {
+//         font-size: calc($base-size / 1.7) ;
+//     }   
+// }
+
+// @mixin font-big-size-adaptive($base-size, $ratio) {
+//     font-size: $base-size;
+//     @media (max-width: $lg) {
+//         font-size: calc($base-size / 1.1 / $ratio) ;
+//     }
+//     @media (max-width: $md) {
+//         font-size: calc($base-size / 1.2 / $ratio) ;
+//     }
+//     @media (max-width: $sm) {
+//         font-size: calc($base-size / 1.4 / $ratio) ;
+//     }
+//     @media (max-width: $xs) {
+//         font-size: calc($base-size / 1.6 / $ratio) ;
+//     }
+//     @media (max-width: $vs) {
+//         font-size: calc($base-size / 1.7 / $ratio) ;
+//     }   
+// }

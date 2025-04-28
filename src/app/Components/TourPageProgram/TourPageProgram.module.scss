@@ -1,0 +1,98 @@
+@use '../../const.scss';
+@use 'sass:map';
+@use 'sass:color';
+
+.tp-program {
+
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 0;
+
+    & h4 {
+        margin-block-end: 2.5em;
+        font-size: 0.9rem;
+    }
+
+    & > p {
+        font-size: 0.95rem;
+        font-weight: 500;
+        width: 50%;
+        border-right: 5px solid const.$main-blue;
+        align-self: flex-end;
+        text-align: right;
+        padding-right: 1.7em;
+    }
+    
+
+    &__container {
+        background-color: const.$primary-background-color;        
+    }
+
+
+    &__day {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: max-content;
+
+        
+    }
+
+    &__text {
+        width: 53%;
+        height: 100%;
+
+        & p {
+            font-size: 0.9rem;
+            text-align: justify;            
+        }
+
+        & ul {
+            margin-block-end: 2em;
+
+            & > li {
+                list-style: circle;
+                margin-left: 2em;
+                // @include font-size-adaptive(24px);
+            }
+        }
+
+        & h3 {
+            margin-block-end: 1.3em;
+        }
+    }
+
+    &__img {
+        width: 43%;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+
+    @media (max-width: map.get(const.$breakpoints, md)) {
+        &__day {flex-direction: column-reverse;}
+        &__img {width: 100%;}
+        &__text {
+            width: 100%;
+            & h3 {
+                margin-block-start: 1.5em;
+            }
+        }
+        & h2 {text-align: center;}
+        & h4 {text-align: center;}
+    }
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        & > p {
+            width: 100%;
+        }
+    }
+}
+

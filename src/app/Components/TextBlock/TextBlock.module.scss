@@ -1,0 +1,39 @@
+@use '../../const.scss';
+@use 'sass:color';
+@use 'sass:map';
+
+.textBlock {
+    width: 100%;
+
+    &__container {
+        margin: 0 auto;
+
+        & ul > li {
+            // list-style-image: url('/check.svg');
+            list-style-type: disc;
+            padding-left: 0.5rem;
+            margin-left: 1.4rem;
+            font-size: 0.9rem;
+            &::marker {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    padding: 3rem 0;
+
+    & h2 {
+        letter-spacing: 0.7;
+        margin-bottom: 2rem;
+    }
+
+    & p {
+        line-height: 1.2;
+        letter-spacing: 0.1;
+        margin-bottom: 1.5rem;
+    }
+
+    & a {
+        text-decoration: underline;
+    }
+}

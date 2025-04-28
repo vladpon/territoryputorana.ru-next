@@ -1,0 +1,64 @@
+@use '../const.scss';
+@use 'sass:map';
+
+.fb-page {
+    width: 100%;
+    background-color: const.$secondary-background-color;
+    padding-top: map.get(const.$header-height, vl);
+        @media (max-width: map.get(const.$breakpoints, lg)) {
+            padding-top: map.get(const.$header-height, lg);
+        }
+        @media (max-width: map.get(const.$breakpoints, md)) {
+            padding-top: map.get(const.$header-height, md);
+        }
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            padding-top: map.get(const.$header-height, sm);
+        }
+        @media (max-width: map.get(const.$breakpoints, xs)) {
+            padding-top: map.get(const.$header-height, xs);
+        }
+        @media (max-width: map.get(const.$breakpoints, vs)) {
+            padding-top: map.get(const.$header-height, vs);
+        }
+    padding-bottom: 2rem;
+}
+
+.fb {
+    background-color: const.$primary-background-color;
+    margin: 2rem auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: map.get(const.$breakpoints, md)) {
+        display: block;
+        &__photo {
+            height: 400px;
+        }
+    }
+
+    &__photo {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 38%;
+        // background-color: #777;
+        & img {
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 60%;
+
+        & p {
+            font-size: 0.75rem;
+        }
+
+        & span {
+            font-style: italic;
+        }
+    }
+}
