@@ -95,8 +95,8 @@
     },
 
     {
-        "id": "photo",
-        "href": "/photo",
+        "id": "gallery",
+        "href": "/gallery",
         "title": "фотогалерея"
     },
 

@@ -7,7 +7,6 @@ import BurgerMenu from './BurgerMenu'
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 
-// import {HEADERBGCOLORS as bgColors} from '../../../constants/colors'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
