@@ -26,7 +26,7 @@ const Footer = () => {
                 <a href="https://t.me/territoryputorana"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
             </div>
             <div className={styles['footer__privacy']}>
-                <a href = 'https://territoryputorana.ru/privacy'>Политика конфиденциальности</a>
+                <a href = '/privacy'>Политика конфиденциальности</a>
                 <span>РТО 025757</span>
             </div>
         </div>

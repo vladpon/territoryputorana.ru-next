@@ -32,7 +32,7 @@ const tours3d = [
         "tourPhoto": [],
         "contacts": {},
         "files": [],
-        "href": "/Locations"
+        "href": "/locations"
     }
 ]
 
