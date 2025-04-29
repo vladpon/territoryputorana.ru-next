@@ -1,0 +1,61 @@
+@use '../const.scss';
+@use 'sass:map';
+
+
+.tours3d-page {
+    position: relative;
+    background-color: const.$secondary-background-color;
+    padding-top: map.get(const.$header-height, vl);
+        @media (max-width: map.get(const.$breakpoints, lg)) {
+            padding-top: map.get(const.$header-height, lg);
+        }
+        @media (max-width: map.get(const.$breakpoints, md)) {
+            padding-top: map.get(const.$header-height, md);
+        }
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            padding-top: map.get(const.$header-height, sm);
+        }
+        @media (max-width: map.get(const.$breakpoints, xs)) {
+            padding-top: map.get(const.$header-height, xs);
+        }
+        @media (max-width: map.get(const.$breakpoints, vs)) {
+            padding-top: map.get(const.$header-height, vs);
+        }
+    
+        &__content {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        &__title {
+            position: relative;
+
+            h1 {
+                position: relative;
+                text-transform: uppercase;
+                font-weight: 500;
+                z-index: 1;
+
+                &::after {
+                    content: '3D туры';
+                    position: absolute;
+                    left: 0.4em;
+                    top: -0.4em;
+                    // @include font-size-adaptive(105px);
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: darken(const.$secondary-background-color, 10%);
+                    z-index: -1;
+                }
+            }
+
+            h3 {
+                font-weight: 400;
+                color: #7c7c7c;
+                // margin-block-end: 1.5em;
+            }
+
+        }
+}
+

@@ -46,7 +46,10 @@ const Header = () => {
         case '/tours':
           setPageClass('other-page')
           break
-        case '/Lama3d':
+        case '/jar3d':
+          setPageClass('tour3d')
+          break;
+        case '/locations':
           setPageClass('tour3d')
           break;
         case '/tourpage':

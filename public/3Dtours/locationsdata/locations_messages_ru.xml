@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="ru_project_title"><![CDATA[lama]]></data>
+
+
+
+  <data name="ru_pano1098_title"><![CDATA[Усадьба Жар.Птица]]></data>
+  <data name="ru_spotpoint1140_tooltip"><![CDATA[Водопад на реке Витаминка]]></data>
+  <data name="ru_spotpoint1141_tooltip"><![CDATA[Водопаад Южный Нералах]]></data>
+  <data name="ru_spotpoint1142_tooltip"><![CDATA[Водопад Южный]]></data>
+  <data name="ru_spotpoint1143_tooltip"><![CDATA[панорама на озеро Капчук и Лама]]></data>
+  <data name="ru_spotpoint1144_tooltip"><![CDATA[панорама озера Капчук]]></data>
+  <data name="ru_spotpoint1153_tooltip"><![CDATA[Прогулки на SUP]]></data>
+  <data name="ru_spotpoint1162_tooltip"><![CDATA[360 тур по Усадьбе Жар.Птица]]></data>
+  <data name="ru_spotpoint1162openurlwebsiteurl"><![CDATA[https://territoryputorana.ru/lama.html]]></data>
+
+
+  <data name="ru_pano1101_title"><![CDATA[Водопад Южный Нералах]]></data>
+  <data name="ru_spotpoint1154_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+  <data name="ru_spotpoint1155_tooltip"><![CDATA[вьюпоинт Фестивальная]]></data>
+
+
+  <data name="ru_pano1104_title"><![CDATA[панорама на озеро Капчук и Лама]]></data>
+  <data name="ru_spotpoint1145_tooltip"><![CDATA[вьюпоинт Фестивальная]]></data>
+  <data name="ru_spotpoint1146_tooltip"><![CDATA[барбекю на озере Капчук]]></data>
+  <data name="ru_spotpoint1147_tooltip"><![CDATA[Водопады на озере Капчук]]></data>
+  <data name="ru_spotpoint1148_tooltip"><![CDATA[Водопад Южный Нералах]]></data>
+
+
+  <data name="ru_pano1107_title"><![CDATA[Прогулки на SUP]]></data>
+  <data name="ru_spotpoint1168_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+
+
+  <data name="ru_pano1110_title"><![CDATA[Водопад Южный]]></data>
+  <data name="ru_spotpoint1167_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+
+
+  <data name="ru_pano1116_title"><![CDATA[Водопад на реке Витаминка]]></data>
+  <data name="ru_spotpoint1156_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+
+
+  <data name="ru_pano1119_title"><![CDATA[вьюпоинт Фестивальная]]></data>
+  <data name="ru_spotpoint1163_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+  <data name="ru_spotpoint1164_tooltip"><![CDATA[панорама на озеро Капчук и Лама]]></data>
+  <data name="ru_spotpoint1165_tooltip"><![CDATA[барбекю на озере Капчук]]></data>
+
+
+  <data name="ru_pano1122_title"><![CDATA[Воопад на Озере Капчук 3]]></data>
+  <data name="ru_spotpoint1166_tooltip"><![CDATA[Воопад на Озере Капчук 2]]></data>
+
+
+  <data name="ru_pano1125_title"><![CDATA[Водопады на озере Капчук]]></data>
+  <data name="ru_spotpoint1149_tooltip"><![CDATA[Воопад на Озере Капчук 2]]></data>
+  <data name="ru_spotpoint1150_tooltip"><![CDATA[барбекю на озере Капчук]]></data>
+  <data name="ru_spotpoint1151_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+  <data name="ru_spotpoint1152_tooltip"><![CDATA[Воопад на Озере Капчук 3]]></data>
+
+
+  <data name="ru_pano1128_title"><![CDATA[Воопад на Озере Капчук 2]]></data>
+
+
+  <data name="ru_pano1131_title"><![CDATA[барбекю на озере Капчук]]></data>
+  <data name="ru_spotpoint1169_tooltip"><![CDATA[панорама на озеро Капчук и Лама]]></data>
+  <data name="ru_spotpoint1170_tooltip"><![CDATA[Водопады на озере Капчук]]></data>
+  <data name="ru_spotpoint1171_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+  <data name="ru_spotpoint1172_tooltip"><![CDATA[вьюпоинт Фестивальная]]></data>
+
+
+  <data name="ru_pano1134_title"><![CDATA[панорама озера Капчук]]></data>
+  <data name="ru_spotpoint1157_tooltip"><![CDATA[панорама на озеро Капчук и Лама]]></data>
+  <data name="ru_spotpoint1158_tooltip"><![CDATA[вьюпоинт Фестивальная]]></data>
+  <data name="ru_spotpoint1159_tooltip"><![CDATA[Воопад на Озере Капчук 3]]></data>
+  <data name="ru_spotpoint1160_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+
+
+  <data name="ru_pano1137_title"><![CDATA[Усадьба Жар.Птица на закате]]></data>
+
+
+	<data name="ru_spotmap1100_tooltip"><![CDATA[Усадьба Жар.Птица]]></data>
+	<data name="ru_spotmap1103_tooltip"><![CDATA[Водопад Южный Нералах]]></data>
+	<data name="ru_spotmap1106_tooltip"><![CDATA[панорама на озеро Капчук и Лама]]></data>
+	<data name="ru_spotmap1109_tooltip"><![CDATA[Прогулки на SUP]]></data>
+	<data name="ru_spotmap1112_tooltip"><![CDATA[Водопад Южный]]></data>
+	<data name="ru_spotmap1118_tooltip"><![CDATA[Водопад на реке Витаминка]]></data>
+	<data name="ru_spotmap1121_tooltip"><![CDATA[вьюпоинт Фестивальная]]></data>
+	<data name="ru_spotmap1124_tooltip"><![CDATA[Воопад на Озере Капчук 3]]></data>
+	<data name="ru_spotmap1127_tooltip"><![CDATA[Водопады на озере Капчук]]></data>
+	<data name="ru_spotmap1130_tooltip"><![CDATA[Воопад на Озере Капчук 2]]></data>
+	<data name="ru_spotmap1133_tooltip"><![CDATA[барбекю на озере Капчук]]></data>
+	<data name="ru_spotmap1136_tooltip"><![CDATA[панорама озера Капчук]]></data>
+	<data name="ru_spotmap1139_tooltip"><![CDATA[Усадьба Жар.Птица на закате]]></data>
+
+
+
+
+  <data name="ru_contextmenuopenFsLabel"><![CDATA[Enter Fullscreen]]></data>
+  <data name="ru_contextmenucloseFsLabel"><![CDATA[Exit Fullscreen]]></data>
+  <data name="ru_contextmenunormallabel"><![CDATA[Normal View]]></data>
+  <data name="ru_contextmenuarchitecturallabel"><![CDATA[Architectural View]]></data>
+  <data name="ru_contextmenulittleplanetlabel"><![CDATA[Little Planet View]]></data>
+  <data name="ru_controlBar_classiczoomInTip"><![CDATA[Zoom in]]></data>
+  <data name="ru_controlBar_classiczoomOutTip"><![CDATA[Zoom out]]></data>
+  <data name="ru_controlBar_classicmoveLeftTip"><![CDATA[Move left]]></data>
+  <data name="ru_controlBar_classicmoveRightTip"><![CDATA[Move right]]></data>
+  <data name="ru_controlBar_classicmoveUpTip"><![CDATA[Move up]]></data>
+  <data name="ru_controlBar_classicmoveDownTip"><![CDATA[Move down]]></data>
+  <data name="ru_controlBar_classicopenFsTip"><![CDATA[Enter fullscreen]]></data>
+  <data name="ru_controlBar_classiccloseFsTip"><![CDATA[Exit fullscreen]]></data>
+  <data name="ru_controlBar_classicautorotateOnTip"><![CDATA[Start autorotation]]></data>
+  <data name="ru_controlBar_classicautorotateOffTip"><![CDATA[Stop autorotation]]></data>
+  <data name="ru_controlBar_classicshowThumbnailsTip"><![CDATA[Show thumbnails]]></data>
+  <data name="ru_controlBar_classichideThumbnailsTip"><![CDATA[Hide thumbnails]]></data>
+  <data name="ru_controlBar_classicdisplayHelpTip"><![CDATA[Show help screen]]></data>
+  <data name="ru_controlBar_classichideHelpTip"><![CDATA[Hide help screen]]></data>
+  <data name="ru_controlBar_classicdisplayControlsTip"><![CDATA[Show controls]]></data>
+  <data name="ru_controlBar_classichideControlsTip"><![CDATA[Hide controls]]></data>
+  <data name="ru_controlBar_classicctrlmodeDragTip"><![CDATA[Change control mode]]></data>
+  <data name="ru_controlBar_classicctrlmodeMoveTip"><![CDATA[Change control mode]]></data>
+  <data name="ru_prevnexttheme2prevSceneTip"><![CDATA[Previous Scene]]></data>
+  <data name="ru_prevnexttheme2nextSceneTip"><![CDATA[Next Scene]]></data>
+
+
+  <data name="ru_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="ru_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="ru_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="ru_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="ru_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="ru_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="ru_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="ru_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="ru_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="ru_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="ru_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="ru_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="ru_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="ru_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="ru_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="ru_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="ru_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="ru_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="ru_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="ru_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="ru_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="ru_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="ru_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="ru_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="ru_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="ru_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

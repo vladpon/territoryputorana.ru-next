@@ -35,7 +35,7 @@ const BigCards = (props) => {
                         </div>)}
         { filteredContent && (
             filteredContent.map( ( item, index ) => 
-                <div onClick = {() => redirect(item.href)} key = {index}>
+                <div className = {styles['big-cards__card-container']} onClick = {() => redirect(item.href)} key = {index}>
                     <div className = {styles["big-cards__card"]}>
                         <div className = {`${styles["big-cards__img"]} ${imgFitContain && styles['big-cards__img_partners']}`}>
                             <img src={item.smallImg} alt="" />
