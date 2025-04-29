@@ -1,5 +1,5 @@
 export async function fetchProjects() {
-    const res = await fetch('http://localhost:3000/data/projects.json')
+    const res = await fetch(process.env.API_URI + '/data/projects.json')
     const tours = await res.json()
     return tours  
   }
