@@ -1,4 +1,4 @@
-const tours = [
+const toursObj = [
   {
       "tourId": "lostput",
       "title": "Затерянный мир Плато Путорана",
@@ -708,7 +708,7 @@ const tours = [
 
 
 export async function fetchTours() {
-    // const res = await fetch(process.env.API_URI + '/data/tours.json')
-    // const tours = await res.json()
-    return tours  
+    const res = await fetch(process.env.API_URL + '/data/tours.json')
+    const tours = await res.json()
+    return tours
   }
