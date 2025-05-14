@@ -15,7 +15,6 @@ const Masonry = (props) => {
 
 
     return (<div className = {`${styles['gallery__block']} container`}>
-            {/* <MainLogo /> */}
                 <div className = {styles['gallery__title']}><h2>{title}</h2></div>
                 <div className = {styles['gallery__photo-container']}>                
                     {photos && photos.map( (photo, index) => 
