@@ -11,7 +11,7 @@ async function init() {
         db = await client.db('territoryputorana_test')
         tours = await db.collection('tours')
     } catch (error) {
-        throw new Error('Failed connection to db')
+        throw new Error(error)
     }
 }
 

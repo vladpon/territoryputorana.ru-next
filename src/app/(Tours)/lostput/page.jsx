@@ -8,6 +8,7 @@ import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 
 import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
 import { fetchTours } from '../../../api/fetchTours'
+import { getTours } from '../../../lib/mongo/tours'
 
 
 export const metadata = {
@@ -18,6 +19,9 @@ export const metadata = {
 
 const Lostput = async () => {
   const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'lostput')[0])
+  const tours = await getTours();
+  const t = tours.tours.filter( (item) => item.tourId == 'lostput')
+  console.log(t[0])
 
   return (
     <main>
