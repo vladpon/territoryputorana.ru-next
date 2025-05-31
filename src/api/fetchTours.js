@@ -707,6 +707,14 @@ const toursObj = [
 export async function fetchTours() {
     // const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/data/tours.json')
     // const tours = await res.json()
+    const tours = await fetch('http://localhost:3000/api/tours', 
+        {
+            headers: {
+                Acccept: 'application/json',
+                method: 'GET',
+            },
+        }
+    ).then(t => t.json())
     
-    return toursObj
+    return tours
   }

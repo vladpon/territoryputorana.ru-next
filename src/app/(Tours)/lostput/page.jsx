@@ -19,9 +19,7 @@ export const metadata = {
 
 const Lostput = async () => {
   const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'lostput')[0])
-  const tours = await getTours();
-  const t = tours.tours.filter( (item) => item.tourId == 'lostput')
-  console.log(t[0])
+ 
 
   return (
     <main>
