@@ -1,5 +1,6 @@
 @use '../../const.scss';
 @use 'sass:map';
+@use 'sass:color';
 
 
 .infoframe {
@@ -96,7 +97,7 @@
     
 .modal__text {
     padding: 10%;
-    color: darken(const.$main-blue, 20);
+    color: color.adjust(const.$main-blue, $lightness: -20%);
     text-align: left;
 
     & p {

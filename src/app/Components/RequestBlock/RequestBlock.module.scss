@@ -184,7 +184,7 @@
 
 
         & h3 {
-            color: darken(const.$main-blue, 10);
+            color: color.adjust(const.$main-blue, $lightness: -10%);
             font-weight: 500;
         }
     }

@@ -1,6 +1,6 @@
 import { getTours } from "../lib/mongo/tours";
 
-const handler = async (req, res) => {
+const fetchTours = async (req, res) => {
     if(req.method === 'GET') {
         try {
             const { tours, error } = await getTours()
@@ -16,4 +16,4 @@ const handler = async (req, res) => {
     res.status(425).end(`Metod ${req.method} is not allowed`)
 }
 
-export default handler
+export default fetchTours

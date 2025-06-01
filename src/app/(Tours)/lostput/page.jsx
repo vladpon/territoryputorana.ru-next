@@ -7,8 +7,8 @@ import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 
 import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
-import { fetchTours } from '../../../api/fetchTours'
-import { getTours } from '../../../lib/mongo/tours'
+
+import { getTour } from '../../../lib/mongo/tours'
 
 
 export const metadata = {
@@ -18,8 +18,9 @@ export const metadata = {
 
 
 const Lostput = async () => {
-  const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'lostput')[0])
- 
+
+  const tour = await getTour('lostput').then( res => res.result)
+
 
   return (
     <main>

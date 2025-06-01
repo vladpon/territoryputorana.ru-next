@@ -35,7 +35,8 @@
 
     &__block {
         width: 100%;
-        // @include blockHPadding;
+        display: flex;
+        flex-direction: column;
         padding-top: 70px;
         padding-bottom: 70px;
         @media (max-width: map.get(const.$breakpoints, lg)) {
@@ -58,8 +59,7 @@
             padding-top: 10px;
             padding-bottom: 10px;
         }   
-        display: flex;
-        flex-direction: column;
+        
     }
 
     

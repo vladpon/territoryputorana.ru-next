@@ -3,11 +3,7 @@
 @use 'sass:map';
 
 
-.tp-about {
-    &__container {
-        background-color: const.$primary-background-color;
-        width: 100%;
-    }
+.tp-about {   
     
     width: 100%;
     margin: 0 auto;
@@ -16,6 +12,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    &__container {
+        background-color: const.$primary-background-color;
+        width: 100%;
+    }
 
     h2 {
         color: const.$main-blue;

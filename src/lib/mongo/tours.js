@@ -34,3 +34,16 @@ export async function getTours() {
         return {error: 'Failed to fetch tours'}
     }    
 }
+
+
+export async function getTour(tourId) {
+    try {
+        if(!tours) await init()
+            const result = await tours
+                .findOne({tourId})
+        
+        return {result}
+    } catch (error) {
+        return {error: 'Failed to fetch tours'}
+    }    
+}
