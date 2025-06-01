@@ -1,5 +1,4 @@
 import { BACKGROUNDCOLORS, COLORS } from '../../../constants/colors'
-import { fetchTours } from '../../../api/fetchTours'
 import MainLogo from '../../Components/MainLogo/MainLogo'
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
@@ -7,6 +6,7 @@ import TextBlock from '../../Components/TextBlock/TextBlock'
 import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
+import { getTour } from '../../../lib/mongo/tours'
 
 
 export const metadata = {
@@ -16,7 +16,7 @@ export const metadata = {
 
 
 const SkiTour = async () => {
-    const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'skitour')[0])
+    const tour = await getTour('skitour').then( res => res.result)
 
   return (
     <main>

@@ -1,4 +1,4 @@
-import { fetchTours } from '../../../api/fetchTours'
+
 import MainLogo from '../../Components/MainLogo/MainLogo'
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
@@ -7,6 +7,7 @@ import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import { BACKGROUNDCOLORS } from '../../../constants/colors'
+import { getTour } from '../../../lib/mongo/tours'
 
 
 export const metadata = {
@@ -25,7 +26,7 @@ const txtTitle = {
 
 
 const HeliTour = async () => {
-    const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'helitour')[0])
+    const tour = await getTour('helitour').then( res => res.result)
 
 
   return (

@@ -1,5 +1,4 @@
 import { BACKGROUNDCOLORS } from '../../../constants/colors'
-import { fetchTours } from '../../../api/fetchTours'
 import MainLogo from '../../Components/MainLogo/MainLogo'
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
@@ -7,6 +6,7 @@ import TextBlock from '../../Components/TextBlock/TextBlock'
 import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
+import { getTour } from '../../../lib/mongo/tours'
 
 export const metadata = {
     title: 'Скитур долина озера Лама',
@@ -15,7 +15,7 @@ export const metadata = {
 
 
 const Skilama = async () => {
-    const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'skilama')[0])
+    const tour = await getTour('skilama').then( res => res.result)
 
   return (
     <main>
