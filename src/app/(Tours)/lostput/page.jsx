@@ -9,11 +9,19 @@ import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
 
 import { getTour } from '../../../lib/mongo/tours'
+import { getPage } from '../../../lib/mongo/pages'
 
+
+const page = await getPage('lostput')
+
+// export const metadata = {
+//   title: 'Затерянный мир плато Путорана',
+//   description: 'Динамичный недельный тур на плато Путорана. Размещение с комфортом класса люкс. Трекинговые маршруты, каньоны, водопады. Водные прогулки. Вертолетные экскурсии. Гастрономический туризм.'
+// }
 
 export const metadata = {
-  title: 'Затерянный мир плато Путорана',
-  description: 'Динамичный недельный тур на плато Путорана. Размещение с комфортом класса люкс. Трекинговые маршруты, каньоны, водопады. Водные прогулки. Вертолетные экскурсии. Гастрономический туризм.'
+  title: page.title,
+  description: page.description
 }
 
 
