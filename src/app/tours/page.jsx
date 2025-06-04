@@ -2,8 +2,9 @@ import MainLogo from '../Components/MainLogo/MainLogo'
 import BigCards from '../Components/BigCards/BigCards'
 
 import styles from './Tours.module.scss'
+import { getTours } from '@/lib/mongo/tours'
 
-import { fetchTours } from '../../api/fetchTours'
+// import { fetchTours } from '../../api/fetchTours'
 
 // import tours from '../../data/tours.json'
 // import { useLocation, useNavigate } from 'react-router-dom'
@@ -16,7 +17,8 @@ export const metadata = {
 
 
 const ToursPage = async () => {
-    const tours = await fetchTours()
+    // const tours = await fetchTours()
+    const tours = await getTours().then( res => JSON.parse(JSON.stringify(res.tours)))
 
 
   return (
