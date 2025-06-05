@@ -42,8 +42,19 @@ export async function getPage(pathname) {
             const result = await pages
                 .findOne({pathname})
         
-        return {result}
+        return result
     } catch (error) {
         return {error: 'Failed to fetch pages'}
-    }    
+    }
+}
+
+export async function getMetadata(pathname) {
+    try {
+        if(!pages) await init()
+            const result = await pages
+                .findOne({pathname: pathname}, {projection: {metadata: 1}})
+        return result.metadata
+    } catch (error) {
+        return {error: 'Failed to fetch pages'}
+    }
 }

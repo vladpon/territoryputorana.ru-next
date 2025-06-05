@@ -7,13 +7,19 @@ import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import BigCards from '../../Components/BigCards/BigCards'
 import { getTour } from '../../../lib/mongo/tours'
+import { getMetadata } from '../../../lib/mongo/pages'
 
 
-export const metadata = {
-    title: 'Хели-ски',
-    description: 'Высокий уровень безопасности и комфорта. Маневренный вертолет. Сертифицированные горные гиды-инструкторы.'
-  }
-
+const tourId = 'heliski'
+export async function generateMetadata()
+  {     
+    const metadata = await getMetadata(tourId)
+    console.log(metadata)
+       return {
+        title: metadata.title,
+        description: metadata.description
+       }
+}
 const severgrandHotel = [
   {
     "id": "severgrand",
@@ -42,7 +48,7 @@ const severgrandHotel = [
 
 
 const Heliski = async () => {
-    const tour = await getTour('heliski').then( res => res.result)
+    const tour = await getTour(tourId).then( res => res.result)
 
   return (
     <main>

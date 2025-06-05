@@ -6,29 +6,30 @@ import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 
+
 import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
 
 import { getTour } from '../../../lib/mongo/tours'
-import { getPage } from '../../../lib/mongo/pages'
+import { getMetadata, getPage } from '../../../lib/mongo/pages'
 
 
-const page = await getPage('lostput')
 
-// export const metadata = {
-//   title: 'Затерянный мир плато Путорана',
-//   description: 'Динамичный недельный тур на плато Путорана. Размещение с комфортом класса люкс. Трекинговые маршруты, каньоны, водопады. Водные прогулки. Вертолетные экскурсии. Гастрономический туризм.'
-// }
-
-export const metadata = {
-  title: page.title,
-  description: page.description
+const tourId = 'lostput'
+export async function generateMetadata()
+  {     
+    const metadata = await getMetadata(tourId)
+    console.log(metadata)
+       return {
+        title: metadata.title,
+        description: metadata.description
+       }
 }
+
 
 
 const Lostput = async () => {
 
-  const tour = await getTour('lostput').then( res => res.result)
-
+  const tour = await getTour(tourId).then( res => res.result)
 
   return (
     <main>

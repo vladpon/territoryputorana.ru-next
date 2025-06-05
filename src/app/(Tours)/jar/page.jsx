@@ -6,13 +6,19 @@ import TextBlock from '../../Components/TextBlock/TextBlock'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import { getTour } from '../../../lib/mongo/tours'
+import { getMetadata } from '../../../lib/mongo/pages'
 
 
-export const metadata = {
-    title: 'Усадьба Жар. Птица',
-    description: 'Озеро Лама – самое знаменитое озеро плато Путорана. Комфорт и сервис класса люкс. Гастрономическое сопровождение. Вертолетные экскурсии. Водные прогулки. Радиальные маршруты.'
-  }
-
+const tourId = 'jar'
+export async function generateMetadata()
+  {     
+    const metadata = await getMetadata(tourId)
+    console.log(metadata)
+       return {
+        title: metadata.title,
+        description: metadata.description
+       }
+}
 
 
 const txtTitle = {
@@ -24,7 +30,7 @@ const txtTitle = {
 
 
 const Jar =  async() => {
-    const tour = await getTour('jar').then( res => res.result)
+    const tour = await getTour(tourId).then( res => res.result)
 
   return (
     <main>

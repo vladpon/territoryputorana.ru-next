@@ -7,16 +7,23 @@ import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import { getTour } from '../../../lib/mongo/tours'
+import { getMetadata } from '../../../lib/mongo/pages'
 
 
-export const metadata = {
-    title: 'Ски-тур',
-    description: 'Недельный лыжный тур на плато Путорана. Комфортабельный теплый глэмпинг. Авторские маршруты. Профессиональные гиды.'
-  }
+const tourId = 'skitour'
+export async function generateMetadata()
+  {     
+    const metadata = await getMetadata(tourId)
+    console.log(metadata)
+       return {
+        title: metadata.title,
+        description: metadata.description
+       }
+}
 
 
 const SkiTour = async () => {
-    const tour = await getTour('skitour').then( res => res.result)
+    const tour = await getTour(tourId).then( res => res.result)
 
   return (
     <main>

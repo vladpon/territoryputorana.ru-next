@@ -10,10 +10,16 @@ import { BACKGROUNDCOLORS } from '../../../constants/colors'
 import { getTour } from '../../../lib/mongo/tours'
 
 
-export const metadata = {
-    title: 'Вертолетная экскурсия',
-    description: 'Увидеть первозданную красоту природы с высоты птичьего полета? Вертолетная экскурсия гарантирует полный восторг и незабываемые впечатления!'
-  }
+const tourId = 'helitour'
+export async function generateMetadata()
+  {     
+    const metadata = await getMetadata(tourId)
+    console.log(metadata)
+       return {
+        title: metadata.title,
+        description: metadata.description
+       }
+}
 
 
 const txtTitle = {
@@ -26,7 +32,7 @@ const txtTitle = {
 
 
 const HeliTour = async () => {
-    const tour = await getTour('helitour').then( res => res.result)
+    const tour = await getTour(tourId).then( res => res.result)
 
 
   return (
