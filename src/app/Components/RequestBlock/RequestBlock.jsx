@@ -13,12 +13,32 @@ const RequestBlock = (props) => {
     const [toursNames, setToursNames]  = useState([])
     const [tours, setTours] = useState([])
 
-    useEffect( () => {
-      fetchTours().then(res => {
-        setTours(res)
-        setToursNames(res.map( item => item.title))
-      })
-    }, [])
+    const fetchToursNames = async () => {
+      try {
+        const res = await fetch('/api/tours?property=tourId', 
+          {
+            headers: {
+              Accept: 'application/json',
+              method: 'GET',
+            },
+          }
+        )
+        if(res) {
+        const data = await res.json()
+      }
+      } catch (error) {
+        console.log(error)
+      }      
+    }
+
+    fetchToursNames().then(arr => setToursNames(arr))
+
+    // useEffect( () => {
+    //   fetchTours().then(res => {
+    //     setTours(res)
+    //     setToursNames(res.map( item => item.title))
+    //   })
+    // }, [])
 
     
     // const styleString = '.req-block::before{background-image: url(' + bgImage + ');}'

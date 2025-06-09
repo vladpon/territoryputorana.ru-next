@@ -17,8 +17,8 @@ export const metadata = {
 
 
 const ToursPage = async () => {
-    // const tours = await fetchTours()
-    const tours = await getTours().then( res => JSON.parse(JSON.stringify(res.tours)))
+
+    const tours = await getTours().then( res => JSON.parse(JSON.stringify(res)))
 
 
   return (

@@ -29,7 +29,7 @@ export async function getTours() {
                 .find({})
                 .toArray()
         
-        return {tours: result}
+        return result
     } catch (error) {
         return {error: 'Failed to fetch tours'}
     }    
@@ -46,4 +46,22 @@ export async function getTour(tourId) {
     } catch (error) {
         return {error: 'Failed to fetch tours'}
     }    
+}
+
+export async function getToursProperty(property) {
+    const propObj = { _id: false }
+    propObj[property] = true
+    
+    try {
+        if(!tours) await init()
+            const res = await tours
+                .find({}, {projection: propObj})
+                .toArray()
+        
+        const result = res.map( tour => tour[property])
+
+        return result
+    } catch (error) {
+        return {error: 'Failed to fetch tours'}
+    }  
 }

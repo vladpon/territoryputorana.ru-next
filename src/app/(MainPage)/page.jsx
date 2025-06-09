@@ -44,7 +44,7 @@ const textFewImages = {
 }
 
 export default async function Home() {
-  const tours = await getTours().then( res => JSON.parse(JSON.stringify(res.tours)))
+  const tours = await getTours().then( res => JSON.parse(JSON.stringify(res)))
 
   return (
     <main className={styles['main-page']}>
