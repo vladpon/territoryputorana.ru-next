@@ -4,12 +4,6 @@ import BigCards from '../Components/BigCards/BigCards'
 import styles from './Tours.module.scss'
 import { getTours } from '@/lib/mongo/tours'
 
-// import { fetchTours } from '../../api/fetchTours'
-
-// import tours from '../../data/tours.json'
-// import { useLocation, useNavigate } from 'react-router-dom'
-
-
 export const metadata = {
     title: 'Туры на Плато Путорана из Красноярска в 2025 году',
     description: 'Туры на Плато Путорана из Красноярска в 2023 году – Все туристические маршруты на Плато Путорана можно найти на сайте или узнать по телефону 8 (903) 929-93-83. Плато Путорана туры и цены на 2023 году вылет на Плато из Красноярска. Бронируйте и покупайте туры на Плато Путорана онлайн на сайте'
