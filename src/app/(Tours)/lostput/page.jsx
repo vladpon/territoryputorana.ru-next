@@ -18,7 +18,6 @@ const tourId = 'lostput'
 export async function generateMetadata()
   {     
     const metadata = await getMetadata(tourId)
-    console.log(metadata)
        return {
         title: metadata.title,
         description: metadata.description

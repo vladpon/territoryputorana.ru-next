@@ -3,19 +3,15 @@ import React, { useEffect } from 'react'
 import styles from './RequestBlock.module.scss'
 import { useState } from 'react'
 import { redirect } from 'next/navigation'
-import { fetchTours } from '../../../api/fetchTours'
-
-
 
 
 const RequestBlock = (props) => {
     const { bgImage, h2Text, h3Text } = props
     const [toursNames, setToursNames]  = useState([])
-    const [tours, setTours] = useState([])
 
     const fetchToursNames = async () => {
       try {
-        const res = await fetch('/api/tours?property=tourId', 
+        const res = await fetch('/api/tours?property=title', 
           {
             headers: {
               Accept: 'application/json',
@@ -25,20 +21,17 @@ const RequestBlock = (props) => {
         )
         if(res) {
         const data = await res.json()
+        return data
       }
       } catch (error) {
         console.log(error)
       }      
     }
 
-    fetchToursNames().then(arr => setToursNames(arr))
-
-    // useEffect( () => {
-    //   fetchTours().then(res => {
-    //     setTours(res)
-    //     setToursNames(res.map( item => item.title))
-    //   })
-    // }, [])
+    
+    useEffect( ()=> {
+      fetchToursNames().then(arr => setToursNames(arr))
+    }, [])
 
     
     // const styleString = '.req-block::before{background-image: url(' + bgImage + ');}'
