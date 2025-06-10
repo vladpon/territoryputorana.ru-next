@@ -8,6 +8,7 @@ import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import { BACKGROUNDCOLORS } from '../../../constants/colors'
 import { getTour } from '../../../lib/mongo/tours'
+import { getMetadata } from '@/lib/mongo/pages'
 
 
 const tourId = 'helitour'
