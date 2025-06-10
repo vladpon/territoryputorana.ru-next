@@ -1,6 +1,4 @@
-// import React from 'react'
 
-// import './styles.scss'
 import styles from './TourPageCover.module.scss'
 
 const TourPageCover = (props) => {
