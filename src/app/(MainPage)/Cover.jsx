@@ -18,7 +18,7 @@ const Cover = () => {
         const vid = document.querySelector("#backgroundvideo");
         if (isSafari() && vid) {            
             const player = vid.children[0];
-            if (player) {
+            if (player) { 
                 player.controls = false;
                 player.playsinline = true;
                 player.muted = true;
