@@ -10,9 +10,15 @@ const isSafari = () => {
 
 const Cover = () => {
     const [shouldUseImage, setShouldUseImage] = useState(false);
+    const [rnd, setRnd] = useState(0)
 
     const paths = ['./img/wf01.mp4', './img/wf02.mp4', './img/wf03.mp4']
-    const pathToVideo = paths[Math.floor(Math.random() * 3)];
+    let pathToVideo = paths[Math.floor(Math.random() * 3)];
+
+    useEffect( () => {
+        setRnd(Math.floor(Math.random() * 3))
+        console.log(rnd)
+    }, [])
     
     useEffect( () => {
         const vid = document.querySelector("#backgroundvideo");
