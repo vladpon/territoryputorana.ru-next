@@ -10,15 +10,18 @@ const isSafari = () => {
 
 const Cover = () => {
     const [shouldUseImage, setShouldUseImage] = useState(false);
-    const [rnd, setRnd] = useState(0)
+    const [rnd, setRnd] = useState()
 
-    const paths = ['./img/wf01.mp4', './img/wf02.mp4', './img/wf03.mp4']
-    let pathToVideo = paths[Math.floor(Math.random() * 3)];
+
+    const paths = ['', './img/wf01.mp4', './img/wf02.mp4', './img/wf03.mp4']
+    // let pathToVideo = paths[Math.floor(Math.random() * 3)];
 
     useEffect( () => {
-        setRnd(Math.floor(Math.random() * 3))
-        console.log(rnd)
+        setRnd((Math.floor(Math.random() * 3)) + 1)        
     }, [])
+
+    useEffect( () => console.log(rnd), [rnd])
+
     
     useEffect( () => {
         const vid = document.querySelector("#backgroundvideo");
@@ -50,13 +53,13 @@ const Cover = () => {
   return (
     <div className={styles.cover}>
         <div className={styles.cover__bg}>
-            {shouldUseImage ? 
-                (<img src={pathToVideo} alt="Muted Video" />) :  
+            {rnd && (shouldUseImage ? 
+                (<img src={paths[rnd]} alt="Muted Video" />) :  
                 (<div className = {styles.vid} id = 'backgroundvideo' dangerouslySetInnerHTML={{
                     __html:`
-                    <video loop muted playsinline autoplay preload="auto"><source src = "${pathToVideo}"></source></video>
+                    <video loop muted playsinline autoplay preload="auto"><source src = "${paths[rnd]}"></source></video>
                     `
-                }} />)}
+                }} />))}
         </div>
         
         <div className={styles.cover__logo}>

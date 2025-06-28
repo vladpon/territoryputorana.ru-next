@@ -30,7 +30,7 @@ const RequestBlock = (props) => {
 
     
     useEffect( ()=> {
-      fetchToursNames().then(arr => setToursNames(arr))
+      fetchToursNames().then(arr => !('error' in arr) && setToursNames(arr))
     }, [])
 
     
