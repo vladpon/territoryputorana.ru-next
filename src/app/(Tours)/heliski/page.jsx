@@ -67,7 +67,7 @@ const Heliski = async () => {
         <TourPageProgram tour = {tour}/>
         <TextBlock  
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
-            title = 'ОТКРЫТО БРОНИРОВАНИЕ: МАРТ-ИЮНЬ 2025'
+            title = 'ОТКРЫТО БРОНИРОВАНИЕ: МАРТ-ИЮНЬ 2026'
             titleAlign = 'center'
             text = {['стандартная программа - для групп 4 человека, частная программа - для групп 3 человека.']}
             textAlign = 'center'

@@ -38,7 +38,7 @@
         width: 60%;
         color: #fff;
         // text-shadow: #444 2px 2px;
-        text-align: center;
+        text-align: left;
 
         @media (max-width: map.get(const.$breakpoints, sm)) {
             width: 100%;

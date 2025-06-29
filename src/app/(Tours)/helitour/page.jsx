@@ -42,7 +42,7 @@ const HeliTour = async () => {
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TourPageProgram tour = {tour}/>
-        <TextBlock 
+        {/* <TextBlock 
             title = "Транспорт"
             titleWeight = '500'
             text = {[
@@ -51,7 +51,7 @@ const HeliTour = async () => {
             titleAlign = 'right'
             textAlign = 'right'
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
-            />
+            /> */}
 
         <div className='container'
             style = {{ 

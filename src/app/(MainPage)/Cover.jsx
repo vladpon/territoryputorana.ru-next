@@ -20,7 +20,6 @@ const Cover = () => {
         setRnd((Math.floor(Math.random() * 3)) + 1)        
     }, [])
 
-    useEffect( () => console.log(rnd), [rnd])
 
     
     useEffect( () => {
