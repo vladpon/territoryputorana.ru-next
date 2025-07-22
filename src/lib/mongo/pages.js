@@ -8,7 +8,7 @@ async function init() {
     if(db) return
     try {
         client = await clientPromise
-        db = await client.db('territoryputorana_test')
+        db = await client.db()
         pages = await db.collection('pages')
     } catch (error) {
         throw new Error(error)
