@@ -12,8 +12,6 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 
 
 
-
-
 .header {
     padding: 0 80px;
     position: absolute;
@@ -447,7 +445,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         color: #000;
         // @include const.font-size-adaptive(24px);
         &:hover {
-            background-color: lighten($color: const.$main-blue, $amount: 45%);
+            background-color: color.adjust(const.$main-blue, $lightness: 45%);
             color: const.$main-blue;
         }    
     }
