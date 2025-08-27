@@ -22,7 +22,10 @@
         @media (max-width: map.get(const.$breakpoints, vs)) {
             padding-top: map.get(const.$header-height, vs);
         }
-    
+        
+        & a {
+            text-decoration: underline;
+        }
         &__content {
             display: flex;
             flex-direction: column;
