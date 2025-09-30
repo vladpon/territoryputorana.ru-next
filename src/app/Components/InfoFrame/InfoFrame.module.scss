@@ -105,11 +105,13 @@
     }
 
     & ul > li {
+        font-size: 0.7rem;
         list-style: circle;
     }
 
     & ol > li {
         list-style: decimal;
+        font-size: 0.7rem;
     }
 }
 
