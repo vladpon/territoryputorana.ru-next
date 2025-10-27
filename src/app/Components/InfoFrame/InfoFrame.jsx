@@ -7,7 +7,7 @@ const InfoFrame = (props) => {
         <div className = {styles["infoframe"]}>
                 <h3>{title}</h3>
                 {<div dangerouslySetInnerHTML={{__html: description}} />}
-                <span className = {styles["infoframe__price"]}>{price}</span><br />
+                <div className = {styles["infoframe__price"]}>{price}</div>
                 {reference && (
                     <div className = {styles['infoframe__note']}><span>*{reference}</span></div>
                 )}

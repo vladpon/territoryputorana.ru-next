@@ -13,9 +13,9 @@ const Footer = () => {
             <Link href = '/arcticexpeditions' className = {styles['footer__logo']}>
                 <img src='https://territoryputorana.ru/img/arctic_logo.svg'></img>
             </Link>
-            <Link href = '/sr' className = {styles['footer__logo']}>
+            {/* <Link href = '/sr' className = {styles['footer__logo']}>
                 <img src='https://territoryputorana.ru/img/sr_logo.svg'></img>
-            </Link>
+            </Link> */}
         </div>
         <div className={styles['footer__contacts']}>
             <span>Связаться с нами</span>
