@@ -28,16 +28,6 @@
                 "id": "jar",
                 "href": "/jar",
                 "title": "Усадьба Жар. Птица"
-            },
-            {
-                "id": "heliski",
-                "href": "/heliski",
-                "title": "Хели-ски"
-            },
-            {
-                "id": "skilama",
-                "href": "/skilama",
-                "title": "Скитур долина озера Лама"
             }
         ]
     },
@@ -45,42 +35,13 @@
     {
         "id": "about",
         "href": "/about",
-        "title": "о нас",
-        "items" : [
-            {
-                "id": "onas",
-                "href": "/about",
-                "title": "О компании"
-            },
-            {
-                "id": "fb",
-                "href": "/fb",
-                "title": "Отзывы"
-            }
-        ]
+        "title": "о нас"
     },
 
     {
         "id": "projects",
         "href": "/projects",
-        "title": "проекты",
-        "items": [
-            {
-                "id": "sr",
-                "href": "/sr",
-                "title": "Снегоходная гонка"
-            },
-            {
-                "id": "lamaproj",
-                "href": "/lamaproj",
-                "title": "Экологический проект"
-            },
-            {
-                "id": "expeditions",
-                "href": "arcticexpeditions",
-                "title": "Экспедиции Арктики"
-            }
-        ]
+        "title": "проекты"
     },
 
     {

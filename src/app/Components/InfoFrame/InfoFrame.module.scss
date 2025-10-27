@@ -19,9 +19,6 @@
         & p {
             line-height: 1.35;
             font-size: 0.8em;
-            & span {
-                // @include font-size-adaptive(20px);
-            }
             & span:first-child {
                 font-weight: 700;
             }
