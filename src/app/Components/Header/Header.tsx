@@ -118,6 +118,12 @@ const Header = () => {
         case '/photo':
           setPageClass('gallery-class')
           break;
+        case '/helifishing':
+          setPageClass('tour-page-class')
+          break;
+        case '/snowqueen':
+          setPageClass('tour-page-class')
+          break;
         default:
           setPageClass('other-page')
       }
