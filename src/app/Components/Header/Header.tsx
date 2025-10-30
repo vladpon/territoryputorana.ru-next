@@ -124,6 +124,12 @@ const Header = () => {
         case '/snowqueen':
           setPageClass('tour-page-class')
           break;
+        case '/helipicnic':
+          setPageClass('tour-page-class')
+          break;
+        case '/icedrift':
+          setPageClass('tour-page-class')
+          break;
         default:
           setPageClass('other-page')
       }
