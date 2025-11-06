@@ -22,7 +22,7 @@
             {
                 "id": "helitour",
                 "href": "/helitour",
-                "title": "Вертолетная экскурсия"
+                "title": "Вертолетная экскурсия по фильму «Территория»"
             },
             {
                 "id": "helifishing",
@@ -43,12 +43,7 @@
                 "id": "icedrift",
                 "href": "/icedrift",
                 "title": "Ледоход на плато Путорана"
-            },
-            {
-                "id": "jar",
-                "href": "/jar",
-                "title": "Усадьба Жар. Птица"
-            }
+            }            
         ]
     },
     
@@ -57,7 +52,11 @@
         "href": "/about",
         "title": "о нас"
     },
-
+    {
+            "id": "jar",
+            "href": "/jar",
+            "title": "Усадьба Жар. Птица"
+    },
     {
         "id": "projects",
         "href": "/projects",
