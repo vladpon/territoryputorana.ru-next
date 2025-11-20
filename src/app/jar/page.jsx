@@ -1,19 +1,18 @@
-import { BACKGROUNDCOLORS, COLORS } from '../../../constants/colors'
-import MainLogo from '../../Components/MainLogo/MainLogo'
-import TourPageCover from '../../Components/TourPageCover/TourPageCover'
-import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
-import TextBlock from '../../Components/TextBlock/TextBlock'
-import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
-import RequestBlock from '../../Components/RequestBlock/RequestBlock'
-import { getTour } from '../../../lib/mongo/tours'
-import { getMetadata } from '../../../lib/mongo/pages'
+import { BACKGROUNDCOLORS, COLORS } from '../../constants/colors'
+import MainLogo from '../Components/MainLogo/MainLogo'
+import TourPageCover from '../Components/TourPageCover/TourPageCover'
+import TourPageAbout from '../Components/TourPageAbout/TourPageAbout'
+import TextBlock from '../Components/TextBlock/TextBlock'
+import PhotoBlock from '../Components/PhotoBlock/PhotoBlock'
+import RequestBlock from '../Components/RequestBlock/RequestBlock'
+import { getJar } from '../../lib/mongo/jar'
+import { getMetadata } from '../../lib/mongo/pages'
 
 
-const tourId = 'jar'
+
 export async function generateMetadata()
   {     
-    const metadata = await getMetadata(tourId)
-    console.log(metadata)
+    const metadata = await getMetadata('jar')
        return {
         title: metadata.title,
         description: metadata.description
@@ -30,13 +29,13 @@ const txtTitle = {
 
 
 const Jar =  async() => {
-    const tour = await getTour(tourId).then( res => res.result)
-
+    const data = await getJar().then( res =>  res.result[0])
+    
   return (
     <main>
         <MainLogo />
-        <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour} varInfoframe = {false}/>
+        <TourPageCover tour = {data}/>
+        <TourPageAbout tour = {data} varInfoframe = {false}/>
         <TextBlock
             backgroundcolor = {COLORS.mainBlue}
             title = 'Во время отдыха мы можем организовать для вас:'
@@ -55,7 +54,7 @@ const Jar =  async() => {
             listColor = {COLORS.white}
             listAlign = 'left'
         />
-        <PhotoBlock photos = {tour.tourPhoto}/>
+        <PhotoBlock photos = {data.tourPhoto}/>
         <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'
