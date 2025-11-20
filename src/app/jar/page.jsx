@@ -7,6 +7,7 @@ import PhotoBlock from '../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../Components/RequestBlock/RequestBlock'
 import { getJar } from '../../lib/mongo/jar'
 import { getMetadata } from '../../lib/mongo/pages'
+import TourPageProgram from '../Components/TourPageProgram/TourPageProgram'
 
 
 
@@ -54,6 +55,7 @@ const Jar =  async() => {
             listColor = {COLORS.white}
             listAlign = 'left'
         />
+        <TourPageProgram tour = {data} />
         <PhotoBlock photos = {data.tourPhoto}/>
         <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
