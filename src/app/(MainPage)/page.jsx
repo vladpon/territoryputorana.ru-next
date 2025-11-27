@@ -6,6 +6,7 @@ import VideoBlock from './VideoBlock'
 import RequestBlock from '../Components/RequestBlock/RequestBlock'
 import styles from './MainPage.module.scss'
 import { getTours } from "@/lib/mongo/tours";
+import TextFewImages from './TextFewImages'
 
 
 
@@ -31,14 +32,14 @@ const textOneImage = {
 
 const textFewImages = {
   photo: [
-    './img/mp_sr001.jpg',
-    './img/mp_sr002.jpg',
-    './img/mp_sr003.jpg',
-    './img/mp_sr004.jpg'
+    './img/exped1.jpg',
+    './img/exped2.jpg',
+    './img/exped3.jpg',
+    './img/exped4.jpg'
   ],
-  title_h2: 'SNOW RIDE Putorana',
-  title_h3: 'Снегоходная гонка за полярным кругом!',
-  text: 'Когда везде зимний сезон заканчивается, у нас в Заполярье он только начинается! С 2022 года в марте-апреле «Территория Путорана» совместно с «Лама-Тур» организует снегоходную гонку в предгорье знаменитого ущелья Красные камни.'
+  title_h2: 'Экспедиции Арктики',
+  title_h3: '',
+  text: 'Вы можете стать участниками настоящей арктической экспедиции. Вместе с профессиональной командой на снегоходах вы отправитесь на разведку вглубь плато Путорана к первозданной природе, незнакомой с человеком.'
 }
 
 export default async function Home() {
@@ -52,6 +53,7 @@ export default async function Home() {
       <CardsBlock tours = {tours} />
       <TextOneImage textOneImage = {textOneImage} />
       <VideoBlock src = './img/putorana.m4v#t=0.001' h2Text = 'Покори Север с нами!'/>
+      <TextFewImages textFewImages = {textFewImages} />
       <RequestBlock bgImage = {'/img/main_req.jpg'}  h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />
    </main>
   );
