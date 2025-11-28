@@ -20,24 +20,29 @@
                 "title": "Вертолетный VIP-тур «Затерянные водопады»"
             },
             {
-                "id": "helitour",
-                "href": "/helitour",
-                "title": "Вертолетная экскурсия по фильму «Территория»"
-            },
-            {
                 "id": "helifishing",
                 "href": "/helifishing",
                 "title": "Вертолётный VIP-тур: спортивная рыбалка"
             },
-             {
+            {
                 "id": "snowqueen",
                 "href": "/snowqueen",
-                "title": "Вертолётный вип-тур «Царство Снежной Королевы»"
+                "title": "Вертолётный VIP-тур «Царство Снежной Королевы»"
             },
             {
                 "id": "helipicnic",
                 "href": "/helipicnic",
                 "title": "Вертолётная экскурсия и гриль-пикник на вершине"
+            },
+            {
+                "id": "grilling",
+                "href": "/grilling",
+                "title": "Дикий гриллинг"
+            },
+            {
+                "id": "helitour",
+                "href": "/helitour",
+                "title": "Вертолетная экскурсия по фильму «Территория»"
             },
             {
                 "id": "icedrift",

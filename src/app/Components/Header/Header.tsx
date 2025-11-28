@@ -130,6 +130,9 @@ const Header = () => {
         case '/icedrift':
           setPageClass('tour-page-class')
           break;
+        case '/grilling':
+          setPageClass('tour-page-class')
+          break;
         default:
           setPageClass('other-page')
       }
