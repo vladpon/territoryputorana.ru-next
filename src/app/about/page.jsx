@@ -2,6 +2,7 @@
 import MainLogo from '../Components/MainLogo/MainLogo'
 import VkBlock from '../Components/VkBlock/VkBlock'
 import styles from './about.module.scss'
+import AboutPartners from './AboutPartners'
 
 
 export const metadata = {
@@ -39,12 +40,15 @@ const AboutPage = () => {
                   <p>Организатор проектов «Экспедиции Арктики», «Чисто Лама», «SNOW RIDE Putorana»</p>
                 </div>
               </div>
-          </div>
-          <div className={styles['about-page__photo']}>
+          </div>          
+
+          {/* <div className={styles['about-page__photo']}>
             <img src='./img/about_team.jpg'></img>
             <p>Все в сборе, считая собаку.<br />Искра - компаньон во всех походах. Заслуженный обладатель звания «Лучшая собака плато Путорана»<br /></p>
-          </div>
+          </div> */}
        </div>
+
+       <AboutPartners />
        <VkBlock />
     </main>
   )
