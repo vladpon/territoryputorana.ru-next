@@ -5,7 +5,7 @@ import TextOneImage from './TextOneImage'
 import VideoBlock from './VideoBlock'
 import RequestBlock from '../Components/RequestBlock/RequestBlock'
 import styles from './MainPage.module.scss'
-import { getTours } from "@/lib/mongo/tours";
+import { getTours, getMainPageTours } from "@/lib/mongo/tours";
 import TextFewImages from './TextFewImages'
 
 
@@ -43,7 +43,7 @@ const textFewImages = {
 }
 
 export default async function Home() {
-  const data = await getTours().then( res => JSON.parse(JSON.stringify(res)))
+  const data = await getMainPageTours().then( res => JSON.parse(JSON.stringify(res)))
   const tours = ('error' in data) ? null : data
 
   return (

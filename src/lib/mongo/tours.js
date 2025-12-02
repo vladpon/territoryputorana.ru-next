@@ -35,6 +35,19 @@ export async function getTours() {
     }    
 }
 
+export async function getMainPageTours() {
+    try {
+        if(!tours) await init()
+            const result = await tours
+                .find({mainPageOrder: {$gt: 0}}).sort({mainPageOrder: 1})
+                .toArray()
+        
+        return result
+    } catch (error) {
+        return {error: 'Failed to fetch tours'}
+    }    
+}
+
 
 export async function getTour(tourId) {
     try {
