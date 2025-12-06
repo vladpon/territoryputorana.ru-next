@@ -8,10 +8,10 @@ const Footer = () => {
     <footer className={styles.footer}>
         <div className={styles['footer__logo-container']}>
             <Link href = '/' className = {styles['footer__logo']}>
-                <img src='https://territoryputorana.ru/img/main_logo.svg'></img>
+                <img src='/img/main_logo.svg'></img>
             </Link>
             <Link href = '/arcticexpeditions' className = {styles['footer__logo']}>
-                <img src='https://territoryputorana.ru/img/arctic_logo.svg'></img>
+                <img src='/img/arctic_logo.svg'></img>
             </Link>
             {/* <Link href = '/sr' className = {styles['footer__logo']}>
                 <img src='https://territoryputorana.ru/img/sr_logo.svg'></img>
