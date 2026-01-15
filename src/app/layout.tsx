@@ -1,20 +1,26 @@
-import { Raleway } from 'next/font/google'
-import { Open_Sans } from 'next/font/google'
+// import { Raleway } from 'next/font/google'
+// import { Open_Sans } from 'next/font/google'
+import { Onest } from 'next/font/google'
 import './globals.scss'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 
-const raleway = Raleway({
-  weight: ['400', '500', '600', '700'],
+// const raleway = Raleway({
+//   weight: ['400', '500', '600', '700'],
+//   subsets: ['cyrillic'],
+// })
+
+
+// const openSans = Open_Sans({
+//   weight: ['400', '500', '600', '700'],
+//   subsets: ['cyrillic'],
+// })
+
+
+const onest = Onest({
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['cyrillic'],
 })
-
-
-const openSans = Open_Sans({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['cyrillic'],
-})
-
 
 export const metadata = {
   title: 'Территория Путорана',
@@ -31,7 +37,7 @@ export default function RootLayout({
 
   return (    
     <html lang="ru">    
-      <body className={raleway.className}>  
+      <body className={onest.className}>  
           <script src="https://vk.com/js/api/openapi.js?169"></script>      
           <Header />
           {children}

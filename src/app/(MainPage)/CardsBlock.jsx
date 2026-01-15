@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import classNames from 'classnames';
@@ -29,18 +28,13 @@ const CardsBlock = (props) => {
                                 <img src={tour.smallImg}></img>
                             </div>
                             <div className={styles["card-container__text-container"]}>
-                                <div className={styles["card-container__top-text"]}>
-                                    <div className={styles["card-container__season"]}>{tour.season}</div>
+                                <div className={styles["card-container__top-text"]}>                                    
                                     <div className={styles["card-container__title"]}>{tour.title}</div>
                                 </div>
                                 <div className={styles["card-container__bottom-text"]}>
-                                    <div className={styles["card-container__days"]}>
-                                        <span>Плато Путорана</span>    
+                                    <div className={styles["card-container__season"]}>{tour.season}</div>
+                                    <div className={styles["card-container__days"]}> 
                                         <span>{tour.time}</span>
-                                    </div>
-                                    <div className={styles["card-container__price"]}>
-                                        <span>цена тура</span>
-                                        <span>{tour.price}</span>
                                     </div>
                                 </div>
                             </div>

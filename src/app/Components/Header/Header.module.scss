@@ -157,14 +157,14 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
             width: 200px;
         }
 
-        & a {
-            // @include const.font-size-adaptive(20px);
-            font-weight: 600;
+        // & a {
+        //     // @include const.font-size-adaptive(20px);
+        //     // font-weight: 600;
 
-            &:first-child{
-                font-family: 'arial';
-            }
-        }
+        //     // &:first-child{
+        //     //     font-family: 'arial';
+        //     // }
+        // }
 
         &.other-page {
             a {

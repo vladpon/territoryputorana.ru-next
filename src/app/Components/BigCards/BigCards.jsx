@@ -57,7 +57,7 @@ const BigCards = (props) => {
 
                             <div className={styles["big-cards__info"]}>
                                 <div className={styles["big-cards__cost"]}>
-                                    <span>{item.price}</span>
+                                    {/* <span>{item.price}</span> */}
                                     <span>{item.time}</span>
                                 </div>
                             </div>
