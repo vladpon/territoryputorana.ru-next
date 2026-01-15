@@ -28,11 +28,11 @@
 
         ::-webkit-scrollbar {
             width: 4px;
-            background-color: darken($color: const.$main-blue, $amount: 0);
+            background-color: color.adjust(const.$main-blue, $lightness: 0%);
         }
         
         ::-webkit-scrollbar-thumb {
-            background-color: darken($color: const.$main-blue, $amount: 15);
+            background-color: color.adjust(const.$main-blue, $lightness: 0%);
             border-radius: 9em;
         }
         
@@ -40,34 +40,9 @@
             background-color: #303030;
         }
 
+        
 
 
-        @media(min-width: 768px) {
-            .big-cards &:nth-child(even) {
-                flex-direction: row-reverse;
-                justify-content: end;
-                .big-cards__img {
-                    border-right: none;
-                    border-left: 8px solid const.$main-blue;
-                }
-                .big-cards__title {
-                    align-self: flex-end;
-                }
-                p {
-                    text-align: right;
-                }
-                .big-cards__info {
-                    flex-direction: row-reverse;
-                    align-items: flex-end;
-                }
-                .big-cards__cost {
-                    align-items: flex-end;
-                }
-                .big-cards__description h3 {
-                    align-self: flex-end;
-                }
-            }        
-        }
 
 
 
@@ -107,6 +82,37 @@
 
         &:hover {
             background-color: #e6e6e6;
+        }
+    }
+
+    &__card-container {
+        @media(min-width: 768px) {
+            .big-cards &:nth-child(even) {
+                .big-cards__card {
+                    flex-direction: row-reverse;
+                    justify-content: end;
+                }
+                .big-cards__img {
+                    border-right: none;
+                    border-left: 8px solid const.$main-blue;
+                }
+                .big-cards__title {
+                    align-self: flex-end;
+                }
+                p {
+                    text-align: right;
+                }
+                .big-cards__info {
+                    flex-direction: row-reverse;
+                    align-items: flex-end;
+                }
+                .big-cards__cost {
+                    align-items: flex-end;
+                }
+                .big-cards__description h3 {
+                    align-self: flex-end;
+                }
+            }        
         }
     }
 
@@ -207,5 +213,29 @@
                 left: 2px;
             }
         }
+    }
+}
+
+
+.main-button {
+    position: relative;
+    background-color: const.$main-blue;
+    padding: 0.8em;
+    border: 0;
+    color: #fff;
+    box-shadow: 2px 2px 2px #000000;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(165, 190, 215);
+        color: rgb(40, 65, 110);
+    }
+
+    &:active {
+        box-shadow: none;
+        top: 2px;
+        left: 2px;
     }
 }

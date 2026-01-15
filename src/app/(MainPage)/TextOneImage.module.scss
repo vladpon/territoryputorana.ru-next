@@ -21,7 +21,7 @@
         text-align: right;        
     }
     &__title {
-        text-align: right;
+        text-align: center;
         padding-right: 2rem;
         & h3 {
             // color: #fff;
@@ -30,18 +30,18 @@
     }
     &__text {
         & p {
-            // text-align: justify;
+            text-align: justify;
             padding-right: 2em;
             font-size: 0.8rem;
         }
 
-        & p:nth-child(even) {
-            width: 70%;
-        }
-        & p:nth-child(odd){
-            width: 70%;
-            justify-self: flex-end;
-        }
+        // & p:nth-child(even) {
+        //     width: 70%;
+        // }
+        // & p:nth-child(odd){
+        //     width: 70%;
+        //     justify-self: flex-end;
+        // }
         
         & p:last-child {
             font-style: italic;

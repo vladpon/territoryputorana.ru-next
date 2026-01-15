@@ -8,14 +8,14 @@ const Footer = () => {
     <footer className={styles.footer}>
         <div className={styles['footer__logo-container']}>
             <Link href = '/' className = {styles['footer__logo']}>
-                <img src='https://territoryputorana.ru/img/main_logo.svg'></img>
+                <img src='/img/main_logo.svg'></img>
             </Link>
             <Link href = '/arcticexpeditions' className = {styles['footer__logo']}>
-                <img src='https://territoryputorana.ru/img/arctic_logo.svg'></img>
+                <img src='/img/arctic_logo.svg'></img>
             </Link>
-            <Link href = '/sr' className = {styles['footer__logo']}>
+            {/* <Link href = '/sr' className = {styles['footer__logo']}>
                 <img src='https://territoryputorana.ru/img/sr_logo.svg'></img>
-            </Link>
+            </Link> */}
         </div>
         <div className={styles['footer__contacts']}>
             <span>Связаться с нами</span>
@@ -26,8 +26,9 @@ const Footer = () => {
                 <a href="https://t.me/territoryputorana"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
             </div>
             <div className={styles['footer__privacy']}>
-                <a href = 'https://territoryputorana.ru/privacy'>Политика конфиденциальности</a>
+                {/* <a href = '/privacy'>Политика конфиденциальности</a> */}
                 <span>РТО 025757</span>
+                <span>Номер реестровой записи:<br /> <a href = 'https://tourism.fsa.gov.ru/ru/resorts/hotels/1e21e3e6-c608-11ef-92da-4b92d2b683f7/about-resort'>С242024002449</a></span>
             </div>
         </div>
     </footer>

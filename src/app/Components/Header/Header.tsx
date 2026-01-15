@@ -7,7 +7,6 @@ import BurgerMenu from './BurgerMenu'
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 
-// import {HEADERBGCOLORS as bgColors} from '../../../constants/colors'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -47,7 +46,10 @@ const Header = () => {
         case '/tours':
           setPageClass('other-page')
           break
-        case '/Lama3d':
+        case '/jar3d':
+          setPageClass('tour3d')
+          break;
+        case '/locations':
           setPageClass('tour3d')
           break;
         case '/tourpage':
@@ -116,6 +118,21 @@ const Header = () => {
         case '/photo':
           setPageClass('gallery-class')
           break;
+        case '/helifishing':
+          setPageClass('tour-page-class')
+          break;
+        case '/snowqueen':
+          setPageClass('tour-page-class')
+          break;
+        case '/helipicnic':
+          setPageClass('tour-page-class')
+          break;
+        case '/icedrift':
+          setPageClass('tour-page-class')
+          break;
+        case '/grilling':
+          setPageClass('tour-page-class')
+          break;
         default:
           setPageClass('other-page')
       }
@@ -132,14 +149,14 @@ const Header = () => {
         <div className = {styles.header__contacts}>
           <a href="tel:+79039299383">+7 (903) 929-93-83</a>
           <div className = {styles.header__icons}>
-              <a href="https://vk.cc/cmIUok"><img className = {styles.header__icon} src="https://territoryputorana.ru/img/vk_ico.png"></img></a>
-              <a href="https://wa.me/79039299383"><img className = {styles.header__icon} src="https://territoryputorana.ru/img/wa_ico.png"></img></a>
-              <a href="https://t.me/territoryputorana"><img className = {styles.header__icon} src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
+              <a href="https://vk.cc/cmIUok"><img className = {styles.header__icon} src="/img/vk_ico.png"></img></a>
+              <a href="https://wa.me/79039299383"><img className = {styles.header__icon} src="/img/wa_ico.png"></img></a>
+              <a href="https://t.me/territoryputorana"><img className = {styles.header__icon} src="/img/tlgrm_ico.png"></img></a>
           </div>
         </div> 
         <div className = {styles.header__home}>
             <Link href = '/' onClick={() => setBurgermenuActive(false)}>
-                <img src='https://territoryputorana.ru/img/home.png'></img>
+                <img src='/img/home.png'></img>
             </Link>
         </div>
       </div>

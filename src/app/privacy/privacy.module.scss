@@ -1,5 +1,6 @@
 @use '../const.scss';
 @use 'sass:map';
+@use 'sass:color';
 
 
 .privacy {
@@ -21,7 +22,10 @@
         @media (max-width: map.get(const.$breakpoints, vs)) {
             padding-top: map.get(const.$header-height, vs);
         }
-    
+        
+        & a {
+            text-decoration: underline;
+        }
         &__content {
             display: flex;
             flex-direction: column;
@@ -51,10 +55,9 @@
                     position: absolute;
                     left: 0.4em;
                     top: -0.4em;
-                    // @include font-size-adaptive(105px);
                     text-transform: uppercase;
                     font-weight: 700;
-                    color: darken(const.$secondary-background-color, 10%);
+                    color: color.adjust(const.$secondary-background-color, $lightness: -10%);
                     z-index: -1;
                 }
             }

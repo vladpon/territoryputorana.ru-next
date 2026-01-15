@@ -2,6 +2,7 @@
 @use 'sass:map';
 
 .fb-page {
+    padding-bottom: 2rem;
     width: 100%;
     background-color: const.$secondary-background-color;
     padding-top: map.get(const.$header-height, vl);
@@ -20,7 +21,7 @@
         @media (max-width: map.get(const.$breakpoints, vs)) {
             padding-top: map.get(const.$header-height, vs);
         }
-    padding-bottom: 2rem;
+    
 }
 
 .fb {

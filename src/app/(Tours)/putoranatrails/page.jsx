@@ -1,7 +1,6 @@
 
 
 import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
-import { fetchTours } from '../../../api/fetchTours'
 import MainLogo from '../../Components/MainLogo/MainLogo'
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
@@ -9,6 +8,7 @@ import TextBlock from '../../Components/TextBlock/TextBlock'
 import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
+import { getTour } from '../../../lib/mongo/tours'
 
 
 
@@ -27,7 +27,7 @@ export const metadata = {
 
 
 const PutoranaTrails = async () => {
-    const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'putoranatrails')[0])
+    const tour = await getTour('putoranatrails').then( res => res.result)
 
   return (
     <main>
@@ -57,7 +57,8 @@ const PutoranaTrails = async () => {
               titleTransform = 'uppercase'
               titleWeight = '400'
               list = {[
-                'Комфортабельные гостевые дома для одно- и двухместного размещения, с душем и санузлом',
+                'Комфортабельный гостевой дом с гостиной и отдельными комнатами для одно- и двухместного размещения, с кухней, душем и санузлом',
+                'Малые лесные дома и глэмпинги для двухместного размещения',
                 'Баня с просторной комнатой отдыха и купелью с кристально чистой речной водой на террасе',
                 'Беседка-барбекю',
                 'Спутниковое телевидение, телефон и интернет',
@@ -72,8 +73,8 @@ const PutoranaTrails = async () => {
             titleAlign = 'right'
             titleWeight = '500'
             text = {[                
-                'Трансферы по Норильску будут выполняться на автомобилях или микроавтобусах (в зависимости от количества человек в группе).',
-                'Заброска на озеро Лама и обратно будет осуществляться на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах также будут использоваться судно на воздушной подушке и моторные лодки.'
+                'Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).',
+                'Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'
              ]}
             textAlign = 'right' />
         <RequestBlock bgImage = {'./img/putoranatrails_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>

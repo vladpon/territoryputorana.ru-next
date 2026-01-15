@@ -20,83 +20,58 @@
                 "title": "Вертолетный VIP-тур «Затерянные водопады»"
             },
             {
+                "id": "helifishing",
+                "href": "/helifishing",
+                "title": "Вертолётный VIP-тур: спортивная рыбалка"
+            },
+            {
+                "id": "snowqueen",
+                "href": "/snowqueen",
+                "title": "Вертолётный VIP-тур «Царство Снежной Королевы»"
+            },
+            {
+                "id": "helipicnic",
+                "href": "/helipicnic",
+                "title": "Вертолётная экскурсия и гриль-пикник на вершине"
+            },
+            {
+                "id": "grilling",
+                "href": "/grilling",
+                "title": "Дикий гриллинг"
+            },
+            {
                 "id": "helitour",
                 "href": "/helitour",
-                "title": "Вертолетная экскурсия"
+                "title": "Вертолетная экскурсия по фильму «Территория»"
             },
             {
-                "id": "jar",
-                "href": "/jar",
-                "title": "Усадьба Жар. Птица"
-            },
-            {
-                "id": "heliski",
-                "href": "/heliski",
-                "title": "Хели-ски"
-            },
-            {
-                "id": "skitour",
-                "href": "/skitour",
-                "title": "Скитур Хребтовая-Валёк-Аякли"
-            },
-            {
-                "id": "skilama",
-                "href": "/skilama",
-                "title": "Скитур долина озера Лама"
-            }
+                "id": "icedrift",
+                "href": "/icedrift",
+                "title": "Ледоход на плато Путорана"
+            }            
         ]
     },
     
     {
         "id": "about",
         "href": "/about",
-        "title": "о нас",
-        "items" : [
-            {
-                "id": "onas",
-                "href": "/about",
-                "title": "О компании"
-            },
-            {
-                "id": "fb",
-                "href": "/fb",
-                "title": "Отзывы"
-            }
-        ]
+        "title": "о нас"
+    },
+    {
+            "id": "jar",
+            "href": "/jar",
+            "title": "Усадьба Жар. Птица"
+    },
+    {
+        "id": "arcticexpeditions",
+        "href": "/arcticexpeditions",
+        "title": "Экспедиции"
     },
 
-    {
-        "id": "projects",
-        "href": "/projects",
-        "title": "проекты",
-        "items": [
-            {
-                "id": "sr",
-                "href": "/sr",
-                "title": "Снегоходная гонка"
-            },
-            {
-                "id": "lamaproj",
-                "href": "/lamaproj",
-                "title": "Экологический проект"
-            },
-            {
-                "id": "expeditions",
-                "href": "arcticexpeditions",
-                "title": "Экспедиции Арктики"
-            }
-        ]
-    },
 
     {
-        "id": "partners",
-        "href": "/partners",
-        "title": "партнеры"
-    },
-
-    {
-        "id": "photo",
-        "href": "/photo",
+        "id": "gallery",
+        "href": "/gallery",
         "title": "фотогалерея"
     },
 
@@ -108,7 +83,7 @@
         "items": [
             {
                 "id": "lama",
-                "href": "/Lama3d",
+                "href": "/jar3d",
                 "title": "Усадьба Жар. Птица"
             },
             {

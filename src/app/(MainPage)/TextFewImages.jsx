@@ -14,8 +14,8 @@ const TextFewImages = (props) => {
             }                
         </div>
         <div className={styles["txt-fimg__text"]}>
-            <h2>{textFewImages.title_h2}</h2>
-            <h3>{textFewImages.title_h3}</h3>
+            { textFewImages.title_h2 && (<h2>{textFewImages.title_h2}</h2>)}
+            { textFewImages.title_h3 && (<h3>{textFewImages.title_h3}</h3>)}
             <p>{textFewImages.text}</p>
         </div>
     </div>

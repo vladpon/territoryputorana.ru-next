@@ -121,15 +121,18 @@
         
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         color: white;
 
         & a {
             color: white;
             text-decoration: underline;
+            font-family: "Open Sans";
         }
 
         & > span {
+            font-size: 0.6rem;
+            text-align: right;
             font-family: "Open Sans";
         }
     }

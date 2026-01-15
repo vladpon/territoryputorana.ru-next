@@ -2,12 +2,7 @@ import MainLogo from '../Components/MainLogo/MainLogo'
 import BigCards from '../Components/BigCards/BigCards'
 
 import styles from './Tours.module.scss'
-
-import { fetchTours } from '../../api/fetchTours'
-
-// import tours from '../../data/tours.json'
-// import { useLocation, useNavigate } from 'react-router-dom'
-
+import { getTours } from '@/lib/mongo/tours'
 
 export const metadata = {
     title: 'Туры на Плато Путорана из Красноярска в 2025 году',
@@ -16,7 +11,8 @@ export const metadata = {
 
 
 const ToursPage = async () => {
-    const tours = await fetchTours()
+
+    const tours = await getTours().then( res => JSON.parse(JSON.stringify(res)))
 
 
   return (

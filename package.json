@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@bbob/preset-react": "^4.2.0",
@@ -14,17 +14,28 @@
     "@reduxjs/toolkit": "^2.5.0",
     "classnames": "^2.5.1",
     "keen-slider": "^6.8.6",
-    "next": "15.1.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "mongodb": "^6.16.0",
+    "next": "16.0.7",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
     "react-redux": "^9.2.0",
+    "react-server-dom-parcel": "^19.2.1",
+    "react-server-dom-turbopack": "^19.2.1",
+    "react-server-dom-webpack": "^19.2.1",
     "redux": "^5.0.1",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "yet-another-react-lightbox": "^3.23.0"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.7",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3"
   }
 }

@@ -1,4 +1,4 @@
-import { fetchTours } from '../../../api/fetchTours'
+
 import MainLogo from '../../Components/MainLogo/MainLogo'
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
@@ -7,12 +7,20 @@ import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import { BACKGROUNDCOLORS } from '../../../constants/colors'
+import { getTour } from '../../../lib/mongo/tours'
+import { getMetadata } from '@/lib/mongo/pages'
 
 
-export const metadata = {
-    title: 'Вертолетная экскурсия',
-    description: 'Увидеть первозданную красоту природы с высоты птичьего полета? Вертолетная экскурсия гарантирует полный восторг и незабываемые впечатления!'
-  }
+const tourId = 'helitour'
+export async function generateMetadata()
+  {     
+    const metadata = await getMetadata(tourId)
+    console.log(metadata)
+       return {
+        title: metadata.title,
+        description: metadata.description
+       }
+}
 
 
 const txtTitle = {
@@ -25,7 +33,7 @@ const txtTitle = {
 
 
 const HeliTour = async () => {
-    const tour = await fetchTours().then( (t) => t.filter( (item) => item.tourId == 'helitour')[0])
+    const tour = await getTour(tourId).then( res => res.result)
 
 
   return (
@@ -34,7 +42,7 @@ const HeliTour = async () => {
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TourPageProgram tour = {tour}/>
-        <TextBlock 
+        {/* <TextBlock 
             title = "Транспорт"
             titleWeight = '500'
             text = {[
@@ -43,7 +51,7 @@ const HeliTour = async () => {
             titleAlign = 'right'
             textAlign = 'right'
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
-            />
+            /> */}
 
         <div className='container'
             style = {{ 

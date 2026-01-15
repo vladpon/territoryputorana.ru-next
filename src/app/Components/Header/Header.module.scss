@@ -113,13 +113,12 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 
     &__home {
         order: -1;
+        width: 35px;
 
         @media (max-width: map.get(const.$breakpoints, sm)) {
             display: block;
             order: 0;
-        }
-
-        width: 35px;
+        }        
         & img {
             width: 100%;
         }
@@ -445,9 +444,8 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     
     a {
         color: #000;
-        // @include const.font-size-adaptive(24px);
         &:hover {
-            background-color: lighten($color: const.$main-blue, $amount: 45%);
+            background-color: color.adjust(const.$main-blue, $lightness: 45%);
             color: const.$main-blue;
         }    
     }

@@ -3,21 +3,34 @@ import React, { useEffect } from 'react'
 import styles from './RequestBlock.module.scss'
 import { useState } from 'react'
 import { redirect } from 'next/navigation'
-import { fetchTours } from '../../../api/fetchTours'
-
-
 
 
 const RequestBlock = (props) => {
     const { bgImage, h2Text, h3Text } = props
     const [toursNames, setToursNames]  = useState([])
-    const [tours, setTours] = useState([])
 
-    useEffect( () => {
-      fetchTours().then(res => {
-        setTours(res)
-        setToursNames(res.map( item => item.title))
-      })
+    const fetchToursNames = async () => {
+      try {
+        const res = await fetch('/api/tours?property=title', 
+          {
+            headers: {
+              Accept: 'application/json',
+              method: 'GET',
+            },
+          }
+        )
+        if(res) {
+        const data = await res.json()
+        return data
+      }
+      } catch (error) {
+        console.log(error)
+      }      
+    }
+
+    
+    useEffect( ()=> {
+      fetchToursNames().then(arr => !('error' in arr) && setToursNames(arr))
     }, [])
 
     

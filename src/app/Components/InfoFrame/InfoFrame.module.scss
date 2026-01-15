@@ -1,12 +1,13 @@
 @use '../../const.scss';
 @use 'sass:map';
+@use 'sass:color';
 
 
 .infoframe {
-        padding: 2em;
+        padding: 1.8em;
         background-color: #d6d6d6;
         width: 100%;
-        text-align: center;
+        text-align: left;
         transition: all 0.3s ease;
 
         & h3 {
@@ -17,9 +18,7 @@
 
         & p {
             line-height: 1.35;
-            & span {
-                // @include font-size-adaptive(20px);
-            }
+            font-size: 0.8em;
             & span:first-child {
                 font-weight: 700;
             }
@@ -38,8 +37,10 @@
         }
        
     &__price {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 1.3rem;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 
     
@@ -96,7 +97,7 @@
     
 .modal__text {
     padding: 10%;
-    color: darken(const.$main-blue, 20);
+    color: color.adjust(const.$main-blue, $lightness: -20%);
     text-align: left;
 
     & p {
@@ -104,11 +105,13 @@
     }
 
     & ul > li {
+        font-size: 0.7rem;
         list-style: circle;
     }
 
     & ol > li {
         list-style: decimal;
+        font-size: 0.7rem;
     }
 }
 
