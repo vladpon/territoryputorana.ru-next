@@ -181,3 +181,4 @@ next-env.d.ts
 #video
 /public/img/main.mp4
 .mp4
+.m4v
