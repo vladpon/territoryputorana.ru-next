@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styles from './TextOneImage.module.scss'
 
 const TextOneImage = (props) => {
@@ -7,7 +7,7 @@ const TextOneImage = (props) => {
         <div className={`${styles['bg-container']}`}>
             <div className={`${styles["txt-oimg"]} container`}>
                 <div className={styles["txt-oimg__img"]}>
-                    <img src={textOneImage.img} />
+                    {/* <img src={textOneImage.img} /> */}
                 </div>
                 <div className={styles["txt-oimg__text-block"]}>
                         {/* <div className={styles["txt-oimg__title"]}>

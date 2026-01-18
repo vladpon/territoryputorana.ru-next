@@ -7,19 +7,22 @@
 }
 
 .txt-oimg {
-    height: 100%;
     padding: 3.5em 0 3.5em 0;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     gap: 1.5em;
+    min-height: 300px;
     
     &__img {
-        background-color: #888;
+        background-image: url('https://territoryputorana.ru/img/anton.jpg');
+        // background-color: #888;
         flex-grow: 1;
         flex-shrink: 1;
-        // flex-basis: 300;
+        flex-basis: 300;
+        min-height: 100%;
             img {
+                    background-color: #446;
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
@@ -33,8 +36,8 @@
         background-color: #999;
         flex-grow: 1;
         flex-shrink: 1;
-        // flex-basis: 300;
-        // text-align: right;        
+        flex-basis: 300;
+        text-align: right;        
     }
     &__title {
         text-align: center;
