@@ -44,7 +44,6 @@ const CardsBlock = (props) => {
                 ) :
                 <h1>No Tours found</h1>}
                 
-                
             </div>
             <div className={styles["cards-block__link"]}><Link href = '/tours'> Перейти в каталог туров </Link></div>
         </div>
