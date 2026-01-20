@@ -16,19 +16,6 @@ const textWord = {
 }
 
 
-const textOneImage = {
-  title_h2: 'Территория Путорана',
-  title_h3: 'Покори Север с нами!',
-  text: [
-    'Мы занимаемся организацией туров и экспедиций на плато Путорана уже больше 10 лет и знаем, чем удивить самого искушенного путешественника.',
-    'Программы наших туров построены так, чтобы за отведённое время, показать Вам самое лучше, необычное и впечатляющее. Знаменитые открыточные виды и тайные уголки, известные только нашим гидам, полёты на вертолётах и аутентичная северная кухня.',
-    'Здесь, в дикой первозданной природе, мы позаботимся о Вашем максимальном удобстве и комфорте.',
-    'Антон Лысов',
-    'Основатель и руководитель компании «Территория Путорана»'
-  ],
-  img: "./img/anton2.jpg"
-}
-
 const textFewImages = {
   photo: [
     './img/exped1.jpg',
@@ -50,7 +37,7 @@ export default async function Home() {
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word}/>
       <CardsBlock tours = {tours} />
-      <TextOneImage textOneImage = {textOneImage} />
+      <TextOneImage />
       <VideoBlock src = './img/putorana.m4v#t=0.001' h2Text = 'Покори Север с нами!'/>
       <TextFewImages textFewImages = {textFewImages} />
       <RequestBlock bgImage = {'/img/main_req.jpg'}  h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />
