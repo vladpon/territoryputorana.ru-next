@@ -21,8 +21,8 @@ const Footer = () => {
             <span>Связаться с нами</span>
             <a href="tel:+79039299383"><span>+7 (903) 929-93-83</span></a>
             <div className={styles["footer__icons"]}>
+                <a href="https://max.ru/u/f9LHodD0cOLZx13Hi2qAmbymgnwCI6NIwvhEI3Zm6JAns50ZFcZBSZIjDAw"><img className={styles["footer__icon"]} src="/img/max_ico.png"></img></a>
                 <a href="https://vk.cc/cmIUok"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/vk_ico.png"></img></a>
-                <a href="https://wa.me/79039299383"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/wa_ico.png"></img></a>
                 <a href="https://t.me/territoryputorana"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
             </div>
             <div className={styles['footer__privacy']}>

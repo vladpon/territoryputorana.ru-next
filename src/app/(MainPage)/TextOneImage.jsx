@@ -32,7 +32,7 @@ const TextOneImage = () => {
                     <div className={styles["txt-oimg__text"]}>
                         {textOneImage.text.map( (p, index) => <p key = {index}>{p}</p>)}
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     )

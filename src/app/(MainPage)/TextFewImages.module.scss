@@ -8,20 +8,24 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 4rem 0 4rem 0;
+    padding: 3.5em 0 3.5rem 0;
+    gap: 1.5em;
+    
     background-color: const.$primary-background-color;
 
     @media (max-width: map.get(const.$breakpoints, sm)) {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     &__ph-container {
+        flex: 1 1 900px;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
+        gap: 0.1em;
 
         @media (max-width: map.get(const.$breakpoints, sm)) {
             display: block;
+            flex: auto;
             & .txt-fimg__photo:nth-child(n+2) {
                 display: none;
             }            
@@ -46,9 +50,6 @@
             grid-column: 3/6;
         }
 
-        &:hover {
-            box-shadow: 2px 2px 2px #363636;
-        }
 
         img {
             width: 100%;
@@ -58,20 +59,29 @@
     }
 
     &__text {
-        padding-left: 5%;
+
+        border: 1px solid #bbb;
+
+        flex: 1 1 350px;
+        align-self: stretch;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        padding: 2em;
 
-        & h3 {
-            margin-block-end: 1.5em;
+        & h2 {
+            font-size: 2.2em;
+            font-weight: 300;
+            & span {
+                font-weight: 750;
+            }
         }
 
         @media (max-width: map.get(const.$breakpoints, sm)) {
+            border: 0;
             padding: 0;
             text-align: center;
-            & p{
-                text-align: justify;
-            }
+            flex: auto;
         }
     }
 }
