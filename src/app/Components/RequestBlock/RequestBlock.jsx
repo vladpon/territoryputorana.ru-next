@@ -153,34 +153,34 @@ const RequestBlock = (props) => {
 
 
   return (
-    <div className={styles['req-block__container']} style = {{backgroundImage: `url(${bgImage})`}}>
-      <div className = {`${styles["req-block"]} container`}>
-          {/* {showThankYou && thankYou(ipName)} */}
-          {showThankYou && redirect('/thankyou')}
-          <div className = {styles["req-block__text"]}>
-              <h2>{h2Text}</h2>
-              <h3>{h3Text}</h3>
+      
+      <div className = {`${styles["req-block"]} container`}>    
+      {showThankYou && redirect('/thankyou')}      
+          <div className={styles['req-block__image']}><img src={bgImage}></img></div>
+          <div className={styles['req-block__form']}>
+            <div className = {styles["req-block__text"]}>
+                <h2>{h2Text}</h2>
+                <p>{h3Text}</p>
+            </div>
+            <form name = 'request__form' action = "#">
+                <input type="text" required  name="name" placeholder="Имя" value = {ipName} onChange={ (e) => setIpName(e.target.value)} />
+                <input type="email" name="email" placeholder="e-mail" value = {ipEmail} onChange={ (e) => setIpEmail(e.target.value)} />
+                <input type="tel" required  name="tel" placeholder="Телефон" value = {ipTel} onChange={ (e) => setIpTel(e.target.value)} />
+                <select name ="tour-select" onChange={ (e) => setIpTour(e.target.value)} defaultValue = 'Какой тур Вас интересует'>
+                  <option disabled>Какой тур Вас интересует</option>
+                  {toursNames.map( (item, index) => {
+                    return (
+                      <option key={index} value = {item}>{item}</option>
+                    )
+                  })}
+                </select>
+                <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
+                <textarea name="text" placeholder="Дополнительная информация (желательные даты)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
+                <button  className = {styles['main-button']} onClick={(e) => handleSubmit(e)}>Отправить</button>
+                <label>Нажимая кнопку "Отправить", вы соглашаетесь с <a href = '/privacy'>обработкой персональных данных</a></label>
+            </form>
           </div>
-          <form name = 'request__form' action = "#">
-              <input type="text" required  name="name" placeholder="Имя" value = {ipName} onChange={ (e) => setIpName(e.target.value)} />
-              <input type="email" name="email" placeholder="e-mail" value = {ipEmail} onChange={ (e) => setIpEmail(e.target.value)} />
-              <input type="tel" required  name="tel" placeholder="Телефон" value = {ipTel} onChange={ (e) => setIpTel(e.target.value)} />
-              <select name ="tour-select" onChange={ (e) => setIpTour(e.target.value)} defaultValue = 'Какой тур Вас интересует'>
-                <option disabled>Какой тур Вас интересует</option>
-                {toursNames.map( (item, index) => {
-                  return (
-                    <option key={index} value = {item}>{item}</option>
-                  )
-                })}
-              </select>
-              <input type="text" required  name="count" placeholder="Количество участников в Вашей группе" value = {ipCount} onChange={ (e) => setIpCount(e.target.value)} />
-              <textarea name="text" placeholder="Дополнительная информация (желательные даты)" rows="5" value = {ipText} onChange={ (e) => setIpText(e.target.value)} />
-              <button  className = {styles['main-button']} onClick={(e) => handleSubmit(e)}>Отправить</button>
-              <label>Нажимая кнопку "Отправить", вы соглашаетесь с <a href = '/privacy'>обработкой персональных данных</a></label>
-          </form>
-          {/* <style>{styleString}</style> */}
       </div>
-    </div>    
   )
 }
 

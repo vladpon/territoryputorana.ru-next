@@ -30,7 +30,7 @@ export default async function Home() {
       <TextOneImage />
       <TextFewImages />
       <VideoBlock src = './img/putorana.m4v#t=0.001'/>      
-      <RequestBlock bgImage = {'/img/main_req.jpg'}  h2Text = {'Есть вопросы?'} h3Text = {"Оставьте заявку и мы обязательно свяжемся с вами!"} />
+      <RequestBlock bgImage = {'/img/main_req.jpg'}  h2Text = {'Отправьте нам Ваши пожелания'} h3Text = {"Мы свяжемся с Вами в самое ближайшее время"} />
    </main>
   );
 }
