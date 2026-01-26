@@ -7,7 +7,8 @@
 
     width: 100%;
     padding: 1rem 3rem;
-    background-color: const.$main-blue;
+    // background-color: const.$main-blue;
+    background-color: #353535;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -127,13 +128,13 @@
         & a {
             color: white;
             text-decoration: underline;
-            font-family: "Open Sans";
+            // font-family: "Open Sans";
         }
 
         & > span {
             font-size: 0.6rem;
             text-align: right;
-            font-family: "Open Sans";
+            // font-family: "Open Sans";
         }
     }
 }

@@ -20,15 +20,16 @@ const TextOneImage = () => {
     
     return (
         <div className={`${styles['bg-container']}`}>
+            <div className={`${styles["txt-oimg__title"]} container`}>
+                            <h2><span>Территория</span> Путорана</h2>
+                            <p>{textOneImage.title_h3}</p>
+                        </div>
             <div className={`${styles["txt-oimg"]} container`}>
+                
                 <div className={styles["txt-oimg__img"]}>
                     <img src={textOneImage.img} />
                 </div>
                 <div className={styles["txt-oimg__text-block"]}>
-                        <div className={styles["txt-oimg__title"]}>
-                            <h2><span>Территория</span> Путорана</h2>
-                            <p>{textOneImage.title_h3}</p>
-                        </div>
                     <div className={styles["txt-oimg__text"]}>
                         {textOneImage.text.map( (p, index) => <p key = {index}>{p}</p>)}
                     </div>

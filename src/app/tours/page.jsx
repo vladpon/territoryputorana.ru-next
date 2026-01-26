@@ -19,7 +19,7 @@ const ToursPage = async () => {
     <main className={styles['tours-page']}>
        
         <div className = {`${styles['tours-page__content']} container`} >
-            <MainLogo />
+            {/* <MainLogo /> */}
             <div className={styles["tours-page__title"]}>
                 <h1>туры</h1>
                 <h3>на Плато Путорана</h3>

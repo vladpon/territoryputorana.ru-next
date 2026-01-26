@@ -11,14 +11,14 @@
 
 .txt-oimg {
 
-    padding: 3.5em 0 3.5em 0;
+    padding: 1.5em 0 3.5em 0;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    gap: 1.5em;
-    height: 1250px;
+    gap: 2em;
+    height: 650px;
     @media (max-width: map.get(const.$breakpoints, md)) {
-            height: 900px;
+            height: 750px;
         }      
     @media (max-width: map.get(const.$breakpoints, sm)) {
             height: 100%;
@@ -46,7 +46,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 300;
-        text-align: right; 
+        text-align: left; 
         align-self: center;
 
         @media (max-width: map.get(const.$breakpoints, sm)) {
@@ -56,6 +56,13 @@
 
 
     &__title {
+
+        
+
+        margin: 0 auto;
+        padding-top: 3.5em;
+
+        text-align: left;
 
         & h2 {
             font-size: 2.2em;
@@ -75,7 +82,10 @@
     }
 
     &__text {
-        margin-top: 2em;
+        // margin-top: 2em;
+        & p {
+            font-size: .8em;
+        }
 
         // & p:nth-child(even) {
         //     width: 70%;
