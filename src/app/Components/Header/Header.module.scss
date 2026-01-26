@@ -122,9 +122,9 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 
     &__home {
         order: -1;
-        width: 5.5em;
+        width: 7em;
 
-        @media (max-width: map.get(const.$breakpoints, sm)) {
+        @media (max-width: map.get(const.$breakpoints, md)) {
             display: block;
             order: 0;
         }        
@@ -136,8 +136,10 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     &__menu {
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
 
-        @media (max-width: map.get(const.$breakpoints, sm)) {
+        @media (max-width: map.get(const.$breakpoints, md)) {
             display: none;
         }
     }
@@ -206,7 +208,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        @media (max-width: map.get(const.$breakpoints, sm)){
+        @media (max-width: map.get(const.$breakpoints, md)){
             display: none;
         }
     }
@@ -224,8 +226,9 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     &__burger {
         display: block;
         cursor: pointer;
+        // width: 7em;
 
-        @media (max-width: map.get(const.$breakpoints, sm)) {
+        @media (max-width: map.get(const.$breakpoints, md)) {
             display: block;
             position: relative;
             width: 30px;
@@ -290,10 +293,10 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 .menu {
     &__list {
         height: 100%;
-        width: 100%;
+        width: 70%;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         z-index: 3;
 

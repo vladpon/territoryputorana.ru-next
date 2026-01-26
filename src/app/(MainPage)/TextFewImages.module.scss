@@ -85,7 +85,7 @@
         @media (max-width: map.get(const.$breakpoints, sm)) {
             border: 0;
             padding: 0;
-            text-align: center;
+            text-align: left;
             flex: auto;
         }
     }

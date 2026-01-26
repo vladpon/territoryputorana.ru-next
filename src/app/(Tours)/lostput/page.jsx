@@ -32,7 +32,7 @@ const Lostput = async () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {true}/>
         <TextBlock 
