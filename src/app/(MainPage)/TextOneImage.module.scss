@@ -18,6 +18,7 @@
     gap: 2em;
     height: 650px;
     @media (max-width: map.get(const.$breakpoints, md)) {
+            flex-direction: column;
             height: 750px;
         }      
     @media (max-width: map.get(const.$breakpoints, sm)) {
@@ -36,8 +37,9 @@
                     object-fit: cover;
                 }
             
-        @media (max-width: map.get(const.$breakpoints, sm)) {
-            display: none;
+        @media (max-width: map.get(const.$breakpoints, md)) {
+            // display: none;
+            height: 350px;
         }        
     }
 

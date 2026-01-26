@@ -15,7 +15,7 @@ const AboutPage = () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <div className = {styles["about-page__cover"]}>        
             <img className = {styles["about-page__bg"]} src='./img/about_cover.jpg' />
             <div className = {styles["about-page__text"]}>

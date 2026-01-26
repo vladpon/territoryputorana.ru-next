@@ -143,7 +143,9 @@ const Header = () => {
   return (
     <header className = {classNames(styles.header, styles[pageClass])}>
       <div className={styles.header__body}>
-        <div className = {`${styles.header__burger} ${burgermenuActive && styles.active} ${styles[pageClass]}`} onClick={ () => burgermenuActive ? setBurgermenuActive(false) : setBurgermenuActive(true) }><span></span></div>
+        <div className={styles.header__burgercontainer}>
+            <div className = {`${styles.header__burger} ${burgermenuActive && styles.active} ${styles[pageClass]}`} onClick={ () => burgermenuActive ? setBurgermenuActive(false) : setBurgermenuActive(true) }><span></span></div>
+        </div>
         <MainMenu menu = {MENU} pageClass = {pageClass}/>
         <BurgerMenu menu = {MENU} active = {burgermenuActive} setActive = {setBurgermenuActive}/>
         <div className = {styles.header__contacts}>
@@ -157,7 +159,10 @@ const Header = () => {
         </div> 
         <div className = {styles.header__home}>
             <Link href = '/' onClick={() => setBurgermenuActive(false)}>
-                <img src='/img/logo_text.png'></img>
+                {(pathname === '/') ? 
+                    <img className = {styles.header__home_home} src='/img/home.png'></img>
+                    : <img className = {styles.header__home_logo} src='/img/logo_text.png'></img>
+                }
             </Link>
         </div>
       </div>
