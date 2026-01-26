@@ -157,7 +157,7 @@ const Header = () => {
         </div> 
         <div className = {styles.header__home}>
             <Link href = '/' onClick={() => setBurgermenuActive(false)}>
-                <img src='/img/home.png'></img>
+                <img src='/img/logo_text.png'></img>
             </Link>
         </div>
       </div>
