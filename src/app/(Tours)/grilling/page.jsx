@@ -32,7 +32,7 @@ const Grilling = async () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TextBlock 
@@ -78,7 +78,7 @@ const Grilling = async () => {
               'Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'
             ]}
             textAlign = 'right' />
-        <RequestBlock bgImage = {'./img/lostput/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
+        <RequestBlock bgImage = {'./img/grilling/grilling_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

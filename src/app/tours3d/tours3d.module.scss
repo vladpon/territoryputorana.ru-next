@@ -6,21 +6,21 @@
 .tours3d-page {
     position: relative;
     background-color: const.$secondary-background-color;
-    padding-top: map.get(const.$header-height, vl);
+    padding-top: calc(map.get(const.$header-height, vl) + 3.5em);
         @media (max-width: map.get(const.$breakpoints, lg)) {
-            padding-top: map.get(const.$header-height, lg);
+            padding-top: calc(map.get(const.$header-height, lg) + 3.5em);
         }
         @media (max-width: map.get(const.$breakpoints, md)) {
-            padding-top: map.get(const.$header-height, md);
+            padding-top: calc(map.get(const.$header-height, md) + 3.5em);
         }
         @media (max-width: map.get(const.$breakpoints, sm)) {
-            padding-top: map.get(const.$header-height, sm);
+            padding-top: calc(map.get(const.$header-height, sm) + 3.5em);
         }
         @media (max-width: map.get(const.$breakpoints, xs)) {
-            padding-top: map.get(const.$header-height, xs);
+            padding-top: calc(map.get(const.$header-height, xs) + 3.5em);
         }
         @media (max-width: map.get(const.$breakpoints, vs)) {
-            padding-top: map.get(const.$header-height, vs);
+            padding-top: calc(map.get(const.$header-height, vs) + 3.5em);
         }
     
         &__content {

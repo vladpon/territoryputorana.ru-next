@@ -32,7 +32,7 @@ const Icedrift = async () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TourPageProgram tour = {tour}/>
@@ -64,7 +64,7 @@ const Icedrift = async () => {
               'Стоимость авиаперелёта до Норильска, проживание и питание в Норильске не входят в стоимость тура.'         
             ]}
             textAlign = 'right' />
-        <RequestBlock bgImage = {'./img/lostput/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
+        <RequestBlock bgImage = {'./img/icedrift/icedrift_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

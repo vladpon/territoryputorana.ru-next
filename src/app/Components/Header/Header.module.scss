@@ -54,6 +54,20 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
                 filter: invert(0);
             }
         }
+
+        .header__burgercontainer {
+            display: none;
+        }
+
+        @media (max-width: map.get(const.$breakpoints, md)) {
+            .header__home {
+                display: none;
+            }
+            .header__burgercontainer{
+                display: block;
+            }
+        }
+
     }
 
     &.other-page {
@@ -71,9 +85,9 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     &.tour-page-class {
         background-color: $tour-page-header-background-color;
         .header__home_logo {
-            img {
+            
                 filter: invert(1);
-            }
+            
         }
     }
 
@@ -83,6 +97,12 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
             img {
                 filter: invert(1);
             }
+        }
+    }
+
+    &.tour3d {
+        .header__home_logo {
+            filter: invert(1);
         }
     }
 

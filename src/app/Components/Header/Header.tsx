@@ -159,9 +159,7 @@ const Header = () => {
         </div> 
         <div className = {styles.header__home}>
             <Link href = '/' onClick={() => setBurgermenuActive(false)}>
-                {(pathname === '/') ? 
-                    <img className = {styles.header__home_home} src='/img/home.png'></img>
-                    : <img className = {styles.header__home_logo} src='/img/logo_text.png'></img>
+                {(pathname !== '/') && <img className = {styles.header__home_logo} src='/img/logo_text.png'></img>
                 }
             </Link>
         </div>

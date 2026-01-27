@@ -32,7 +32,7 @@ const Snowqueen = async () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TourPageProgram tour = {tour}/>
@@ -67,7 +67,7 @@ const Snowqueen = async () => {
               'По вашему желанию мы можем доставить вас в аэропорт Норильска ко времени обратного вылета на вертолёте прямо с усадьбы «Жар. Птица», либо организовать одну ночевку в гостинице в Норильске.'         
             ]}
             textAlign = 'right' />
-        <RequestBlock bgImage = {'./img/lostput/lostput_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
+        <RequestBlock bgImage = {'./img/snowqueen/snowqueen_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

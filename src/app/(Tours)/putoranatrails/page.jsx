@@ -31,7 +31,7 @@ const PutoranaTrails = async () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {true}/>\
         <TextBlock
@@ -77,7 +77,7 @@ const PutoranaTrails = async () => {
                 'Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'
              ]}
             textAlign = 'right' />
-        <RequestBlock bgImage = {'./img/putoranatrails_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
+        <RequestBlock bgImage = {'./img/putoranatrails/putoranatrails_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

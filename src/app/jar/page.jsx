@@ -34,7 +34,7 @@ const Jar =  async() => {
     
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {data}/>
         <TourPageAbout tour = {data} varInfoframe = {false}/>
         <TextBlock

@@ -21,7 +21,7 @@ const LostWaterfalls = async () => {
 
   return (
     <main>
-        <MainLogo />
+        {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false} />
         <TourPageProgram tour = {tour}/>
@@ -55,7 +55,7 @@ const LostWaterfalls = async () => {
                 'Водные экскурсии и возвращение в Норильск на скоростном закрытом судне на воздушной подушке.'
             ]}
             textAlign = 'right' />
-       <RequestBlock bgImage = {'./img/heli_footer.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
+       <RequestBlock bgImage = {'./img/lostwaterfalls/lostwaterfalls_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
 }

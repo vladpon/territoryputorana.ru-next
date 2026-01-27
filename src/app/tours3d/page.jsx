@@ -46,7 +46,7 @@ const Tours3d = () => {
   return (
     <main className = {styles['tours3d-page']}>
         <div className = {`${styles['tours3d-page__content']} container`}>
-            <MainLogo />
+            {/* <MainLogo /> */}
             <div className = {styles["tours3d-page__title"]}>
                 <h1>3D Туры</h1>
                 <h3>Территории Путорана</h3>
