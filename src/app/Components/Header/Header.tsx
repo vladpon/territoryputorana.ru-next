@@ -146,9 +146,9 @@ const Header = () => {
         <div className={styles.header__burgercontainer}>
             <div className = {`${styles.header__burger} ${burgermenuActive && styles.active} ${styles[pageClass]}`} onClick={ () => burgermenuActive ? setBurgermenuActive(false) : setBurgermenuActive(true) }><span></span></div>
         </div>
-        <div className = {styles.header__phone}>
+        {/* <div className = {styles.header__phone}>
           <a href="tel:+79039299383"><img className = {styles.header__icon} src="/img/phone_ico.png"></img></a>
-        </div>        
+        </div>         */}
         <MainMenu menu = {MENU} pageClass = {pageClass}/>
         <BurgerMenu menu = {MENU} active = {burgermenuActive} setActive = {setBurgermenuActive}/>
         <div className = {styles.header__contacts}>

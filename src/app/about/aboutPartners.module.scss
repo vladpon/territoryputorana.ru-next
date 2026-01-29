@@ -4,7 +4,8 @@
 .about_partners {
 
     width: 100%;
-    background-color: const.$main-blue;
+    // background-color: const.$main-blue;
+    background-color: #eee;
     margin: 0 auto;
 
     & .content {
@@ -14,7 +15,8 @@
         & .text {
             font-size: 1.3rem;
             text-align: center;
-            color: const.$white;
+            // color: const.$white;
+            color: black;
         }
 
         & .logos {
@@ -24,6 +26,7 @@
             justify-content: center;
             align-items: flex-end;
             gap: 1rem;
+            filter: invert(1);
 
             @media (max-width: map.get(const.$breakpoints, md)) {
                 flex-wrap: wrap;
