@@ -154,6 +154,13 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         // }
     }
 
+    &__phone {
+        display: none;
+        @media (max-width: map.get(const.$breakpoints, sm)) {
+            display: block;
+        } 
+    }
+
     &__menu {
         width: 100%;
         height: 100%;
@@ -193,6 +200,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         }
         @media (max-width: map.get(const.$breakpoints, sm)) {
             flex-basis: auto;
+            display: none;
         }
 
 
@@ -236,13 +244,15 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 
     &__burgercontainer {
         width: 7em;
+        // @media (max-width: map.get(const.$breakpoints, sm)){
+        //     width: auto;
+        // }
     }
 
     &__burger {
         display: block;
         cursor: pointer;
         // width: 7em;
-
         @media (max-width: map.get(const.$breakpoints, md)) {
             display: block;
             position: relative;
