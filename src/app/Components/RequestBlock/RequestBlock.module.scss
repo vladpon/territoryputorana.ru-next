@@ -31,7 +31,7 @@
 
     @media (max-width: map.get(const.$breakpoints, sm)) {
         flex-direction: column-reverse;
-        height: auto;
+        // height: auto;
         &__image {
             display: none;
         }
