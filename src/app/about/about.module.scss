@@ -96,23 +96,27 @@
         display: flex;
         flex-direction: row;
         // align-items: flex-start;
-        gap: 2em;
-        height: 950px;
+        gap: 4em;
+        height: 900px;
         padding-bottom: 3.5em;
     }
 
    
     &__owner {
         height: 100%;
-        flex: 1 1 350px;
+        flex: 1 1 500px;
         display: flex;
-        flex-direction: column;
-        border-left: 3px solid #000;
-        border-top: 3px solid #000;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 3px solid #eee;
+        border-top: 3px solid #eee;
+        // padding-top: 2.4em;
+        padding-left: 2.4em;
 
         &:hover {
-            border-left: 3px solid #555555;
-            border-top: 3px solid #555555;
+            border-left: 3px solid #bbb;
+            border-top: 3px solid #bbb;
         }
         // gap: 1.5em;
         // border-right: 3px solid #eee;
@@ -130,9 +134,9 @@
         //     height: 100%;
         // }
 
-        & > img {
+        & > img {                
                 width: 100%;
-                height: 100%;
+                height: 500px;
                 
                 // margin-bottom: 5%;
                 object-fit: cover;
@@ -148,9 +152,10 @@
 
     &__ownerdesc {
         
-        // position: relative;
+        position: relative;
+        width: 1200%;
         // bottom: 7.3em;
-        background-color: rgba($color: #eee, $alpha: .85);
+        // background-color: rgba($color: #eee, $alpha: .85);
         padding: 1em;
         // background-color: const.$secondary-background-color;
         // padding: 1em;
@@ -176,11 +181,11 @@
             margin-block-end: 0.5em;
         }
         & > p {
-            font-size: .7em;
+            font-size: .65em;
             font-style: italic;
             margin-block: 0 0.35em;
             &:hover {
-            transform: scale(1.05);
+            transform: scale(1.01);
         }
             // text-align: center;
             // margin-block-end: 0.5em;
@@ -196,17 +201,17 @@
         // align-self: flex-start;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        flex: 1 1 350px;
+        justify-content: center;
+        flex: 1 1 500px;
          & p {
             font-size: .8em;
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.01);
             }
         }
 
-        padding-right: 1.4em;
-        padding-bottom: 1.4em;
+        padding-right: 2.4em;
+        // padding-bottom: 2.4em;
 
         border-right: 3px solid #eee;
         border-bottom: 3px solid #eee;
