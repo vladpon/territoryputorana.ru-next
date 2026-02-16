@@ -1,5 +1,4 @@
 
-import MainLogo from '../Components/MainLogo/MainLogo'
 import VkBlock from '../Components/VkBlock/VkBlock'
 import styles from './about.module.scss'
 import AboutPartners from './AboutPartners'
@@ -15,7 +14,6 @@ const AboutPage = () => {
 
   return (
     <main>
-        {/* <MainLogo /> */}
         <div className = {styles["about-page__cover"]}>
             <img className = {styles["about-page__bg"]} src='./img/about_cover.jpg' />
             <div className = {styles["about-page__text"]}>
@@ -28,7 +26,6 @@ const AboutPage = () => {
                   <h2><span>Туры</span> и экспедиции</h2>
                   <p>с местным туроператором</p>
               </div>
-              <div className = {styles['about-page__columncontainer']}>
                 <div className = {styles['about-page__rowcontainer']}>                
                   <div className = {styles["about-page__owner"]}>
                     <img src='/img/anton3.jpg'></img>                  
@@ -45,15 +42,8 @@ const AboutPage = () => {
                         <p>Организатор проектов «Экспедиции Арктики», «Чисто Лама», «SNOW RIDE Putorana»</p>
                     </div>
                   </div>
-                </div>
-                
-              </div>              
+                </div>           
           </div>
-
-          {/* <div className={styles['about-page__photo']}>
-            <img src='./img/about_team.jpg'></img>
-            <p>Все в сборе, считая собаку.<br />Искра - компаньон во всех походах. Заслуженный обладатель звания «Лучшая собака плато Путорана»<br /></p>
-          </div> */}
        </div>
 
        <AboutPartners />
