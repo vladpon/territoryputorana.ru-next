@@ -48,7 +48,7 @@
 
         & p {
             font-size: 0.9rem;
-            text-align: justify;            
+            text-align: justify;
         }
 
         & ul {
@@ -57,7 +57,6 @@
             & > li {
                 list-style: circle;
                 margin-left: 2em;
-                // @include font-size-adaptive(24px);
             }
         }
 

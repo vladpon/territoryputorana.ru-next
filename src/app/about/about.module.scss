@@ -60,19 +60,14 @@
         flex-direction: column;
         margin: 0 auto;
         gap: 5em;
-        // padding: 2rem 0;
         padding-top: 3.5em;
     }
 
     &__about {
-        // height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         padding-bottom: 3.5em;
-        // @media (max-width: map.get(const.$breakpoints, md)) {
-        //     flex-direction: column;
-        // }
     }
 
     &__title {
@@ -97,83 +92,34 @@
     &__rowcontainer {
         display: flex;
         flex-direction: row;
-        gap: 4em;
-        height: 650px;
+        justify-content: space-between;
+        gap: 2em;
+        width: 100%;
+        height: 600px;
+        @media  (max-width: map.get(const.$breakpoints, xl)) {
+            height: max-content;
+        }
+        @media  (max-width: map.get(const.$breakpoints, sm)) {
+            flex-direction: column;
+        }
+        
     }
 
    
     &__owner {
-        height: 100%;
-        flex: 1 1 500px;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        // border-left: 3px solid #eee;
-        // border-top: 3px solid #eee;
-        // padding-top: 2.4em;
-        // padding-left: 2.4em;
+        flex: 1 1 200px;
 
-        &:hover {
-            // border-left: 3px solid #bbb;
-            // border-top: 3px solid #bbb;
-        }
-        // gap: 1.5em;
-        // border-right: 3px solid #eee;
-        // padding-right: 1.4em;
-
-        // @media (max-width: map.get(const.$breakpoints, md)) {
-        //     flex-direction: row;
-        //     justify-content: space-between;
-        //     gap: 3%;
-        // }
-        // @media (max-width: map.get(const.$breakpoints, xs)) {
-        //     flex-direction: column;
-        //     justify-content: space-between;
-        //     gap: 3%;
-        //     height: 100%;
-        // }
-
-        & > img {                
+        & > img {    
                 width: 100%;
-                height: 100%;
-                
-                // margin-bottom: 5%;
+                height: 100%;  
                 object-fit: cover;
-                // @media (max-width: map.get(const.$breakpoints, md)) {
-                //     min-width: 40%;
-                //     flex: 1 1 auto;
-                //     margin: 0;
-                // }
             }    
     }
 
      
-
-    &__ownerdesc {
-        align-self: center;
-        // bottom: 7.3em;
-        // background-color: rgba($color: #eee, $alpha: .85);
-        
-        // background-color: const.$secondary-background-color;
-        // padding: 1em;
-        // @media (max-width: map.get(const.$breakpoints, md)) {
-        //     flex: 5 1 1200px;
-        //     height: 100%;
-        //     display: flex;
-        //     flex-direction: column;
-        //     justify-content: space-around;;
-        // }
-        // @media (max-width: map.get(const.$breakpoints, xs)) {
-        //     flex: 1 1 auto;
-        // }
-
-        
+    &__ownerdesc {       
         
         & > h3 {
-            // margin-bottom: 0.5em;
-            // color: const.$main-blue;
-            // text-align: center;
             font-weight: 600;
             font-size: 0.8em;
             margin-block-end: 0.5em;
@@ -184,23 +130,14 @@
             margin-block: 0 0.35em;
             &:hover {
             transform: scale(1.01);
-        }
-            // text-align: center;
-            // margin-block-end: 0.5em;
-            // @include font-size-adaptive(20px);
-            // line-height: 1.4em;
-            // font-weight: 400;
+            }
         }
     }
 
 
     &__description {
         height: 100%;
-        align-self: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex: 1 1 500px;
+        flex: 1 1 300px;
          & p {
             font-size: .8em;
             &:hover {
@@ -208,20 +145,11 @@
             }
         }
 
-        // padding-right: 2.4em;
-        // padding-bottom: 2.4em;
-
-        // border-right: 3px solid #eee;
-        // border-bottom: 3px solid #eee;
-
         &:hover {
             .about-page__columncontainer {
                 border: 1px solid red;
             }
         }
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
     }
     
 
@@ -249,7 +177,6 @@
             width: 25%;
             text-transform: uppercase;
             font-weight: 600;
-            // @include font-size-adaptive(17px);
             font-size: 0.60rem;
             line-height: 1.5em;
             position: absolute;

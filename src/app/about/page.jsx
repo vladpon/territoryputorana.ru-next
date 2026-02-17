@@ -22,10 +22,10 @@ const AboutPage = () => {
         </div>   
         <div className = {`${styles["about-page__content"]} container`}>
           <div className={styles['about-page__about']}>
-              <div className = {styles['about-page__title']}>
-                  <h2><span>Туры</span> и экспедиции</h2>
-                  <p>с местным туроператором</p>
-              </div>
+                <div className = {styles['about-page__title']}>
+                    <h2><span>Туры</span> и экспедиции</h2>
+                    <p>с местным туроператором</p>
+                </div>
                 <div className = {styles['about-page__rowcontainer']}>                
                   <div className = {styles["about-page__owner"]}>
                     <img src='/img/anton3.jpg'></img>                  
@@ -36,7 +36,7 @@ const AboutPage = () => {
                       <p>Мы работаем с корпоративными и частными группами, организуем персональные туры с индивидуальной программой, гастрономические и ивент-туры.</p>
                       <p>Можете быть уверены, что путешествие в затерянный мир плато Путорана вместе с нами подарит вам самые яркие эмоции и запомнится надолго.</p>
                       <div className={styles['about-page__ownerdesc']}>
-                        <h3>Антон Лысов</h3>
+                        <h3>Антон Лысов</h3> 
                         <p>Основатель и руководитель компании «Территория Путорана»</p>
                         <p>Член Русского географического общества</p>
                         <p>Организатор проектов «Экспедиции Арктики», «Чисто Лама», «SNOW RIDE Putorana»</p>
