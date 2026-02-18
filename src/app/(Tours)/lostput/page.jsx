@@ -1,5 +1,4 @@
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
-import MainLogo from "../../Components/MainLogo/MainLogo"
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
 import TextBlock from '../../Components/TextBlock/TextBlock'
 import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
@@ -43,9 +42,9 @@ const Lostput = async () => {
                         href: '/helitour',
                         text: [' чтобы облететь наиболее живописные и недоступные уголки плато Путорана. Вы увидите высочайшие в России водопады и бездонные каньоны, а возможно, даже встретитесь с путоранским снежным бараном — уникальным животным-эндемиком, обитающим в этих краях.']
                   }}
-              backgroundcolor = {COLORS.mainBlue} 
-              titleColor = {COLORS.white} 
-              textColor = {COLORS.white}
+              backgroundcolor = {BACKGROUNDCOLORS.secondary} 
+              titleColor = {COLORS.black} 
+              textColor = {COLORS.black}
               titleAlign = {'center'}
               textAlign = {'left'}/>
         <TourPageProgram tour = {tour}/>
@@ -72,7 +71,6 @@ const Lostput = async () => {
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'
             titleAlign = 'right'
-            titleWeight = '500'
             text = {[
               'Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).',
               'Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'

@@ -4,7 +4,13 @@
 
 .textBlock {
     width: 100%;
-    padding: 3rem 0;
+    padding: 3.5em 0;
+
+    // background-color: #eee;
+
+    font-weight: 300;
+
+    // font-size: .8em;
 
     &__container {
         margin: 0 auto;
@@ -13,8 +19,8 @@
             // list-style-image: url('/check.svg');
             list-style-type: disc;
             padding-left: 0.5rem;
-            margin-left: 1.4rem;
-            font-size: 0.9rem;
+            margin-left: 1em;
+            font-size: 0.8em;
             &::marker {
                 font-size: 1.2rem;
             }
@@ -23,13 +29,16 @@
 
     & h2 {
         letter-spacing: 0.7;
-        margin-bottom: 2rem;
+        font-size: 2.2em;
+        font-weight: 300;
+        // margin-block-end: .8em;
     }
 
     & p {
+        font-size: .8em;
         line-height: 1.2;
         letter-spacing: 0.1;
-        margin-bottom: 1.5rem;
+        margin-bottom: .8em;
     }
 
     & a {

@@ -16,7 +16,7 @@ const TourPageAbout = (props) => {
             </div>
             <div className = {styles['tp-about__hit-container']}>
                 <InfoFrame title = {detailsTitle} price = {price} reference = {reference} description = {details} included = {included} clothes = {clothes}/>
-                {varInfoframe && <InfoFrame title = {varDetailstitle} price = {varPrice} reference = {varReference} description = {varDetails} inlcuded = {varIncluded}/>}
+                {/* {varInfoframe && <InfoFrame title = {varDetailstitle} price = {varPrice} reference = {varReference} description = {varDetails} inlcuded = {varIncluded}/>} */}
             </div>
         </div>
     </div>

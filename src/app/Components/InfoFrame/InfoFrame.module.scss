@@ -5,24 +5,30 @@
 
 .infoframe {
         padding: 1.8em;
+
+        border: 1px solid rgb(189, 189, 189);
+        border-radius: 4px;
+        border-left: none;
+        border-right: none;
+
+
         background-color: #d6d6d6;
         width: 100%;
         text-align: left;
         transition: all 0.3s ease;
 
         & h3 {
-            text-align: center;
-            color: const.$main-blue;
+            font-size: 1.15rem;
             font-weight: 700;
+            text-transform: uppercase;
+            margin-block-end: 0.5em;
         }
 
         & p {
-            line-height: 1.35;
-            font-size: 0.8em;
-            & span:first-child {
-                font-weight: 700;
-            }
-            margin-block-end: 0em;
+            font-size: 0.66rem;
+            width: 100%;
+            // font-weight: 500;
+            line-height: 1.4em; 
             
         }
 
@@ -37,10 +43,8 @@
         }
        
     &__price {
-        font-weight: 500;
-        font-size: 1.3rem;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        font-size: 0.8rem;
+        color: #979797;
     }
 
     
@@ -50,7 +54,7 @@
     &__note {
         & span {
             font-style: italic;
-            font-size: 0.8rem; 
+            font-size: 0.6rem; 
         }
         
         &_included {
@@ -87,16 +91,23 @@
     }
 
     & details {
-        font-size: 0.75rem;
+        margin-top: 1em;
+        font-size: 0.6em;
+        & summary::-webkit-details-marker {
+            font-size: .1em;
+        }
     }
     
+    // summary::-webkit-details-marker {
+    //     font-size: 0.6em;
+    // }
     
 }
 
 
     
 .modal__text {
-    padding: 10%;
+    margin-top: 1em;
     color: color.adjust(const.$main-blue, $lightness: -20%);
     text-align: left;
 
@@ -105,13 +116,13 @@
     }
 
     & ul > li {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         list-style: circle;
     }
 
     & ol > li {
         list-style: decimal;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 }
 
