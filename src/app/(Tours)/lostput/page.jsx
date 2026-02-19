@@ -33,7 +33,21 @@ const Lostput = async () => {
     <main>
         {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour} varInfoframe = {true}/>
+        <TourPageAbout tour = {tour} varInfoframe = {false}/>
+        <TextBlock 
+              title = {tour.varDetailstitle} 
+              text = {['Организацией туров для сборных групп занимаются наши постоянные партнеры Russia Discovery. Доступные для бронирования даты можно посмотреть ']} 
+              aText = {{
+                        link: 'здесь', 
+                        href: 'https://www.russiadiscovery.ru/tours/putorana-plateau-gory-bez-vershin/'
+                  }}
+              backgroundcolor = {BACKGROUNDCOLORS.secondary} 
+              titleColor = {COLORS.black} 
+              textColor = {COLORS.black}
+              titleAlign = {'center'}
+              textAlign = {'left'}/>
+        
+        <TourPageProgram tour = {tour}/>
         <TextBlock 
               title = 'Дополнительно' 
               text = {['Вы можете заказать ']} 
@@ -47,7 +61,7 @@ const Lostput = async () => {
               textColor = {COLORS.black}
               titleAlign = {'center'}
               textAlign = {'left'}/>
-        <TourPageProgram tour = {tour}/>
+        <PhotoBlock photos = {tour.tourPhoto}/>
         <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.secondary}
               title = 'Проживание'
@@ -66,7 +80,7 @@ const Lostput = async () => {
               ]}
               listAlign = 'left'
             />
-        <PhotoBlock photos = {tour.tourPhoto}/>
+        
         <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'
