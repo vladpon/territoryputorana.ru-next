@@ -4,24 +4,27 @@
 
 
     .day {      
-        background-color: const.$secondary-background-color;
-        border: 1px solid rgb(189, 189, 189);
+        background-color: const.$primary-background-color;
+        // border: 1px solid rgb(189, 189, 189);
         border-radius: 4px;
         border-left: none;
         border-right: none;
-        cursor: pointer;
-        margin-bottom: 1.2em;
+        // cursor: pointer;
+        // margin-bottom: 1.2em;
+        padding: 1.2em;
+        margin-top: 1.5em;
 
-        
+                
 
         &__title {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 1.2em;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-between;
+            // padding: 1.2em;
 
             & h3 {
                 font-size: 1.2em;
+                margin-block-end: 1em;
             }
 
             & img {
@@ -35,8 +38,9 @@
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
-            max-height: 0px;
+            // max-height: 0px;
             overflow: hidden;
+            gap: 2em;
 
             transition: max-height 0.6s ease;
 
@@ -48,13 +52,13 @@
 
 
         &__text {
-                padding: 2em;
+                // padding: 2em;
                 height: 100%;
                 flex: 1 1 30px;
 
                 & p {
                     font-size: 0.8em;
-                    text-align: justify;
+                    text-align: left;
                     font-weight: 300;
                 }
 
@@ -72,7 +76,7 @@
         }
 
         &__img {
-            padding: 2em;
+            // padding: 2em;
             flex: 1 1 20px;
 
             & img {
@@ -85,18 +89,26 @@
             }
         }
 
-        
-        &_opened {
-            & .day__content {
-                max-height: 800px;
-                overflow: hidden;
-            }
+        &:nth-child(odd) {
+            background-color: black;
+            color: white;
 
-            .day__title img {
-                rotate: (-180deg);
+            .day__content {
+                flex-direction: row-reverse;
             }
         }
+
         
+        // &_opened {
+        //     & .day__content {
+        //         max-height: 800px;
+        //         overflow: hidden;
+        //     }
+
+        //     .day__title img {
+        //         rotate: (-180deg);
+        //     }
+        // }        
               
 }
         

@@ -41,7 +41,7 @@ const Lostput = async () => {
                         link: 'здесь', 
                         href: 'https://www.russiadiscovery.ru/tours/putorana-plateau-gory-bez-vershin/'
                   }}
-              backgroundcolor = {BACKGROUNDCOLORS.secondary} 
+              backgroundcolor = {BACKGROUNDCOLORS.primary} 
               titleColor = {COLORS.black} 
               textColor = {COLORS.black}
               titleAlign = {'center'}
@@ -56,14 +56,14 @@ const Lostput = async () => {
                         href: '/helitour',
                         text: [' чтобы облететь наиболее живописные и недоступные уголки плато Путорана. Вы увидите высочайшие в России водопады и бездонные каньоны, а возможно, даже встретитесь с путоранским снежным бараном — уникальным животным-эндемиком, обитающим в этих краях.']
                   }}
-              backgroundcolor = {BACKGROUNDCOLORS.secondary} 
+              backgroundcolor = {BACKGROUNDCOLORS.primary} 
               titleColor = {COLORS.black} 
               textColor = {COLORS.black}
               titleAlign = {'center'}
               textAlign = {'left'}/>
         <PhotoBlock photos = {tour.tourPhoto}/>
         <TextBlock
-              backgroundcolor = {BACKGROUNDCOLORS.secondary}
+              backgroundcolor = {BACKGROUNDCOLORS.primary}
               title = 'Проживание'
               text = {['На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:']}
               titleAlign = 'center'

@@ -4,7 +4,8 @@ export const HEADERBGCOLORS = {
 
 export const BACKGROUNDCOLORS = {
     primary: '#fefefe',
-    secondary: '#eee'
+    secondary: '#eee',
+    black: 'rgb(29, 29, 27)'
 }
 
 export const COLORS = {
