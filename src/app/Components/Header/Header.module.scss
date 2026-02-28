@@ -39,7 +39,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     }
 
     &.main-page {
-        background-color: $main-page-header-background-color;
+        // background-color: $main-page-header-background-color;
         .menu__link {
             color: $main-page-menu-link-color;
             &::after {
@@ -83,7 +83,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
 
 
     &.tour-page-class {
-        background-color: $tour-page-header-background-color;
+        // background-color: $tour-page-header-background-color;
         .header__home_logo {
             
                 filter: invert(1);

@@ -17,17 +17,17 @@
             {
                 "id": "lostwaterfalls",
                 "href": "/lostwaterfalls",
-                "title": "Вертолетный VIP-тур «Затерянные водопады»"
+                "title": "Вертолетный ВИП-тур «Затерянные водопады»"
             },
             {
                 "id": "helifishing",
                 "href": "/helifishing",
-                "title": "Вертолётный VIP-тур: спортивная рыбалка"
+                "title": "Вертолётный ВИП-тур: спортивная рыбалка"
             },
             {
                 "id": "snowqueen",
                 "href": "/snowqueen",
-                "title": "Вертолётный VIP-тур «Царство Снежной Королевы»"
+                "title": "Вертолётный ВИП-тур «Царство Снежной Королевы»"
             },
             {
                 "id": "helipicnic",
@@ -79,7 +79,7 @@
     {
         "id": "3dtours",
         "href": "/tours3d",
-        "title": "3d tour",
+        "title": "3d тур",
         "items": [
             {
                 "id": "lama",
