@@ -1,6 +1,7 @@
 // 'use client'
 
 // import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import styles from './DayCard.module.scss'
 
 const DayCard = (props) => {
@@ -26,7 +27,11 @@ const DayCard = (props) => {
                         {dayDesc && dayDesc.map( (p, index) => <p key = {index}>{p}</p>)}
                     </div>
                     <div className={styles["day__img"]}>
-                        <img src={dayImg} />
+                        <Image 
+                            src={dayImg}
+                            alt=""
+                            width={857}
+                            height={500} />
                     </div>
                 </div>
     </div>   
