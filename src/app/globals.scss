@@ -175,7 +175,6 @@ body.lock {
     padding: 0;
     font-family: 'Onest', sans-serif;
     // font-weight: 300;
-    transition: all 0.3s ease 0s;
 }
 
 a {
@@ -255,6 +254,21 @@ body.lock {
     @media( max-width: map.get(const.$breakpoints, vs)){
         max-width: 315px;
     }
+}
+
+
+.section {
+    padding: 3.5em 0;
+    // @media (max-width: const.$lg) {
+    // }
+    // @media (max-width: const.$md) {
+    // }
+    // @media (max-width: const.$sm) {
+    // }
+    // @media (max-width: const.$xs) {
+    // }
+    // @media (max-width: const.$vs) {
+    // }    
 }
 
 
