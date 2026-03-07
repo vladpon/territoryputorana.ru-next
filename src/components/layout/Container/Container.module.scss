@@ -1,0 +1,31 @@
+// @use '../../../app/globals.scss';
+@use '../../../app/const.scss';
+@use 'sass:math';
+@use "sass:map";
+
+
+.container {
+    margin: 0 auto;
+    max-width: 2800px;
+    @media( max-width: map.get(const.$breakpoints, vl)){
+        max-width: 1850px;
+    }
+    @media( max-width: map.get(const.$breakpoints, xl)){
+        max-width: 1280px;
+    }
+    @media( max-width: map.get(const.$breakpoints, lg)){
+        max-width: 920px;
+    }
+    @media( max-width: map.get(const.$breakpoints, md)){
+        max-width: 700px;
+    }
+    @media( max-width: map.get(const.$breakpoints, sm)){
+        max-width: 400px;
+    }
+    @media( max-width: map.get(const.$breakpoints, xs)){
+        max-width: 350px;
+    }
+    @media( max-width: map.get(const.$breakpoints, vs)){
+        max-width: 315px;
+    }
+}

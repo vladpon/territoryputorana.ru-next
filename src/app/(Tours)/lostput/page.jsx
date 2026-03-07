@@ -4,7 +4,8 @@ import TextBlock from '../../Components/TextBlock/TextBlock'
 import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
-import AccordionCard from '../../Components/AccordionCard/AccordionCard'
+import AccordionCard from '../../../components/ui/AccordionCard/AccordionCard'
+import Section from '../../../components/layout/Section/Section'
 
 
 import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
@@ -49,7 +50,13 @@ const Lostput = async () => {
               textAlign = {'left'}/>
         
         <TourPageProgram tour = {tour}/>
-        <AccordionCard title = 'text' children={<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptate repudiandae aspernatur similique consequatur incidunt dolorem, quod, dicta, voluptatem illum beatae delectus labore amet minima rem. Dolorum, totam quas! Illum.</p>}/>
+
+        <Section>
+          <AccordionCard title = 'text'>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptate repudiandae aspernatur similique consequatur incidunt dolorem, quod, dicta, voluptatem illum beatae delectus labore amet minima rem. Dolorum, totam quas! Illum.</p>
+          </AccordionCard>
+        </Section>
+
         <TextBlock 
               title = 'Дополнительно' 
               text = {['Вы можете заказать ']} 

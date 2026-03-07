@@ -23,7 +23,7 @@ export default function AccordionCard({
   };
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} container`}>
       <button className={styles.header} onClick={toggle}>
         <span className={styles.title}>{title}</span>
 
