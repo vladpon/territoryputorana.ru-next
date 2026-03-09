@@ -95,6 +95,9 @@
 
             .day__content {
                 flex-direction: row-reverse;
+                @media (max-width: map.get(const.$breakpoints, sm)) {
+                    flex-direction: column;
+                }
             }
         }
 
