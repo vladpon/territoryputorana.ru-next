@@ -55,7 +55,7 @@ const Lostput = async () => {
         <TourPageProgram tour = {tour}/>
 
         <Section>
-
+          
           <AccordionCard title = 'Проживание'>
             <p>На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:</p>
             <ul>
@@ -76,11 +76,6 @@ const Lostput = async () => {
           </AccordionCard>
 
         </Section>
-
-        <Section>
-          <h2>TEST</h2>
-        </Section>
-
 
                
 
