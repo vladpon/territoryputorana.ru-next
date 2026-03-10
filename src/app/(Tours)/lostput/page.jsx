@@ -16,6 +16,8 @@ import { getTour } from '../../../lib/mongo/tours'
 import { getMetadata, getPage } from '../../../lib/mongo/pages'
 import PhotoSlider from '../../../components/ui/PhotoSlider/PhotoSlider'
 
+import styles from './Lostput.module.scss'
+
 
 
 const tourId = 'lostput'
@@ -70,9 +72,9 @@ const Lostput = async () => {
           titleAlign = {'center'}
           textAlign = {'left'}/>
 
-        <Section>
+        <Section className = {styles.bg_secondary}>
 
-          <AccordionCard title = 'Проживание'>
+          <AccordionCard title = 'Проживание' className={styles.bg_primary}>
             <p>На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:</p>
             <ul>
               <li>Комфортабельный гостевой дом с гостиной и отдельными комнатами для одно- и двухместного размещения, с кухней, душем и санузлом</li>
@@ -85,13 +87,13 @@ const Lostput = async () => {
             <GallerySlider photos={tour.tourPhoto} />
           </AccordionCard>
 
-          <AccordionCard title = 'Транспорт'>
+          <AccordionCard title = 'Транспорт' className={styles.bg_primary}>
               <p>Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).</p>
               <p>Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'</p>
             <GallerySlider photos={tour.tourPhoto} />
           </AccordionCard>
 
-          <AccordionCard title = 'Рекомендации по одежде и снаряжению'>
+          <AccordionCard title = 'Рекомендации по одежде и снаряжению' className={styles.bg_primary}>
               <div dangerouslySetInnerHTML={{__html: tour.clothes}}></div>
           </AccordionCard>
 

@@ -7,6 +7,7 @@ export default function AccordionCard({
   title,
   children,
   defaultOpen = false,
+  className
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const contentRef = useRef(null);
@@ -23,7 +24,7 @@ export default function AccordionCard({
   };
 
   return (
-    <div className={`${styles.card}`}>
+    <div className={`${styles.card} ${className}`}>
       <button className={styles.header} onClick={toggle}>
         <span className={styles.title}>{title}</span>
 

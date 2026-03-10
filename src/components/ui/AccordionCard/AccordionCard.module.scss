@@ -35,12 +35,14 @@
   letter-spacing: 0.7;
   font-size: 1.2em;
   font-weight: 300;
+  color: black;
 }
 
 .icon {
   font-size: 2.2em;
   font-weight: 300;
   transition: transform 0.3s ease;
+  color: black;
 
   &Open {
     transform: rotate(45deg);
