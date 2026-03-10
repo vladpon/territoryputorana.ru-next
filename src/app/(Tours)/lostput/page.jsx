@@ -55,7 +55,7 @@ const Lostput = async () => {
         <TourPageProgram tour = {tour}/>
 
         <Section>
-          
+
           <AccordionCard title = 'Проживание'>
             <p>На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:</p>
             <ul>
@@ -75,6 +75,10 @@ const Lostput = async () => {
             <GallerySlider photos={tour.tourPhoto} />
           </AccordionCard>
 
+          <AccordionCard title = 'Рекомендации по одежде и снаряжению'>
+              <div dangerouslySetInnerHTML={{__html: tour.clothes}}></div>
+          </AccordionCard>
+
         </Section>
 
                
@@ -92,7 +96,7 @@ const Lostput = async () => {
               textColor = {COLORS.black}
               titleAlign = {'center'}
               textAlign = {'left'}/>
-        <PhotoBlock photos = {tour.tourPhoto}/>
+        {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
         {/* <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.primary}
               title = 'Проживание'
@@ -112,7 +116,7 @@ const Lostput = async () => {
               listAlign = 'left'
             /> */}
         
-        <TextBlock
+        {/* <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'
             titleAlign = 'right'
@@ -120,7 +124,7 @@ const Lostput = async () => {
               'Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).',
               'Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'
             ]}
-            textAlign = 'right' />
+            textAlign = 'right' /> */}
         <RequestBlock bgImage = {'./img/lostput/lostput_req1.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
