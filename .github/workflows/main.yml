@@ -45,6 +45,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            which node
+            node -v
+            which pm2
             cd ${{ secrets.SERVER_PATH }}
             npm install --omit=dev
             pm2 restart putorana
