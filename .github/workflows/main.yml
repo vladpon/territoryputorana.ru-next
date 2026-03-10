@@ -45,6 +45,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            source $NVM_DIR/nvm.sh
+            nvm use 24
             cd ${{ secrets.SERVER_PATH }}
             npm install --omit=dev
             pm2 restart putorana
