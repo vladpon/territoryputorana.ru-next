@@ -51,8 +51,24 @@ const Lostput = async () => {
               textColor = {COLORS.black}
               titleAlign = {'center'}
               textAlign = {'left'}/>
+
+          
         
         <TourPageProgram tour = {tour}/>
+
+        <TextBlock 
+          title = 'Дополнительно' 
+          text = {['Вы можете заказать ']} 
+          aText = {{
+                    link: 'вертолетную экскурсию', 
+                    href: '/helitour',
+                    text: [' чтобы облететь наиболее живописные и недоступные уголки плато Путорана. Вы увидите высочайшие в России водопады и бездонные каньоны, а возможно, даже встретитесь с путоранским снежным бараном — уникальным животным-эндемиком, обитающим в этих краях.']
+              }}
+          backgroundcolor = {BACKGROUNDCOLORS.primary} 
+          titleColor = {COLORS.black} 
+          textColor = {COLORS.black}
+          titleAlign = {'center'}
+          textAlign = {'left'}/>
 
         <Section>
 
@@ -83,19 +99,7 @@ const Lostput = async () => {
 
                
 
-        <TextBlock 
-              title = 'Дополнительно' 
-              text = {['Вы можете заказать ']} 
-              aText = {{
-                        link: 'вертолетную экскурсию', 
-                        href: '/helitour',
-                        text: [' чтобы облететь наиболее живописные и недоступные уголки плато Путорана. Вы увидите высочайшие в России водопады и бездонные каньоны, а возможно, даже встретитесь с путоранским снежным бараном — уникальным животным-эндемиком, обитающим в этих краях.']
-                  }}
-              backgroundcolor = {BACKGROUNDCOLORS.primary} 
-              titleColor = {COLORS.black} 
-              textColor = {COLORS.black}
-              titleAlign = {'center'}
-              textAlign = {'left'}/>
+        
         {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
         {/* <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.primary}

@@ -41,7 +41,8 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     &.main-page {
         // background-color: $main-page-header-background-color;
         .menu__link {
-            color: $main-page-menu-link-color;
+            // color: $main-page-menu-link-color;
+            color: #000;
             &::after {
                 background-color: $main-page-menu-link-color;
             }
@@ -49,6 +50,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         .header__contacts {
             a {
                 color: $main-page-menu-link-color;
+                // color: #000;
             }
             .header__icon {
                 filter: invert(0);
