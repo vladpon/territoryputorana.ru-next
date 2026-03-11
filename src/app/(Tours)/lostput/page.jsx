@@ -2,7 +2,6 @@ import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
 import TextBlock from '../../Components/TextBlock/TextBlock'
 import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
-import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
 import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import AccordionCard from '../../../components/ui/AccordionCard/AccordionCard'
 import Section from '../../../components/layout/Section/Section'
@@ -14,11 +13,10 @@ import { COLORS, BACKGROUNDCOLORS } from '../../../constants/colors'
 
 import { getTour } from '../../../lib/mongo/tours'
 import { getMetadata, getPage } from '../../../lib/mongo/pages'
-import PhotoSlider from '../../../components/ui/PhotoSlider/PhotoSlider'
 
 import styles from './Lostput.module.scss'
 
-import transport from '../../../../public/data/transport.json'
+import transport from '../../../data/transport.json'
 
 const tourId = 'lostput'
 export async function generateMetadata()
@@ -60,7 +58,7 @@ const Lostput = async () => {
         
         <TourPageProgram tour = {tour}/>
 
-        <TextBlock 
+        {/* <TextBlock 
           title = 'Дополнительно' 
           text = {['Вы можете заказать ']} 
           aText = {{
@@ -72,7 +70,7 @@ const Lostput = async () => {
           titleColor = {COLORS.black} 
           textColor = {COLORS.black}
           titleAlign = {'center'}
-          textAlign = {'left'}/>
+          textAlign = {'left'}/> */}
 
         <Section className = {styles.bg_secondary}>
 

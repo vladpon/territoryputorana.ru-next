@@ -12,9 +12,9 @@
   height: 250px;
   cursor: pointer;
 
-  @media (max-width: map.get(const.$breakpoints, md)) {
-    height: 150px;
-  }
+  // @media (max-width: map.get(const.$breakpoints, md)) {
+  //   height: 150px;
+  // }
 }
 
 .image {

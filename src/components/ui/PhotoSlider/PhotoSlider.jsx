@@ -14,7 +14,6 @@ import styles from "./PhotoSlider.module.scss";
 export default function PhotoSlider({ photos }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  console.log(photos)
   const close = () => setActiveIndex(null);
 
   const next = () => {
@@ -57,6 +56,7 @@ useEffect(() => {
         spaceBetween={20}
         slidesPerView={3}
         breakpoints={{
+          320: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
