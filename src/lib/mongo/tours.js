@@ -78,3 +78,19 @@ export async function getToursProperty(property) {
         return {error: 'Failed to fetch tours'}
     }  
 }
+
+
+export async function insertTour(tour) {
+    
+    try {
+        if(!tours) await init()
+            const res = await tours
+                .insertOne(tour)
+                .toArray()
+        
+
+        return res
+    } catch (error) {
+        return {error: 'Failed to fetch tours'}
+    }  
+}

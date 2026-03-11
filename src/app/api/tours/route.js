@@ -1,4 +1,4 @@
-import { getTours, getToursProperty } from "../../../lib/mongo/tours"
+import { getTours, getToursProperty, insertTour } from "../../../lib/mongo/tours"
 import { NextResponse } from "next/server"
 
 export async function GET(request) {
@@ -8,4 +8,13 @@ export async function GET(request) {
 
 
     return NextResponse.json(result)
+}
+
+export async function POST(request) {
+
+    const body = await request.json();
+    const result = await insertTour(body)
+
+    return NextResponse.json(result);
+
 }
