@@ -18,7 +18,7 @@ import PhotoSlider from '../../../components/ui/PhotoSlider/PhotoSlider'
 
 import styles from './Lostput.module.scss'
 
-
+import transport from '../../../../public/data/transport.json'
 
 const tourId = 'lostput'
 export async function generateMetadata()
@@ -33,6 +33,8 @@ export async function generateMetadata()
 
 
 const Lostput = async () => {
+
+
 
   const tour = await getTour(tourId).then( res => res.result)
 
@@ -90,7 +92,7 @@ const Lostput = async () => {
           <AccordionCard title = 'Транспорт' className={styles.bg_primary}>
               <p>Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).</p>
               <p>Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'</p>
-            <GallerySlider photos={tour.tourPhoto} />
+            {transport.photo ? <GallerySlider photos={transport.photo} /> : <span>Loading...</span>}
           </AccordionCard>
 
           <AccordionCard title = 'Рекомендации по одежде и снаряжению' className={styles.bg_primary}>

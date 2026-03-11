@@ -14,6 +14,7 @@ import styles from "./PhotoSlider.module.scss";
 export default function PhotoSlider({ photos }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  console.log(photos)
   const close = () => setActiveIndex(null);
 
   const next = () => {
@@ -61,7 +62,7 @@ useEffect(() => {
         }}
         className={styles.slider}
       >
-        {photos.map((photo, i) => (
+        {photos?.map((photo, i) => (
           <SwiperSlide key={i}>
             <div
               className={styles.imageWrapper}
