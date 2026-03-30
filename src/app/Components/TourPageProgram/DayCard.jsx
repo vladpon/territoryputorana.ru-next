@@ -22,7 +22,6 @@ const DayCard = (props) => {
                     <div className = {styles["day__text"]}>
                         <div className = {`${styles["day__title"]}`}>
                             <h3>{dayTitle}</h3>
-                            {/* <img src={'/img/arrow.svg'}></img> */}
                         </div>
                         {dayDesc && dayDesc.map( (p, index) => <p key = {index}>{p}</p>)}
                     </div>
@@ -30,8 +29,9 @@ const DayCard = (props) => {
                         <Image 
                             src={dayImg}
                             alt=""
-                            width={857}
-                            height={500} />
+                            fill
+                            style={{ objectFit: "cover" }}
+                            />
                     </div>
                 </div>
     </div>   

@@ -41,7 +41,7 @@ const Header = () => {
    useEffect( () => {
       switch(pathname) {
         case '/':
-          setPageClass('other-page')
+          setPageClass('main-page')
           break
         case '/tours':
           setPageClass('other-page')
