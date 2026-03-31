@@ -1,44 +1,59 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 
+export async function PUT(req, { params }) {
 
+  try {
 
-// export async function GET(req, { params }) {
+    const { id } = params;
 
+    if (!ObjectId.isValid(id)) {
+      return Response.json(
+        { error: "Invalid ID" },
+        { status: 400 }
+      );
+    }
 
-//   const tour = await db
-//     .collection("tours")
-//     .findOne({ _id: new ObjectId(params.id) });
+    const body = await req.json();
 
-//   return Response.json(tour);
-// }
+    // 🔥 удаляем _id если пришёл
+    delete body._id;
 
+    // 🔥 базовая валидация
+    if (!body.title) {
+      return Response.json(
+        { error: "Title is required" },
+        { status: 400 }
+      );
+    }
 
+    const client = await clientPromise;
+    const db = client.db("territory");
 
+    const result = await db.collection("tours").updateOne(
+      { _id: new ObjectId(id) },
+      { $set: body }
+    );
 
-// export async function PUT(req, { params }) {
+    if (result.matchedCount === 0) {
+      return Response.json(
+        { error: "Tour not found" },
+        { status: 404 }
+      );
+    }
 
-//   const body = await req.json();
+    return Response.json({
+      success: true,
+      updated: result.modifiedCount
+    });
 
-//   const client = await clientPromise;
-//   const db = client.db("territory");
+  } catch (error) {
 
-//   await db.collection("tours").updateOne(
-//     { _id: new ObjectId(params.id) },
-//     { $set: body }
-//   );
+    return Response.json(
+      { error: error.message },
+      { status: 500 }
+    );
 
-//   return Response.json({ success: true });
-// }
+  }
 
-// export async function DELETE(req, { params }) {
-
-//   const client = await clientPromise;
-//   const db = client.db("territory");
-
-//   await db.collection("tours").deleteOne({
-//     _id: new ObjectId(params.id)
-//   });
-
-//   return Response.json({ success: true });
-// }
+}

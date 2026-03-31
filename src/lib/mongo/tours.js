@@ -1,52 +1,110 @@
 import clientPromise from ".";
 
-let client
-let db
-let tours
+// let client
+// let db
+// let tours
 
-async function init() {
-    if(db) return
-    try {
-        client = await clientPromise
-        db = await client.db()
-        tours = await db.collection('tours')
-    } catch (error) {
-        throw new Error(error)
-    }
+// async function init() {
+//     if(db) return
+//     try {
+//         client = await clientPromise
+//         db = await client.db()
+//         tours = db.collection('tours')
+//     } catch (error) {
+//         throw new Error(error)
+//     }
+// }
+
+// ;(async () => {
+//     await init()
+// })()
+
+
+//////AI VERSION
+
+
+async function getCollection() {
+    const client = await clientPromise
+    const db = client.db()
+    return db.collection('tours')
 }
-
-;(async () => {
-    await init()
-})()
-
-
-
 
 export async function getTours() {
     try {
-        if(!tours) await init()
-            const result = await tours
-                .find({})
-                .toArray()
-        
+        const tours = await getCollection()
+
+        const result = await tours.find({}).toArray()
+
         return result
     } catch (error) {
-        return {error: 'Failed to fetch tours'}
-    }    
+        console.error(error)
+        throw new Error('Failed to fetch tours')
+    }
 }
 
 export async function getMainPageTours() {
     try {
-        if(!tours) await init()
-            const result = await tours
-                .find({mainPageOrder: {$gt: 0}}).sort({mainPageOrder: 1})
-                .toArray()
-        
+        const tours = await getCollection()
+
+        const result = await tours
+            .find({ mainPageOrder: { $gt: 0 } })
+            .sort({ mainPageOrder: 1 })
+            .toArray()
+
         return result
     } catch (error) {
-        return {error: 'Failed to fetch tours'}
-    }    
+        console.error(error)
+        throw new Error('Failed to fetch main page tours')
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export async function getTours() {
+//     try {
+//         if(!tours) await init()
+//             const result = await tours
+//                 .find({})
+//                 .toArray()
+        
+//         return result
+//     } catch (error) {
+//         return {error: 'Failed to fetch tours'}
+//     }    
+// }
+
+// export async function getMainPageTours() {
+//     try {
+//         if(!tours) await init()
+//             const result = await tours
+//                 .find({mainPageOrder: {$gt: 0}}).sort({mainPageOrder: 1})
+//                 .toArray()
+        
+//         return result
+//     } catch (error) {
+//         return {error: 'Failed to fetch tours'}
+//     }    
+// }
 
 
 export async function getTour(tourId) {
