@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server"
 import { getTour, updateTour } from "@/lib/mongo/tours"
+import { requireAdmin } from "@/lib/require-admin"
+// import { auth } from "@/auth"
 
 export async function GET(request, { params }) {
     try {
@@ -24,6 +26,10 @@ export async function GET(request, { params }) {
 }
 
 export async function PATCH(request, { params }) {
+
+    const guard = await requireAdmin()
+    if (!guard.ok) return guard.response
+
     try {
         const { tourId } = await params
         const body = await request.json()
