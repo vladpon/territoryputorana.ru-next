@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import TourPageCover from '../../Components/TourPageCover/TourPageCover'
 import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
 import TextBlock from '../../Components/TextBlock/TextBlock'
@@ -32,9 +34,9 @@ export async function generateMetadata()
 
 const Lostput = async () => {
 
-
-
   const tour = await getTour(tourId)
+
+  if (!tour) notFound()
 
   return (
     <main>
