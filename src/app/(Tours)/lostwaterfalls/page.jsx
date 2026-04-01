@@ -16,7 +16,7 @@ export const metadata = {
 
 
 const LostWaterfalls = async () => {
-    const tour = await getTour('lostwaterfalls').then( res => res.result)
+    const tour = await getTour('lostwaterfalls')
 
 
   return (

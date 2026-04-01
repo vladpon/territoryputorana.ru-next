@@ -28,8 +28,7 @@ export async function generateMetadata()
 
 const Helipicnic = async () => {
 
-  const tour = await getTour(tourId).then( res => res.result)
-
+  const tour = await getTour(tourId)
   return (
     <main>
         {/* <MainLogo /> */}

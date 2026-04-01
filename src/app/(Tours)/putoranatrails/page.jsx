@@ -27,7 +27,7 @@ export const metadata = {
 
 
 const PutoranaTrails = async () => {
-    const tour = await getTour('putoranatrails').then( res => res.result)
+    const tour = await getTour('putoranatrails')
 
   return (
     <main>

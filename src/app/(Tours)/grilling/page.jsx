@@ -28,7 +28,7 @@ export async function generateMetadata()
 
 const Grilling = async () => {
 
-  const tour = await getTour(tourId).then( res => res.result)
+  const tour = await getTour(tourId)
 
   return (
     <main>
