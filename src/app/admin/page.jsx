@@ -1,17 +1,13 @@
-import { auth } from "@/auth"
-import { redirect } from "next/navigation"
+import Link from "next/link"
 
-export default async function AdminPage() {
-    const session = await auth()
-
-    if (!session || session.user?.role !== "admin") {
-        redirect("/login")
-    }
-
+export default function AdminPage() {
     return (
         <main>
-            <h1>Админка</h1>
-            <p>Вы авторизованы</p>
+            <h1 style={{ marginBottom: "16px" }}>Админка</h1>
+
+            <div style={{ display: "grid", gap: "12px", maxWidth: "420px" }}>
+                <Link href="/admin/tours">Перейти к турам</Link>
+            </div>
         </main>
     )
 }

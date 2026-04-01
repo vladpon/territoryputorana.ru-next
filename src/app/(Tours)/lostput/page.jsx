@@ -34,7 +34,7 @@ const Lostput = async () => {
 
 
 
-  const tour = await getTour(tourId).then( res => res.result)
+  const tour = await getTour(tourId)
 
   return (
     <main>
