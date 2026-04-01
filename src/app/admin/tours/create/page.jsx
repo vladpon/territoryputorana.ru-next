@@ -1,15 +1,15 @@
-import TourForm from "@/components/admin/TourForm";
+// import TourForm from "@/components/admin/TourForm";
 
-export default function CreateTour() {
+// export default function CreateTour() {
 
-  return (
-    <div>
+//   return (
+//     <div>
 
-      <h1>Create Tour</h1>
+//       <h1>Create Tour</h1>
 
-      <TourForm />
+//       <TourForm />
 
-    </div>
-  );
+//     </div>
+//   );
 
-}
+// }

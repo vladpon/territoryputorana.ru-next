@@ -1,62 +1,62 @@
-"use client";
+// "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
+// import { useEffect, useState } from "react";
+// import Link from "next/link";
 
-export default function ToursAdmin() {
+// export default function ToursAdmin() {
 
-  const [tours, setTours] = useState([]);
+//   const [tours, setTours] = useState([]);
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    fetch("/api/tours")
-      .then(r => r.json())
-      .then(setTours);
+//     fetch("/api/tours")
+//       .then(r => r.json())
+//       .then(setTours);
 
-  }, []);
+//   }, []);
 
-  async function remove(id) {
+//   async function remove(id) {
 
-    await fetch("/api/tours/" + id, {
-      method: "DELETE"
-    });
+//     await fetch("/api/tours/" + id, {
+//       method: "DELETE"
+//     });
 
-    setTours(tours.filter(t => t._id !== id));
+//     setTours(tours.filter(t => t._id !== id));
 
-  }
+//   }
 
-  return (
+//   return (
 
-    <div>
+//     <div>
 
-      <h1>Tours</h1>
+//       <h1>Tours</h1>
 
-      <Link href="/admin/tours/create">
-        Create tour
-      </Link>
+//       <Link href="/admin/tours/create">
+//         Create tour
+//       </Link>
 
-      {tours.map(tour => (
+//       {tours.map(tour => (
 
-        <div key={tour._id}>
+//         <div key={tour._id}>
 
-          {tour.title}
+//           {tour.title}
 
-          <Link href={"/admin/tours/edit/" + tour._id}>
-            edit
-          </Link>
+//           <Link href={"/admin/tours/edit/" + tour._id}>
+//             edit
+//           </Link>
 
-          <button
-            onClick={() => remove(tour._id)}
-          >
-            delete
-          </button>
+//           <button
+//             onClick={() => remove(tour._id)}
+//           >
+//             delete
+//           </button>
 
-        </div>
+//         </div>
 
-      ))}
+//       ))}
 
-    </div>
+//     </div>
 
-  );
+//   );
 
-}
+// }

@@ -1,32 +1,32 @@
-import TourForm from "@/components/admin/TourForm";
+// import TourForm from "@/components/admin/TourForm";
 
-async function getTour(id) {
+// async function getTour(id) {
 
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_SITE_URL +
-    "/api/tours/" +
-    id,
-    { cache: "no-store" }
-  );
+//   const res = await fetch(
+//     process.env.NEXT_PUBLIC_SITE_URL +
+//     "/api/tours/" +
+//     id,
+//     { cache: "no-store" }
+//   );
 
-  return res.json();
+//   return res.json();
 
-}
+// }
 
-export default async function EditTour({ params }) {
+// export default async function EditTour({ params }) {
 
-  const tour = await getTour(params.id);
+//   const tour = await getTour(params.id);
 
-  return (
+//   return (
 
-    <div>
+//     <div>
 
-      <h1>Edit Tour</h1>
+//       <h1>Edit Tour</h1>
 
-      <TourForm initialData={tour} />
+//       <TourForm initialData={tour} />
 
-    </div>
+//     </div>
 
-  );
+//   );
 
-}
+// }

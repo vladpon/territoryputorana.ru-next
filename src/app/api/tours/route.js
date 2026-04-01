@@ -1,20 +1,34 @@
-import { getTours, getToursProperty, insertTour } from "../../../lib/mongo/tours"
+
 import { NextResponse } from "next/server"
+import { getTours, getToursProperty } from "@/lib/mongo/tours"
 
 export async function GET(request) {
-    
+
     const property = request.nextUrl.searchParams.get('property')
-    const result = property ? await getToursProperty(property) : await getTours()
 
-
-    return NextResponse.json(result)
-}
-
-export async function POST(request) {
-
-    const body = await request.json();
-    const result = await insertTour(body)
-
-    return NextResponse.json(result);
-
+    if(property)
+    {
+        try {
+            const tours = await getToursProperty(property)
+            return NextResponse.json(tours, { status: 200 })
+        } catch (error) {
+            console.error(error)
+            return NextResponse.json(
+                { error: "Failed to fetch tours" },
+                { status: 500 }
+            )
+        }
+    } else
+    {
+        try {
+            const tours = await getTours()
+            return NextResponse.json(tours, { status: 200 })
+        } catch (error) {
+            console.error(error)
+            return NextResponse.json(
+                { error: "Failed to fetch tours" },
+                { status: 500 }
+            )
+        }
+    }
 }
