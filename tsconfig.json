@@ -33,9 +33,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/Components/Header/HeaderProvider.jsx",
-    "src/app/Components/Header/MainMenu.jsx",
-    "src/app/(MainPage)/page.jsx",
+    "src/components/Header/HeaderProvider.jsx",
+    "src/components/Header/MainMenu.jsx",
+    "src/app/(site)/(MainPage)/page.jsx",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
