@@ -1,132 +1,8 @@
-// "use client"
-
-// import { useState } from "react"
-// import { useRouter } from "next/navigation"
-
-// export default function TourForm({ initialData }) {
-//     const router = useRouter()
-
-//     const originalTourId = initialData.tourId
-
-//     const [jsonText, setJsonText] = useState(
-//         JSON.stringify(initialData, null, 2)
-//     )
-//     const [saving, setSaving] = useState(false)
-//     const [error, setError] = useState("")
-//     const [success, setSuccess] = useState("")
-
-//     async function handleSave() {
-//         setError("")
-//         setSuccess("")
-
-//         let parsedData
-
-//         try {
-//             parsedData = JSON.parse(jsonText)
-//         } catch (err) {
-//             setError("Некорректный JSON")
-//             return
-//         }
-
-//         delete parsedData._id
-
-//         setSaving(true)
-
-//         try {
-//             const res = await fetch(`/api/tours/${originalTourId}`, {
-//                 method: "PATCH",
-//                 headers: {
-//                     "Content-Type": "application/json"
-//                 },
-//                 body: JSON.stringify(parsedData)
-//             })
-
-//             const data = await res.json()
-
-//             if (!res.ok) {
-//                 setError(data?.error || "Ошибка сохранения")
-//                 setSaving(false)
-//                 return
-//             }
-
-//             setSuccess("Изменения сохранены")
-//             setSaving(false)
-
-//             if (parsedData.tourId && parsedData.tourId !== originalTourId) {
-//                 router.push(`/admin/tours/edit/${parsedData.tourId}`)
-//                 router.refresh()
-//                 return
-//             }
-
-//             router.refresh()
-//         } catch (err) {
-//             setError("Ошибка сети при сохранении")
-//             setSaving(false)
-//         }
-//     }
-
-//     return (
-//         <div style={{ display: "grid", gap: "16px" }}>
-//             <div
-//                 style={{
-//                     padding: "12px",
-//                     border: "1px solid #ddd",
-//                     borderRadius: "8px",
-//                     background: "#fafafa"
-//                 }}
-//             >
-//                 <div><strong>Редактирование целого документа</strong></div>
-//                 <div style={{ marginTop: "8px", fontSize: "14px", color: "#666" }}>
-//                     Пока структура БД не реформирована, это самый удобный способ.
-//                 </div>
-//             </div>
-
-//             <textarea
-//                 value={jsonText}
-//                 onChange={(e) => setJsonText(e.target.value)}
-//                 spellCheck={false}
-//                 style={{
-//                     width: "100%",
-//                     minHeight: "700px",
-//                     fontFamily: "monospace",
-//                     fontSize: "14px",
-//                     lineHeight: "1.5",
-//                     padding: "16px",
-//                     border: "1px solid #ccc",
-//                     borderRadius: "8px"
-//                 }}
-//             />
-
-//             <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-//                 <button
-//                     type="button"
-//                     onClick={handleSave}
-//                     disabled={saving}
-//                     style={{
-//                         padding: "10px 16px",
-//                         cursor: saving ? "default" : "pointer"
-//                     }}
-//                 >
-//                     {saving ? "Сохраняем..." : "Сохранить"}
-//                 </button>
-
-//                 {success ? (
-//                     <span style={{ color: "green" }}>{success}</span>
-//                 ) : null}
-
-//                 {error ? (
-//                     <span style={{ color: "crimson" }}>{error}</span>
-//                 ) : null}
-//             </div>
-//         </div>
-//     )
-// }
-
-
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
+import styles from "./TourForm.module.scss"
 
 function linesToArray(value) {
     return value
@@ -296,311 +172,271 @@ export default function TourForm({ tourId }) {
     }
 
     if (loading) {
-        return <div>Загрузка тура...</div>
+        return <div className={styles.stateBox}>Загрузка тура...</div>
     }
 
     return (
-        <form
-            onSubmit={handleSubmit}
-            style={{
-                display: "grid",
-                gap: "24px",
-                maxWidth: "1000px"
-            }}
-        >
-            <section
-                style={{
-                    border: "1px solid #ddd",
-                    borderRadius: "12px",
-                    padding: "20px",
-                    display: "grid",
-                    gap: "16px"
-                }}
-            >
-                <h2 style={{ margin: 0 }}>Основная информация</h2>
+        <form className={styles.form} onSubmit={handleSubmit}>
+            <section className={styles.section}>
+                <div className={styles.sectionHeader}>
+                    <h2 className={styles.sectionTitle}>Основная информация</h2>
+                    <p className={styles.sectionText}>
+                        Базовые поля тура, URL и порядок вывода.
+                    </p>
+                </div>
 
-                <div style={{ display: "grid", gap: "12px" }}>
-                    <label>
-                        <div>Название тура</div>
+                <div className={styles.fields}>
+                    <label className={styles.field}>
+                        <span className={styles.label}>Название тура</span>
                         <input
+                            className={styles.input}
                             name="title"
                             value={form.title}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
-                    <label>
-                        <div>tourId</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>tourId</span>
                         <input
+                            className={styles.input}
                             name="tourId"
                             value={form.tourId}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
-                    <label>
-                        <div>href</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>href</span>
                         <input
+                            className={styles.input}
                             name="href"
                             value={form.href}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
                     {previewHref ? (
-                        <div style={{ fontSize: "14px", color: "#666" }}>
-                            Предпросмотр ссылки: {previewHref}
+                        <div className={styles.helper}>
+                            Предпросмотр ссылки: <span>{previewHref}</span>
                         </div>
                     ) : null}
 
-                    <div
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                            gap: "12px"
-                        }}
-                    >
-                        <label>
-                            <div>Сезон</div>
+                    <div className={styles.grid3}>
+                        <label className={styles.field}>
+                            <span className={styles.label}>Сезон</span>
                             <input
+                                className={styles.input}
                                 name="season"
                                 value={form.season}
                                 onChange={handleChange}
-                                style={{ width: "100%", padding: "10px" }}
                             />
                         </label>
 
-                        <label>
-                            <div>Длительность</div>
+                        <label className={styles.field}>
+                            <span className={styles.label}>Длительность</span>
                             <input
+                                className={styles.input}
                                 name="time"
                                 value={form.time}
                                 onChange={handleChange}
-                                style={{ width: "100%", padding: "10px" }}
                             />
                         </label>
 
-                        <label>
-                            <div>Цена</div>
+                        <label className={styles.field}>
+                            <span className={styles.label}>Цена</span>
                             <input
+                                className={styles.input}
                                 name="price"
                                 value={form.price}
                                 onChange={handleChange}
-                                style={{ width: "100%", padding: "10px" }}
                             />
                         </label>
                     </div>
 
-                    <div
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                            gap: "12px"
-                        }}
-                    >
-                        <label>
-                            <div>Reference</div>
+                    <div className={styles.grid2}>
+                        <label className={styles.field}>
+                            <span className={styles.label}>Reference</span>
                             <input
+                                className={styles.input}
                                 name="reference"
                                 value={form.reference}
                                 onChange={handleChange}
-                                style={{ width: "100%", padding: "10px" }}
                             />
                         </label>
 
-                        <label>
-                            <div>Порядок на главной</div>
+                        <label className={styles.field}>
+                            <span className={styles.label}>Порядок на главной</span>
                             <input
+                                className={styles.input}
                                 name="mainPageOrder"
                                 value={form.mainPageOrder}
                                 onChange={handleChange}
-                                style={{ width: "100%", padding: "10px" }}
                             />
                         </label>
                     </div>
                 </div>
             </section>
 
-            <section
-                style={{
-                    border: "1px solid #ddd",
-                    borderRadius: "12px",
-                    padding: "20px",
-                    display: "grid",
-                    gap: "16px"
-                }}
-            >
-                <h2 style={{ margin: 0 }}>Заголовки и короткие блоки</h2>
+            <section className={styles.section}>
+                <div className={styles.sectionHeader}>
+                    <h2 className={styles.sectionTitle}>Заголовки и текстовые блоки</h2>
+                    <p className={styles.sectionText}>
+                        Короткие текстовые поля и описания.
+                    </p>
+                </div>
 
-                <div style={{ display: "grid", gap: "12px" }}>
-                    <label>
-                        <div>aboutTitle</div>
+                <div className={styles.fields}>
+                    <label className={styles.field}>
+                        <span className={styles.label}>aboutTitle</span>
                         <input
+                            className={styles.input}
                             name="aboutTitle"
                             value={form.aboutTitle}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
-                    <label>
-                        <div>detailsTitle</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>detailsTitle</span>
                         <input
+                            className={styles.input}
                             name="detailsTitle"
                             value={form.detailsTitle}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
-                    <label>
-                        <div>details</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>details</span>
                         <textarea
+                            className={`${styles.input} ${styles.textarea}`}
                             name="details"
                             value={form.details}
                             onChange={handleChange}
                             rows={4}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
-                    <label>
-                        <div>included</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>included</span>
                         <textarea
+                            className={`${styles.input} ${styles.textarea}`}
                             name="included"
                             value={form.included}
                             onChange={handleChange}
                             rows={4}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
-                    <label>
-                        <div>clothes</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>clothes</span>
                         <textarea
+                            className={`${styles.input} ${styles.textarea}`}
                             name="clothes"
                             value={form.clothes}
                             onChange={handleChange}
                             rows={4}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
                 </div>
             </section>
 
-            <section
-                style={{
-                    border: "1px solid #ddd",
-                    borderRadius: "12px",
-                    padding: "20px",
-                    display: "grid",
-                    gap: "16px"
-                }}
-            >
-                <h2 style={{ margin: 0 }}>Изображения обложки</h2>
+            <section className={styles.section}>
+                <div className={styles.sectionHeader}>
+                    <h2 className={styles.sectionTitle}>Обложки</h2>
+                    <p className={styles.sectionText}>
+                        Основные изображения для карточки и страницы тура.
+                    </p>
+                </div>
 
-                <div style={{ display: "grid", gap: "12px" }}>
-                    <label>
-                        <div>bigImg</div>
+                <div className={styles.fields}>
+                    <label className={styles.field}>
+                        <span className={styles.label}>bigImg</span>
                         <input
+                            className={styles.input}
                             name="bigImg"
                             value={form.bigImg}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
                     {form.bigImg ? (
-                        <img
-                            src={form.bigImg}
-                            alt=""
-                            style={{
-                                maxWidth: "320px",
-                                borderRadius: "8px",
-                                border: "1px solid #ddd"
-                            }}
-                        />
+                        <div className={styles.previewWrap}>
+                            <img className={styles.previewImage} src={form.bigImg} alt="" />
+                        </div>
                     ) : null}
 
-                    <label>
-                        <div>smallImg</div>
+                    <label className={styles.field}>
+                        <span className={styles.label}>smallImg</span>
                         <input
+                            className={styles.input}
                             name="smallImg"
                             value={form.smallImg}
                             onChange={handleChange}
-                            style={{ width: "100%", padding: "10px" }}
                         />
                     </label>
 
                     {form.smallImg ? (
-                        <img
-                            src={form.smallImg}
-                            alt=""
-                            style={{
-                                maxWidth: "240px",
-                                borderRadius: "8px",
-                                border: "1px solid #ddd"
-                            }}
-                        />
+                        <div className={styles.previewWrap}>
+                            <img className={styles.previewImageSmall} src={form.smallImg} alt="" />
+                        </div>
                     ) : null}
                 </div>
             </section>
 
-            <section
-                style={{
-                    border: "1px solid #ddd",
-                    borderRadius: "12px",
-                    padding: "20px",
-                    display: "grid",
-                    gap: "16px"
-                }}
-            >
-                <h2 style={{ margin: 0 }}>Массивы строк</h2>
+            <section className={styles.section}>
+                <div className={styles.sectionHeader}>
+                    <h2 className={styles.sectionTitle}>Массивы строк</h2>
+                    <p className={styles.sectionText}>
+                        Каждый пункт с новой строки. При сохранении строки превращаются в массив.
+                    </p>
+                </div>
 
-                <label>
-                    <div>about — по одной строке на пункт</div>
-                    <textarea
-                        name="about"
-                        value={form.about}
-                        onChange={handleChange}
-                        rows={8}
-                        style={{ width: "100%", padding: "10px" }}
-                    />
-                </label>
+                <div className={styles.fields}>
+                    <label className={styles.field}>
+                        <span className={styles.label}>about</span>
+                        <textarea
+                            className={`${styles.input} ${styles.textareaLarge}`}
+                            name="about"
+                            value={form.about}
+                            onChange={handleChange}
+                            rows={8}
+                        />
+                    </label>
 
-                <label>
-                    <div>description — по одной строке на пункт</div>
-                    <textarea
-                        name="description"
-                        value={form.description}
-                        onChange={handleChange}
-                        rows={8}
-                        style={{ width: "100%", padding: "10px" }}
-                    />
-                </label>
+                    <label className={styles.field}>
+                        <span className={styles.label}>description</span>
+                        <textarea
+                            className={`${styles.input} ${styles.textareaLarge}`}
+                            name="description"
+                            value={form.description}
+                            onChange={handleChange}
+                            rows={8}
+                        />
+                    </label>
+                </div>
             </section>
 
-            <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <div className={styles.actions}>
                 <button
+                    className={styles.submitButton}
                     type="submit"
                     disabled={saving}
-                    style={{
-                        padding: "12px 18px",
-                        cursor: saving ? "default" : "pointer"
-                    }}
                 >
                     {saving ? "Сохраняем..." : "Сохранить изменения"}
                 </button>
 
                 {success ? (
-                    <span style={{ color: "green" }}>{success}</span>
+                    <span className={`${styles.status} ${styles.success}`}>
+                        {success}
+                    </span>
                 ) : null}
 
                 {error ? (
-                    <span style={{ color: "crimson" }}>{error}</span>
+                    <span className={`${styles.status} ${styles.error}`}>
+                        {error}
+                    </span>
                 ) : null}
             </div>
         </form>

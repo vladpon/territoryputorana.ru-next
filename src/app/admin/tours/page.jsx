@@ -1,46 +1,8 @@
-// import Link from "next/link"
-// import { getTours } from "@/lib/mongo/tours"
-
-// export default async function AdminToursPage() {
-//     const tours = await getTours()
-
-//     return (
-//         <main>
-//             <h1 style={{ marginBottom: "20px" }}>Туры</h1>
-
-//             <div style={{ display: "grid", gap: "12px" }}>
-//                 {tours.map((tour) => (
-//                     <div
-//                         key={tour.tourId}
-//                         style={{
-//                             border: "1px solid #ddd",
-//                             borderRadius: "8px",
-//                             padding: "16px"
-//                         }}
-//                     >
-//                         <div style={{ marginBottom: "8px" }}>
-//                             <strong>{tour.title || "Без названия"}</strong>
-//                         </div>
-
-//                         <div style={{ marginBottom: "8px", fontSize: "14px", color: "#666" }}>
-//                             tourId: {tour.tourId}
-//                         </div>
-
-//                         <Link href={`/admin/tours/edit/${tour.tourId}`}>
-//                             Редактировать
-//                         </Link>
-//                     </div>
-//                 ))}
-//             </div>
-//         </main>
-//     )
-// }
-
-
 "use client"
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import styles from "./AdminToursPage.module.scss"
 
 export default function AdminToursPage() {
     const [tours, setTours] = useState([])
@@ -50,6 +12,9 @@ export default function AdminToursPage() {
     useEffect(() => {
         async function loadTours() {
             try {
+                setLoading(true)
+                setError("")
+
                 const res = await fetch("/api/tours", {
                     cache: "no-store"
                 })
@@ -73,36 +38,126 @@ export default function AdminToursPage() {
         loadTours()
     }, [])
 
-    if (loading) return <div style={{ padding: "24px" }}>Загрузка...</div>
-    if (error) return <div style={{ padding: "24px", color: "crimson" }}>{error}</div>
+    if (loading) {
+        return (
+            <main className={styles.page}>
+                <div className={styles.stateBox}>Загрузка туров...</div>
+            </main>
+        )
+    }
+
+    if (error) {
+        return (
+            <main className={styles.page}>
+                <div className={`${styles.stateBox} ${styles.errorBox}`}>
+                    {error}
+                </div>
+            </main>
+        )
+    }
 
     return (
-        <main style={{ padding: "24px" }}>
-            <h1 style={{ marginBottom: "20px" }}>Туры</h1>
+        <main className={styles.page}>
+            <div className={styles.header}>
+                <div>
+                    <h1 className={styles.title}>Туры</h1>
+                    <p className={styles.subtitle}>
+                        Список туров для редактирования в админке.
+                    </p>
+                </div>
 
-            <div style={{ display: "grid", gap: "12px" }}>
-                {tours.map((tour) => (
-                    <div
-                        key={tour.tourId}
-                        style={{
-                            border: "1px solid #ddd",
-                            borderRadius: "10px",
-                            padding: "16px"
-                        }}
-                    >
-                        <div style={{ fontWeight: 700 }}>{tour.title}</div>
-                        <div style={{ color: "#666", marginTop: "6px" }}>
-                            tourId: {tour.tourId}
-                        </div>
-
-                        <div style={{ marginTop: "12px" }}>
-                            <Link href={`/admin/tours/edit/${tour.tourId}`}>
-                                Редактировать
-                            </Link>
-                        </div>
-                    </div>
-                ))}
+                <div className={styles.counter}>
+                    Всего туров: <span>{tours.length}</span>
+                </div>
             </div>
+
+            {tours.length === 0 ? (
+                <div className={styles.stateBox}>Туры не найдены</div>
+            ) : (
+                <div className={styles.grid}>
+                    {tours.map((tour) => (
+                        <article key={tour.tourId} className={styles.card}>
+                            <div className={styles.cardTop}>
+                                <div className={styles.cardContent}>
+                                    <h2 className={styles.cardTitle}>
+                                        {tour.title || "Без названия"}
+                                    </h2>
+
+                                    <div className={styles.meta}>
+                                        <span className={styles.badge}>
+                                            tourId: {tour.tourId || "—"}
+                                        </span>
+
+                                        {tour.season ? (
+                                            <span className={styles.badge}>
+                                                {tour.season}
+                                            </span>
+                                        ) : null}
+
+                                        {tour.time ? (
+                                            <span className={styles.badge}>
+                                                {tour.time}
+                                            </span>
+                                        ) : null}
+                                    </div>
+
+                                    <div className={styles.infoList}>
+                                        <div className={styles.infoItem}>
+                                            <span className={styles.infoLabel}>Цена</span>
+                                            <span className={styles.infoValue}>
+                                                {tour.price || "—"}
+                                            </span>
+                                        </div>
+
+                                        <div className={styles.infoItem}>
+                                            <span className={styles.infoLabel}>Ссылка</span>
+                                            <span className={styles.infoValue}>
+                                                {tour.href || "—"}
+                                            </span>
+                                        </div>
+
+                                        <div className={styles.infoItem}>
+                                            <span className={styles.infoLabel}>Порядок</span>
+                                            <span className={styles.infoValue}>
+                                                {tour.mainPageOrder ?? "—"}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {tour.smallImg ? (
+                                    <div className={styles.imageWrap}>
+                                        <img
+                                            className={styles.image}
+                                            src={tour.smallImg}
+                                            alt={tour.title || ""}
+                                        />
+                                    </div>
+                                ) : null}
+                            </div>
+
+                            <div className={styles.actions}>
+                                <Link
+                                    className={styles.editLink}
+                                    href={`/admin/tours/edit/${tour.tourId}`}
+                                >
+                                    Редактировать
+                                </Link>
+
+                                {tour.href ? (
+                                    <Link
+                                        className={styles.viewLink}
+                                        href={tour.href}
+                                        target="_blank"
+                                    >
+                                        Открыть страницу
+                                    </Link>
+                                ) : null}
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            )}
         </main>
     )
 }
