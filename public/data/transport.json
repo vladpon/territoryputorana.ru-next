@@ -1,0 +1,24 @@
+{
+    "photo": [
+            {
+                "path": "/img/transport/transport_1.jpg",                       
+                "alt": ""
+            },
+            {
+                "path": "/img/transport/transport_2.jpg",
+                "alt": ""
+            },
+            {
+                "path": "/img/transport/transport_3.jpg",
+                "alt": ""
+            },
+            {
+                "path": "/img/transport/transport_4.jpg",
+                "alt": ""
+            },
+            {
+                "path": "/img/transport/transport_5.jpg",
+                "alt": ""
+            }
+        ]
+}

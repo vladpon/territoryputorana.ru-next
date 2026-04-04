@@ -1,5 +1,5 @@
 
-import InfoFrame from '../InfoFrame/InfoFrame'
+import InfoFrame from '@/components/blocks/InfoFrame/InfoFrame'
 import styles from './TourPageAbout.module.scss'
 
 const TourPageAbout = (props) => {
