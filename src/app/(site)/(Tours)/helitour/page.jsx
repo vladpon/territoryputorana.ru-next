@@ -1,11 +1,12 @@
+import TourPageCover from '@/components/tour/TourPageCover/TourPageCover'
+import TourPageAbout from '@/components/tour/TourPageAbout/TourPageAbout'
+import AccordionCard from '@/components/ui/AccordionCard/AccordionCard'
+import Section from '@/components/layout/Section/Section'
+import TextBlock from '@/components/blocks/TextBlock/TextBlock'
+import TourPageProgram from '@/components/tour/TourPageProgram/TourPageProgram'
+import RequestBlock from '@/components/blocks/RequestBlock/RequestBlock'
+import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 
-import MainLogo from '../../Components/MainLogo/MainLogo'
-import TourPageCover from '../../Components/TourPageCover/TourPageCover'
-import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
-import TextBlock from '../../Components/TextBlock/TextBlock'
-import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
-import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
-import RequestBlock from '../../Components/RequestBlock/RequestBlock'
 import { BACKGROUNDCOLORS } from '@/constants/colors'
 import { getTour } from '@/lib/mongo/tours'
 import { getMetadata } from '@/lib/mongo/pages'
@@ -64,7 +65,7 @@ const HeliTour = async () => {
             }}></img>
         </div>
 
-        <PhotoBlock photos = {tour.tourPhoto}/>
+        {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
 
         <RequestBlock bgImage = {'./img/helitour/helitour_req1.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>

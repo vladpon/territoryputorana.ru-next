@@ -1,11 +1,12 @@
 import { BACKGROUNDCOLORS } from '@/constants/colors'
-import MainLogo from '../../Components/MainLogo/MainLogo'
-import TourPageCover from '../../Components/TourPageCover/TourPageCover'
-import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
-import TextBlock from '../../Components/TextBlock/TextBlock'
-import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
-import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
-import RequestBlock from '../../Components/RequestBlock/RequestBlock'
+import TourPageCover from '@/components/tour/TourPageCover/TourPageCover'
+import TourPageAbout from '@/components/tour/TourPageAbout/TourPageAbout'
+import AccordionCard from '@/components/ui/AccordionCard/AccordionCard'
+import Section from '@/components/layout/Section/Section'
+import TextBlock from '@/components/blocks/TextBlock/TextBlock'
+import TourPageProgram from '@/components/tour/TourPageProgram/TourPageProgram'
+import RequestBlock from '@/components/blocks/RequestBlock/RequestBlock'
+import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 import { getTour } from '@/lib/mongo/tours'
 
 
@@ -43,7 +44,7 @@ const LostWaterfalls = async () => {
               ]}
               listAlign = 'left'
             />
-        <PhotoBlock photos = {tour.tourPhoto}/>
+        {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
         <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'

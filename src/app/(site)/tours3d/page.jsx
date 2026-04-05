@@ -1,6 +1,4 @@
-import MainLogo from '../../Components/MainLogo/MainLogo'
-import BigCards from '../../Components/BigCards/BigCards'
-
+import BigCards from '@/components/blocks/BigCards/BigCards'
 import styles from './tours3d.module.scss'
 
 const tours3d = [

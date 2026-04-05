@@ -1,5 +1,6 @@
-import Masonry from "../../Components/MasonryPhotoBlock/Masonry"
 
+
+import Masonry from '@/components/blocks/MasonryPhotoBlock/Masonry'
 import styles from './gallery.module.scss'
 
 // const photos1 = [

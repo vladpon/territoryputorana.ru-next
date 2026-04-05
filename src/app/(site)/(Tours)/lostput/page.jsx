@@ -7,7 +7,6 @@ import Section from '@/components/layout/Section/Section'
 import TextBlock from '@/components/blocks/TextBlock/TextBlock'
 import TourPageProgram from '@/components/tour/TourPageProgram/TourPageProgram'
 import RequestBlock from '@/components/blocks/RequestBlock/RequestBlock'
-
 import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 
 import { COLORS, BACKGROUNDCOLORS } from '@/constants/colors'

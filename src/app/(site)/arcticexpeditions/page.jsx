@@ -1,13 +1,16 @@
-import TourPageCover from '../../Components/TourPageCover/TourPageCover'
-import MainLogo from '../../Components/MainLogo/MainLogo'
-import TextBlock from '../../Components/TextBlock/TextBlock'
+import TourPageCover from '@/components/tour/TourPageCover/TourPageCover'
+import TextBlock from '@/components/blocks/TextBlock/TextBlock'
+import TourPageAbout from '@/components/tour/TourPageAbout/TourPageAbout'
+import MainLogo from '@/components/blocks/MainLogo/MainLogo'
+
 
 import { BACKGROUNDCOLORS, COLORS } from '@/constants/colors'
 
-import styles from './arcticexpeditions.module.scss'
 
-import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
-import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
+import styles from './arcticexpeditions.module.scss'
+import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
+
+
 
 
 

@@ -1,13 +1,14 @@
 import { BACKGROUNDCOLORS, COLORS } from '@/constants/colors'
-import MainLogo from '../../Components/MainLogo/MainLogo'
-import TourPageCover from '../../Components/TourPageCover/TourPageCover'
-import TourPageAbout from '../../Components/TourPageAbout/TourPageAbout'
-import TextBlock from '../../Components/TextBlock/TextBlock'
-import PhotoBlock from '../../Components/PhotoBlock/PhotoBlock'
-import RequestBlock from '../../Components/RequestBlock/RequestBlock'
+import TourPageCover from '@/components/tour/TourPageCover/TourPageCover'
+import TourPageAbout from '@/components/tour/TourPageAbout/TourPageAbout'
+import AccordionCard from '@/components/ui/AccordionCard/AccordionCard'
+import Section from '@/components/layout/Section/Section'
+import TextBlock from '@/components/blocks/TextBlock/TextBlock'
+import TourPageProgram from '@/components/tour/TourPageProgram/TourPageProgram'
+import RequestBlock from '@/components/blocks/RequestBlock/RequestBlock'
+import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 import { getJar } from '@/lib/mongo/jar'
 import { getMetadata } from '@/lib/mongo/pages'
-import TourPageProgram from '../../Components/TourPageProgram/TourPageProgram'
 
 
 
@@ -55,7 +56,7 @@ const Jar =  async() => {
             listAlign = 'left'
         />
         <TourPageProgram tour = {data} />
-        <PhotoBlock photos = {data.tourPhoto}/>
+        {/* <PhotoBlock photos = {data.tourPhoto}/> */}
         <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = ''

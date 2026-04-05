@@ -1,5 +1,5 @@
 
-import VkBlock from '../../Components/VkBlock/VkBlock'
+import VkBlock from '@/components/blocks/VkBlock/VkBlock'
 import styles from './about.module.scss'
 import AboutPartners from './AboutPartners'
 
