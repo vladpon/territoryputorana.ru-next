@@ -15,6 +15,7 @@ import { getTour } from '@/lib/mongo/tours'
 import { getMetadata, getPage } from '@/lib/mongo/pages'
 
 import styles from './Lostput.module.scss'
+import InfoContent from '@/components/ui/InfoContent/InfoContent'
 
 
 
@@ -33,7 +34,7 @@ export async function generateMetadata()
 
 const Lostput = async () => {
 
-  const transport = await fetch('https://figabit.ru/data/transport.json').then( (res => res.json()))
+  const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
   const tour = await getTour(tourId)
 
   if (!tour) notFound()
@@ -43,6 +44,7 @@ const Lostput = async () => {
         {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
+        <InfoContent info = {tour.info} />
         <TextBlock 
               title = {tour.varDetailstitle} 
               text = {['Организацией туров для сборных групп занимаются наши постоянные партнеры Russia Discovery. Доступные для бронирования даты можно посмотреть ']} 
