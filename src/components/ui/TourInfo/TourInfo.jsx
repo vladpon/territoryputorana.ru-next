@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import { normalizeInfo } from "@/lib/richText/infoParser"
-import styles from "./InfoContent.module.scss"
+import styles from "./TourInfo.module.scss"
 
 function isExternalLink(href = "") {
     return /^https?:\/\//i.test(href)
@@ -90,7 +90,7 @@ function renderBlock(block, index) {
     return null
 }
 
-export default function InfoContent({ info }) {
+export default function TourInfo({ info }) {
     const parsed = normalizeInfo(info)
 
     if (!parsed.title && !parsed.blocks.length) return null
