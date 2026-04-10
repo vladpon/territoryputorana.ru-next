@@ -10,6 +10,7 @@ import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 import { BACKGROUNDCOLORS } from '@/constants/colors'
 import { getTour } from '@/lib/mongo/tours'
 import { getMetadata } from '@/lib/mongo/pages'
+import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
 
 const tourId = 'helitour'
@@ -54,7 +55,7 @@ const HeliTour = async () => {
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             /> */}
 
-        <div className='container'
+        {/* <div className='container'
             style = {{ 
                 margin: '0 auto',
             }}>
@@ -63,9 +64,9 @@ const HeliTour = async () => {
             style = {{
                 width: '100%'
             }}></img>
-        </div>
+        </div> */}
 
-        {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
+        <PhotoBlock photos = {tour.tourPhoto}/>
 
         <RequestBlock bgImage = {'./img/helitour/helitour_req1.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>

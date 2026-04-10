@@ -13,6 +13,8 @@ import { COLORS, BACKGROUNDCOLORS } from '@/constants/colors'
 import { getTour } from '@/lib/mongo/tours'
 import { getMetadata, getPage } from '@/lib/mongo/pages'
 
+import styles from './Icedrift.module.scss'
+
 
 
 const tourId = 'icedrift'
@@ -37,7 +39,7 @@ const Icedrift = async () => {
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TourPageProgram tour = {tour}/>
-        <TextBlock
+        {/* <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.secondary}
               title = 'Проживание'
               text = {['На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:']}
@@ -53,9 +55,9 @@ const Icedrift = async () => {
                 'Гастрономическое сопровождение с локальными специалитетами — олениной и северной рыбой'
               ]}
               listAlign = 'left'
-            />
+            /> */}
         {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
-        <TextBlock
+        {/* <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Дополнительные условия'
             titleAlign = 'right'
@@ -64,7 +66,27 @@ const Icedrift = async () => {
               'Вертолётная экскурсия оплачивается дополнительно — от 760 000 руб/группа.',
               'Стоимость авиаперелёта до Норильска, проживание и питание в Норильске не входят в стоимость тура.'         
             ]}
-            textAlign = 'right' />
+            textAlign = 'right' /> */}
+            <Section className = {styles.bg_secondary}>
+
+          <AccordionCard title = 'Проживание' className={styles.bg_primary}>
+            <p>На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:</p>
+            <ul>
+              <li>Комфортабельный гостевой дом с гостиной и отдельными комнатами для одно- и двухместного размещения, с кухней, душем и санузлом</li>
+              <li>Баня с просторной комнатой отдыха и купелью с кристально чистой речной водой на террасе</li>
+              <li>Беседка-барбекю</li>
+              <li>Спутниковое телевидение, телефон и интернет</li>        
+            </ul>
+            <GallerySlider photos={tour.tourPhoto} />
+          </AccordionCard>
+
+          <AccordionCard title = 'Дополнительные условия' className={styles.bg_primary}>
+              <p>Вертолётная экскурсия оплачивается дополнительно — от 760 000 ₽ за группу</p>
+              <p>Стоимость авиаперелёта до Норильска, проживание и питание в Норильске не входят в стоимость тура.</p>
+          </AccordionCard>
+
+
+        </Section>
         <RequestBlock bgImage = {'./img/icedrift/icedrift_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )

@@ -1,4 +1,6 @@
 @use '../../../app/const.scss';
+@use 'sass:map';
+@use 'sass:color';
 
 .pb {
     width: 100%;
@@ -43,6 +45,10 @@
             height: 100%;  
             object-fit: contain;         
         }
+    }
+
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        display: none;
     }
 
 }

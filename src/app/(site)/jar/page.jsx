@@ -40,10 +40,11 @@ const Jar =  async() => {
         <TourPageAbout tour = {data} varInfoframe = {false}/>
         <TextBlock
             backgroundcolor = {COLORS.mainBlue}
-            title = 'Усадьба «Жар. Птица» — островок комфорта и уюта посреди дикой природы плато Путорана.'
+            title = 'Островок комфорта и уюта посреди дикой природы'
             titleAlign = 'center'
-            titleColor = {COLORS.white}
-            titleWeight = '700'
+            textAlign = 'left'
+            listAlign = 'left'
+
             list = {
                 [
                     '120 км от Норильска',
@@ -52,12 +53,13 @@ const Jar =  async() => {
                     'Сервис и комфорт вип-уровня'
                 ]
             }
-            listColor = {COLORS.white}
-            listAlign = 'left'
+            backgroundcolor = {BACKGROUNDCOLORS.primary} 
+              titleColor = {COLORS.black} 
+              textColor = {COLORS.black}
         />
         <TourPageProgram tour = {data} />
         {/* <PhotoBlock photos = {data.tourPhoto}/> */}
-        <TextBlock
+        {/* <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = ''
             titleAlign = 'right'
@@ -67,7 +69,7 @@ const Jar =  async() => {
                 'Частные группы могут арендовать усадьбу для скитура или хели-ски в горах плато Путорана.',
                 'Условия проживания: размещение гостей в центральном доме, баня и сушилка для вещей, питание по запросу.'
             ]}
-        />
+        /> */}
         {/* <RequestBlock bgImage = {'./img/jar/jar_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/> */}
     </main>
   )

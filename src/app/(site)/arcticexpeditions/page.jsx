@@ -2,15 +2,18 @@ import TourPageCover from '@/components/tour/TourPageCover/TourPageCover'
 import TextBlock from '@/components/blocks/TextBlock/TextBlock'
 import TourPageAbout from '@/components/tour/TourPageAbout/TourPageAbout'
 import MainLogo from '@/components/blocks/MainLogo/MainLogo'
+import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 
 
 import { BACKGROUNDCOLORS, COLORS } from '@/constants/colors'
 
 
-import styles from './arcticexpeditions.module.scss'
+
 import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
+import Section from '@/components/layout/Section/Section'
+import AccordionCard from '@/components/ui/AccordionCard/AccordionCard'
 
-
+import styles from './arcticexpeditions.module.scss'
 
 
 
@@ -32,17 +35,18 @@ const ArcticExpeditions = () => {
     <main>
       <TourPageCover tour = {coverData}/>
       <TourPageAbout tour = {{
-        about: ['Традиционно в весеннее время мы организуем снегоходную экспедицию на плато Путорана, подготовка к которой идёт целый год. Не больше двух путешественников могут стать полноценными членами профессиональной команды «Экспедиции Арктики».',
+        about: ['Вы можете стать участниками настоящей арктической экспедиции.',
+              'Традиционно в весеннее время мы организуем снегоходную экспедицию на плато Путорана, подготовка к которой идёт целый год. Не больше двух путешественников могут стать полноценными членами профессиональной команды «Экспедиции Арктики».',
               'Экспедиция – это не про знакомство с достопримечательностями и обзорные экскурсии, это про достижение и преодоление, покорение арктических высот, разведку новых территорий.'
             ],
-        aboutTitle: 'Вы можете стать участниками настоящей арктической экспедиции!',
+        aboutTitle: 'Об экспедиции',
         details: '<p><b>Продолжительность:</b> от 5 дней/ 6 ночей </p><p><b>Время проведения: </b>март-май</p><p><b>Группа: </b>не более 2-х путешественников в составе профессиональной команды экспедиции</p><p><b>Уровень: </b>необходимы хорошая физическая форма и опыт управления снегоходом</p><p><b>Стоимость: </b>от 550 000 руб/ участник</p>'
       }} />
       <MainLogo logoImg = './img/arcticLogo3.svg' backgroundColor = '#fff'/>
       <TextBlock 
-          backgroundcolor = {COLORS.mainBlue}
-          textColor = {COLORS.white}
-          titleColor = {COLORS.white}
+          backgroundcolor = {BACKGROUNDCOLORS.primary} 
+          titleColor = {COLORS.black} 
+          textColor = {COLORS.black}
           title = ''
           titleAlign = 'center'
           text = {[
@@ -57,9 +61,8 @@ const ArcticExpeditions = () => {
           {path: './img/expeditions/glr/3.jpg'},
           {path: './img/expeditions/glr/4.jpg'},
           {path: './img/expeditions/glr/5.jpg'},
-          {path: './img/expeditions/glr/6.jpg'}
         ]} />
-        <TextBlock
+        {/* <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Базовый лагерь экспедиции'
             titleAlign = 'center'
@@ -67,15 +70,27 @@ const ArcticExpeditions = () => {
             text = {[
                 'Усадьба «Жар. Птица» на озере Лама – более комфортных условий проживания в зимнее время на плато Путорана не существует. Уютный, большой и теплый дом с полноценными кроватями и свежим постельным бельем, ежедневная баня, вкусная еда с северным колоритом.'
             ]}
-        />
-         <PhotoBlock photos = {[
-          {path: './img/expeditions/glr/7.jpg'},
-          {path: './img/expeditions/glr/8.jpg'},
-          {path: './img/expeditions/glr/9.jpg'},
-          {path: './img/expeditions/glr/10.jpg'},
-          {path: './img/expeditions/glr/11.jpg'},
-          {path: './img/expeditions/glr/12.jpg'}
+        /> */}
+
+
+
+        <Section className = {styles.bg_secondary}>
+
+        <AccordionCard title = 'Базовый лагерь экспедиции' className={styles.bg_primary}>
+            <p>Усадьба «Жар. Птица» на озере Лама – более комфортных условий проживания в зимнее время на плато Путорана не существует. Уютный, большой и теплый дом с полноценными кроватями и свежим постельным бельем, ежедневная баня, вкусная еда с северным колоритом.</p>
+            <GallerySlider photos={[
+              {path: '/img/expeditions/glr/7.jpg'},
+              {path: '/img/expeditions/glr/8.jpg'},
+              {path: '/img/expeditions/glr/9.jpg'},
+              {path: '/img/expeditions/glr/10.jpg'},
+              {path: '/img/expeditions/glr/11.jpg'},
+              {path: '/img/expeditions/glr/12.jpg'}
         ]} />
+          </AccordionCard>
+
+        </Section>
+
+
     </main>
   )
 }
