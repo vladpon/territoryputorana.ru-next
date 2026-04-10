@@ -7,11 +7,13 @@ import TourPageProgram from '@/components/tour/TourPageProgram/TourPageProgram'
 import RequestBlock from '@/components/blocks/RequestBlock/RequestBlock'
 import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
 
+import styles from './Helifishing.module.scss'
 
 import { COLORS, BACKGROUNDCOLORS } from '@/constants/colors'
 
 import { getTour } from '@/lib/mongo/tours'
 import { getMetadata, getPage } from '@/lib/mongo/pages'
+import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
 
 
@@ -30,6 +32,7 @@ export async function generateMetadata()
 const Helifishing = async () => {
 
   const tour = await getTour(tourId)
+  const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
   
 
   return (
@@ -38,7 +41,7 @@ const Helifishing = async () => {
         <TourPageCover tour = {tour}/>
         <TourPageAbout tour = {tour} varInfoframe = {false}/>
         <TourPageProgram tour = {tour}/>
-        <TextBlock
+        {/* <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.secondary}
               title = 'Проживание'
               text = {['На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:']}
@@ -54,9 +57,10 @@ const Helifishing = async () => {
                 'Снаряжение для сапбординга, пакрафтинга, рыбалки'
               ]}
               listAlign = 'left'
-            />
-        {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
-        <TextBlock
+            /> */}
+            
+        
+        {/* <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'
             titleAlign = 'right'
@@ -68,7 +72,35 @@ const Helifishing = async () => {
               'Обратный вылет из Норильска будет утром понедельник. В Москву вы прибудете практически в тоже время, в которое вылетели из Норильска.',
               'По вашему желанию мы можем доставить вас в аэропорт Норильска ко времени обратного вылета на вертолёте прямо с усадьбы «Жар. Птица», либо организовать одну ночевку в гостинице в Норильске.'         
             ]}
-            textAlign = 'right' />
+            textAlign = 'right' /> */}
+            <Section className = {styles.bg_secondary}>
+              <AccordionCard title = 'Проживание' className={styles.bg_primary}>
+              <p>На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:</p>
+              <ul>
+                <li>Комфортабельный гостевой дом с гостиной и отдельными комнатами для одно- и двухместного размещения, с кухней, душем и санузлом</li>
+                <li>Баня с просторной комнатой отдыха и купелью с кристально чистой речной водой на террасе</li>
+                <li>Беседка-барбекю</li>
+                <li>Спутниковое телевидение, телефон и интернет</li>
+                <li>Снаряжение для сапбординга, пакрафтинга, рыбалки</li>              
+              </ul>
+              <GallerySlider photos={tour.tourPhoto} />
+            </AccordionCard>
+
+            <AccordionCard title = 'Транспорт' className={styles.bg_primary}>
+                <p>Учитывайте разницу во времени с Москвой +4 часа.</p>
+                <p>Этот тур можно провести в формате тура выходного дня.</p>
+                <p>Вылетая из Москвы вечером в четверг, вы прибудете в Норильск утром в пятницу, мы встретим вас в аэропорту и сразу отправимся в путешествие.</p>
+                <p>Обратный вылет из Норильска будет утром понедельник. В Москву вы прибудете практически в тоже время, в которое вылетели из Норильска.</p>
+                <p>По вашему желанию мы можем доставить вас в аэропорт Норильска ко времени обратного вылета на вертолёте прямо с усадьбы «Жар. Птица», либо организовать одну ночевку в гостинице в Норильске.</p>
+              {transport.photo ? <GallerySlider photos={transport.photo} /> : <span>Loading...</span>}
+            </AccordionCard>
+
+            <AccordionCard title = 'Рекомендации по одежде и снаряжению' className={styles.bg_primary}>
+                <div dangerouslySetInnerHTML={{__html: tour.clothes}}></div>
+            </AccordionCard>
+          </Section>
+
+              <PhotoBlock photos = {tour.tourPhoto}/>
         <RequestBlock bgImage = {'./img/helifishing/helifishing_req1.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )

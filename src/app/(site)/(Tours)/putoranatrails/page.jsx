@@ -10,6 +10,11 @@ import TextBlock from '@/components/blocks/TextBlock/TextBlock'
 import TourPageProgram from '@/components/tour/TourPageProgram/TourPageProgram'
 import RequestBlock from '@/components/blocks/RequestBlock/RequestBlock'
 import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
+import Section from '@/components/layout/Section/Section'
+
+import AccordionCard from '@/components/ui/AccordionCard/AccordionCard'
+import styles from './PutoranaTrails.module.scss'
+import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
 // const txtTitle = {
 //   title: "Транспорт",
@@ -27,13 +32,26 @@ export const metadata = {
 
 const PutoranaTrails = async () => {
     const tour = await getTour('putoranatrails')
+    const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
 
   return (
     <main>
         {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour} varInfoframe = {true}/>\
-        <TextBlock
+        <TourPageAbout tour = {tour} varInfoframe = {true}/>
+        <TextBlock 
+              title = {tour.varDetailstitle} 
+              text = {['Организацией туров для сборных групп занимаются наши постоянные партнеры Russia Discovery. Доступные для бронирования даты можно посмотреть ']} 
+              aText = {{
+                        link: 'здесь', 
+                        href: 'https://www.russiadiscovery.ru/tours/putorana-trekking-na-plato-putorana/'
+                  }}
+              backgroundcolor = {BACKGROUNDCOLORS.primary} 
+              titleColor = {COLORS.black} 
+              textColor = {COLORS.black}
+              titleAlign = {'center'}
+              textAlign = {'left'}/>
+        {/* <TextBlock
                 title = 'Дополнительно'
                 text = {['Вы можете заказать ']} 
                 aText = {{
@@ -45,9 +63,9 @@ const PutoranaTrails = async () => {
                 titleColor = {COLORS.white} 
                 textColor = {COLORS.white}
                 titleAlign = {'center'}
-                textAlign = {'left'}/>
+                textAlign = {'left'}/> */}
         <TourPageProgram tour = {tour}/>
-        <TextBlock
+        {/* <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.secondary}
               title = 'Проживание'
               text = {['На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:']}
@@ -64,9 +82,9 @@ const PutoranaTrails = async () => {
                 'Снаряжение для сапбординга, пакрафтинга, рыбалки'
               ]}
               listAlign = 'left'
-            />
+            /> */}
         {/* <PhotoBlock photos = {tour.tourPhoto}/> */}
-        <TextBlock
+        {/* <TextBlock
             backgroundcolor = {BACKGROUNDCOLORS.secondary}
             title = 'Транспорт'
             titleAlign = 'right'
@@ -75,7 +93,33 @@ const PutoranaTrails = async () => {
                 'Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).',
                 'Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.'
              ]}
-            textAlign = 'right' />
+            textAlign = 'right' /> */}
+        <Section className = {styles.bg_secondary}>
+
+          <AccordionCard title = 'Проживание' className={styles.bg_primary}>
+            <p>На усадьбе «Жар. Птица» созданы все условия для того, чтобы вы могли насладиться красотами северной природы, не лишая себя привычного сервиса и комфорта:</p>
+            <ul>
+              <li>Комфортабельный гостевой дом с гостиной и отдельными комнатами для одно- и двухместного размещения, с кухней, душем и санузлом</li>
+              <li>Малые лесные дома и глэмпинги для двухместного размещения</li>
+              <li>Баня с просторной комнатой отдыха и купелью с кристально чистой речной водой на террасе</li>
+              <li>Беседка-барбекю</li>
+              <li>Спутниковое телевидение, телефон и интернет</li>
+              <li>Снаряжение для сапбординга, пакрафтинга, рыбалки</li>              
+            </ul>
+            <GallerySlider photos={tour.tourPhoto} />
+          </AccordionCard>
+
+          <AccordionCard title = 'Транспорт' className={styles.bg_primary}>
+              <p>Трансферы по Норильску на автомобилях или микроавтобусах (в зависимости от количества человек в группе).</p>
+              <p>Заброска на озеро Лама и обратно на скоростном закрытом катере на воздушной подушке. На активных дневных маршрутах мы также перемещаемся на судне на воздушной подушке.</p>
+            {transport.photo ? <GallerySlider photos={transport.photo} /> : <span>Loading...</span>}
+          </AccordionCard>
+
+          <AccordionCard title = 'Рекомендации по одежде и снаряжению' className={styles.bg_primary}>
+              <div dangerouslySetInnerHTML={{__html: tour.clothes}}></div>
+          </AccordionCard>
+
+        </Section>
         <RequestBlock bgImage = {'./img/putoranatrails/putoranatrails_req.jpg'}  h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )
