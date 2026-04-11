@@ -54,6 +54,8 @@ function renderInlineNodes(nodes = [], keyPrefix = "inline") {
 }
 
 function renderBlock(block, index) {
+
+
     if (block.type === "fact") {
         return (
             <div key={block.key || index} className={styles.factRow}>
@@ -77,13 +79,16 @@ function renderBlock(block, index) {
         const Tag = block.style === "ordered" ? "ol" : "ul"
 
         return (
-            <Tag key={index} className={styles.list}>
-                {block.items.map((item, itemIndex) => (
-                    <li key={`${index}-${itemIndex}`} className={styles.listItem}>
-                        {renderInlineNodes(item.children, `list-${index}-${itemIndex}`)}
-                    </li>
-                ))}
-            </Tag>
+            <Fragment key={index} >
+                {block.label && <span className = {styles.listLabel}>{renderInlineNode(block.label)}</span>}
+                <Tag className={styles.list}>
+                    {block.items.map((item, itemIndex) => (
+                        <li key={`${index}-${itemIndex}`} className={styles.listItem}>
+                            {renderInlineNode(item, `list-${index}-${itemIndex}`)}
+                        </li>
+                    ))}
+                </Tag>
+            </Fragment>
         )
     }
 
@@ -91,6 +96,7 @@ function renderBlock(block, index) {
 }
 
 export default function TourInfo({ info }) {
+    
     const parsed = normalizeInfo(info)
 
     if (!parsed.title && !parsed.blocks.length) return null

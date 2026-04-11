@@ -1,8 +1,8 @@
 import TourPageCover from '@/components/tour/TourPageCover/TourPageCover'
 import TextBlock from '@/components/blocks/TextBlock/TextBlock'
 import TourPageAbout from '@/components/tour/TourPageAbout/TourPageAbout'
-import MainLogo from '@/components/blocks/MainLogo/MainLogo'
 import GallerySlider from "@/components/ui/PhotoSlider/PhotoSlider";
+import ArcticLogo from './ArcticLogo'
 
 
 import { BACKGROUNDCOLORS, COLORS } from '@/constants/colors'
@@ -25,7 +25,7 @@ export const metadata = {
 
 
 const coverData = {
-  title: 'Экспедиционный туризм',
+  title: '',
   bigImg: './img/expeditions/expeditions_cover.jpg'
 }
 
@@ -33,16 +33,78 @@ const ArcticExpeditions = () => {
 
   return (
     <main>
-      <TourPageCover tour = {coverData}/>
+      <TourPageCover tour = {coverData}>
+        <ArcticLogo />
+      </TourPageCover>
       <TourPageAbout tour = {{
         about: ['Вы можете стать участниками настоящей арктической экспедиции.',
               'Традиционно в весеннее время мы организуем снегоходную экспедицию на плато Путорана, подготовка к которой идёт целый год. Не больше двух путешественников могут стать полноценными членами профессиональной команды «Экспедиции Арктики».',
               'Экспедиция – это не про знакомство с достопримечательностями и обзорные экскурсии, это про достижение и преодоление, покорение арктических высот, разведку новых территорий.'
             ],
+         info: {
+              "version": 1,
+              "title": "",
+              "blocks": [
+                {
+                  "type": "fact",
+                  "key": "time",
+                  "label": "Продложительность",
+                  "value": [
+                    {
+                      "type": "text",
+                      "text": "от 5 дней/ 6 ночей"
+                    }
+                  ]
+                },
+                {
+                  "type": "fact",
+                  "key": "period",
+                  "label": "Время проведения",
+                  "value": [
+                    {
+                      "type": "text",
+                      "text": "март-май"
+                    }
+                  ]
+                },
+                {
+                  "type": "fact",
+                  "key": "groupSize",
+                  "label": "Группа",
+                  "value": [
+                    {
+                      "type": "text",
+                      "text": "не более 2-х путешественников в составе профессиональной команды экспедиции"
+                    }
+                  ]
+                },
+                {
+                  "type": "fact",
+                  "key": "uroven",
+                  "label": "Уровень",
+                  "value": [
+                    {
+                      "type": "text",
+                      "text": "необходимы хорошая физическая форма и опыт управления снегоходом"
+                    }
+                  ]
+                },
+                {
+                  "type": "fact",
+                  "key": "price",
+                  "label": "Стоимость",
+                  "value": [
+                    {
+                      "type": "text",
+                      "text": "от 550 000 ₽/ участник"
+                    }
+                  ]
+                }
+              ]
+            },
         aboutTitle: 'Об экспедиции',
         details: '<p><b>Продолжительность:</b> от 5 дней/ 6 ночей </p><p><b>Время проведения: </b>март-май</p><p><b>Группа: </b>не более 2-х путешественников в составе профессиональной команды экспедиции</p><p><b>Уровень: </b>необходимы хорошая физическая форма и опыт управления снегоходом</p><p><b>Стоимость: </b>от 550 000 руб/ участник</p>'
       }} />
-      <MainLogo logoImg = './img/arcticLogo3.svg' backgroundColor = '#fff'/>
       <TextBlock 
           backgroundcolor = {BACKGROUNDCOLORS.primary} 
           titleColor = {COLORS.black} 
@@ -79,12 +141,24 @@ const ArcticExpeditions = () => {
         <AccordionCard title = 'Базовый лагерь экспедиции' className={styles.bg_primary}>
             <p>Усадьба «Жар. Птица» на озере Лама – более комфортных условий проживания в зимнее время на плато Путорана не существует. Уютный, большой и теплый дом с полноценными кроватями и свежим постельным бельем, ежедневная баня, вкусная еда с северным колоритом.</p>
             <GallerySlider photos={[
-              {path: '/img/expeditions/glr/7.jpg'},
-              {path: '/img/expeditions/glr/8.jpg'},
-              {path: '/img/expeditions/glr/9.jpg'},
-              {path: '/img/expeditions/glr/10.jpg'},
-              {path: '/img/expeditions/glr/11.jpg'},
-              {path: '/img/expeditions/glr/12.jpg'}
+              {path: '/img/expeditions/glr/7.jpg',
+                alt: ''
+              },
+              {path: '/img/expeditions/glr/8.jpg',
+                alt: ''
+              },
+              {path: '/img/expeditions/glr/9.jpg',
+                alt: ''
+              },
+              {path: '/img/expeditions/glr/10.jpg',
+                alt: ''
+              },
+              {path: '/img/expeditions/glr/11.jpg',
+                alt: ''
+              },
+              {path: '/img/expeditions/glr/12.jpg',
+                alt: ''
+              }
         ]} />
           </AccordionCard>
 

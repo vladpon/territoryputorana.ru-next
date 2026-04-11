@@ -87,19 +87,11 @@ function normalizeParagraphBlock(block) {
 function normalizeListBlock(block) {
     const style = block.style === "ordered" ? "ordered" : "unordered"
 
+    const label = block.label ? normalizeInlineNode(block.label) : ''
+
     const items = Array.isArray(block.items)
         ? block.items
-              .map((item) => {
-                  const children = Array.isArray(item?.children)
-                      ? item.children
-                            .map((node) => normalizeInlineNode(node))
-                            .filter(Boolean)
-                      : []
-
-                  if (!children.length) return null
-
-                  return { children }
-              })
+              .map((node) => normalizeInlineNode(node))
               .filter(Boolean)
         : []
 
@@ -108,7 +100,8 @@ function normalizeListBlock(block) {
     return {
         type: "list",
         style,
-        items
+        items,
+        label
     }
 }
 

@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '../../../app/const.scss';
+
 .info {
         padding: 1.8em;
         border-radius: 4px;
@@ -19,13 +22,15 @@
     display: flex;
     flex-direction: column;
     font-size: 0.66rem;
+
     line-height: 1.4em;
+
+    @media (max-width: map.get(const.$breakpoints, sm)) {
+        font-size: .8rem;
+    }
 }
 
 .factRow {
-    // display: grid;
-    // grid-template-columns: minmax(180px, 220px) 1fr;
-    // gap: 12px 20px;
     padding: 14px 0;
     border-bottom: 1px solid #e5e7eb;
      &:nth-last-child(1) {
@@ -53,8 +58,15 @@
     line-height: 1.7;
 }
 
+.listLabel {
+    padding: 14px 0;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
 .listItem {
     margin: 6px 0;
+    list-style-type: disc;
 }
 
 .underline {

@@ -3,8 +3,10 @@ import styles from './TourPageCover.module.scss'
 
 const TourPageCover = (props) => {
     const { title, time, varTime, season, bigImg } = props.tour
+    const { children } = props
   return (
-    <div className = {styles["tp-cover"]}>        
+    <div className = {styles["tp-cover"]}>
+        {children}        
         <img className = {styles["tp-cover__bg"]} src={bigImg} />        
         <div className = {`${styles["tp-cover__text"]} container`}>
             <h1>{title}</h1>
