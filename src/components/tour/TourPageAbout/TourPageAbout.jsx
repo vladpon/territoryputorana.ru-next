@@ -4,14 +4,12 @@ import styles from './TourPageAbout.module.scss'
 import TourInfo from '@/components/ui/TourInfo/TourInfo'
 
 const TourPageAbout = (props) => {
-    // const {about, aboutTitle, detailsTitle, price, reference, details, included, clothes, varDetailstitle, varPrice, varReference, varDetails, varIncluded} = props.tour
-    // const varInfoframe = props.varInfoframe
     const { info } = props.tour
-    const { tour } = props
+    const { tour, lightness } = props
 
 
   return (
-<div className = {styles["tp-about__container"]}>
+<div className = {`${styles["tp-about__container"]} ${lightness ? styles[lightness] : styles['dark']}`}>
         <div className = {`${styles['tp-about']} container`}>
             <div className = {styles["tp-about__main"]}>
                 <h2>{tour.aboutTitle}</h2>

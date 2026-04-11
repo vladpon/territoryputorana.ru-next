@@ -16,8 +16,13 @@
     
 
     &__container {
-        background-color: const.$secondary-background-color;
         width: 100%;
+        &.light {
+            background-color: const.$primary-background-color;
+        }
+        &.dark {
+            background-color: const.$secondary-background-color;
+        }
     }
 
     h2 {

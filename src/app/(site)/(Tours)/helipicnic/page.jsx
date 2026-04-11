@@ -40,7 +40,7 @@ const Helipicnic = async () => {
     <main>
         {/* <MainLogo /> */}
         <TourPageCover tour = {tour}/>
-        <TourPageAbout tour = {tour} varInfoframe = {false}/>
+        <TourPageAbout tour = {tour} varInfoframe = {false} lightness = 'light'/>
         <TourPageProgram tour = {tour}/>
         {/* <TextBlock
               backgroundcolor = {BACKGROUNDCOLORS.secondary}
