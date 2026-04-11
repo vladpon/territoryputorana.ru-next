@@ -88,6 +88,7 @@ function renderBlock(block, index) {
                         </li>
                     ))}
                 </Tag>
+                
             </Fragment>
         )
     }
@@ -95,7 +96,7 @@ function renderBlock(block, index) {
     return null
 }
 
-export default function TourInfo({ info }) {
+export default function TourInfo({ info, included }) {
     
     const parsed = normalizeInfo(info)
 
@@ -108,6 +109,10 @@ export default function TourInfo({ info }) {
             <div className={styles.blocks}>
                 {parsed.blocks.map((block, index) => renderBlock(block, index))}
             </div>
+            {included && <details className = {styles.infoframe}>
+                                <summary className = {`${styles['infoframe__note']} ${styles['infoframe__note_included']}`}><span>*Что включено?</span></summary>
+                                <div className = {styles['modal__text']} dangerouslySetInnerHTML={{__html: included}}></div>
+                            </details>}
         </div>
     )
 }

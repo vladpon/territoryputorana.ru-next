@@ -16,7 +16,7 @@ const TourPageAbout = (props) => {
                 {tour.about && tour.about.map( (p, index) => <p key={index}>{p}</p>)}
             </div>
             <div className = {styles['tp-about__hit-container']}>
-                <TourInfo info = {tour.info} />
+                <TourInfo info = {tour.info} included = {tour.included}/>
                 {/* <InfoFrame title = {detailsTitle} price = {price} reference = {reference} description = {details} included = {included} clothes = {clothes}/> */}
                 {/* {varInfoframe && <InfoFrame title = {varDetailstitle} price = {varPrice} reference = {varReference} description = {varDetails} inlcuded = {varIncluded}/>} */}
             </div>

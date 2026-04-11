@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:color';
 @use '../../../app/const.scss';
 
 .info {
@@ -77,5 +78,51 @@
     .factRow {
         grid-template-columns: 1fr;
         gap: 6px;
+    }
+}
+
+
+
+
+.infoframe {
+    
+    &__note {
+        &::marker{
+            font-size: 0.6rem;;
+        }
+
+        & span {
+            font-style: italic;
+            font-size: 0.6rem; 
+        }
+        
+        &_included {
+            span {
+                border-bottom: 1px dotted;
+                cursor: pointer; 
+                // line-height: 2.35;  
+            }
+        }
+                     
+    }
+
+    .modal__text {
+    margin-top: 1em;
+    color: color.adjust(white, $lightness: -35%);
+    text-align: left;
+
+    & p {
+        margin: 0.4em;
+    }
+
+    & ul > li {
+        font-size: 0.6rem;
+        list-style: circle;
+    }
+
+    & ol > li {
+        list-style: decimal;
+        font-size: 0.6rem;
+    }
     }
 }
