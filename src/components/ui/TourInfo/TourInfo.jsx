@@ -1,6 +1,7 @@
 import { Fragment } from "react"
 import { normalizeInfo } from "@/lib/richText/infoParser"
 import styles from "./TourInfo.module.scss"
+import IncludedInfo from "../IncludedInfo/IncludedInfo"
 
 function isExternalLink(href = "") {
     return /^https?:\/\//i.test(href)
@@ -96,7 +97,7 @@ function renderBlock(block, index) {
     return null
 }
 
-export default function TourInfo({ info, included }) {
+export default function TourInfo({ info, includedInfo }) {
     
     const parsed = normalizeInfo(info)
 
@@ -109,9 +110,10 @@ export default function TourInfo({ info, included }) {
             <div className={styles.blocks}>
                 {parsed.blocks.map((block, index) => renderBlock(block, index))}
             </div>
-            {included && <details className = {styles.infoframe}>
+            {includedInfo && <details className = {styles.infoframe}>
                                 <summary className = {`${styles['infoframe__note']} ${styles['infoframe__note_included']}`}><span>*Что включено?</span></summary>
-                                <div className = {styles['modal__text']} dangerouslySetInnerHTML={{__html: included}}></div>
+                                {/* <div className = {styles['modal__text']} dangerouslySetInnerHTML={{__html: included}}></div> */}
+                                <IncludedInfo includedInfo={includedInfo} />
                             </details>}
         </div>
     )
