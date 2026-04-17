@@ -77,7 +77,32 @@ const LostWaterfalls = async () => {
                 <p>Трансферы по Норильску на автомобилях или микроавтобусах вип-класса.</p>
                 <p>Заброска на плато Путорана на вертолете.</p>
                 <p>Водные экскурсии и возвращение в Норильск на скоростном закрытом судне на воздушной подушке.</p>
-              {transport.photo ? <GallerySlider photos={transport.photo} /> : <span>Loading...</span>}
+              <GallerySlider photos={[
+                                                          {
+                                                              "path": "/img/lostwaterfalls/transport/transport_01.jpg",                       
+                                                              "alt": ""
+                                                          },
+                                                          {
+                                                              "path": "/img/lostwaterfalls/transport/transport_02.jpg",
+                                                              "alt": ""
+                                                          },
+                                                          {
+                                                              "path": "/img/lostwaterfalls/transport/transport_03.jpg",
+                                                              "alt": ""
+                                                          },
+                                                          {
+                                                              "path": "/img/lostwaterfalls/transport/transport_04.jpg",
+                                                              "alt": ""
+                                                          },
+                                                          {
+                                                              "path": "/img/lostwaterfalls/transport/transport_05.jpg",
+                                                              "alt": ""
+                                                          },
+                                                          {
+                                                              "path": "/img/lostwaterfalls/transport/transport_06.jpg",
+                                                              "alt": ""
+                                                          }
+                                                      ]} />
             </AccordionCard>
 
             <AccordionCard title = 'Рекомендации по одежде и снаряжению' className={styles.bg_primary}>

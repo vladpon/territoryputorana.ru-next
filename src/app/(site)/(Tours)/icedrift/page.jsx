@@ -14,6 +14,7 @@ import { getTour } from '@/lib/mongo/tours'
 import { getMetadata, getPage } from '@/lib/mongo/pages'
 
 import styles from './Icedrift.module.scss'
+import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
 
 
@@ -77,7 +78,25 @@ const Icedrift = async () => {
               <li>Беседка-барбекю</li>
               <li>Спутниковое телевидение, телефон и интернет</li>        
             </ul>
-            <GallerySlider photos={tour.tourPhoto} />
+            <GallerySlider photos={
+                                                                [
+                                                                  {
+                                                                    "path": "/img/icedrift/accmdtn/accmdtn_01.jpg",
+                                                                    "alt": ""
+                                                                  },
+                                                                  {
+                                                                    "path": "/img/icedrift/accmdtn/accmdtn_02.jpg",
+                                                                    "alt": ""
+                                                                  },
+                                                                  {
+                                                                    "path": "/img/icedrift/accmdtn/accmdtn_03.jpg",
+                                                                    "alt": ""
+                                                                  },
+                                                                  {
+                                                                    "path": "/img/icedrift/accmdtn/accmdtn_04.jpg",
+                                                                    "alt": ""
+                                                                  }
+                                                                ]} />
           </AccordionCard>
 
           <AccordionCard title = 'Дополнительные условия' className={styles.bg_primary}>
@@ -85,8 +104,31 @@ const Icedrift = async () => {
               <p>Стоимость авиаперелёта до Норильска, проживание и питание в Норильске не входят в стоимость тура.</p>
           </AccordionCard>
 
-
+          
         </Section>
+
+        <PhotoBlock photos = {[
+                                                      {
+                                                          "path": "/img/snowqueen/glr/1.jpg",                       
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/2.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/3.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/4.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/5.jpg",
+                                                          "alt": ""
+                                                      }
+                                                  ]}/>
         <RequestBlock bgImage = {'./img/icedrift/icedrift_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>
   )

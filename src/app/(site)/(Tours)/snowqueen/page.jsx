@@ -33,7 +33,6 @@ export async function generateMetadata()
 const Snowqueen = async () => {
 
   const tour = await getTour(tourId)
-  const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
 
   return (
     <main>
@@ -82,7 +81,25 @@ const Snowqueen = async () => {
               <li>Беседка-барбекю</li>
               <li>Спутниковое телевидение, телефон и интернет</li>       
             </ul>
-            <GallerySlider photos={tour.tourPhoto} />
+            <GallerySlider photos={
+                                                    [
+                                                      {
+                                                        "path": "/img/snowqueen/accmdtn/accmdtn_01.jpg",
+                                                        "alt": ""
+                                                      },
+                                                      {
+                                                        "path": "/img/snowqueen/accmdtn/accmdtn_02.jpg",
+                                                        "alt": ""
+                                                      },
+                                                      {
+                                                        "path": "/img/snowqueen/accmdtn/accmdtn_03.jpg",
+                                                        "alt": ""
+                                                      },
+                                                      {
+                                                        "path": "/img/snowqueen/accmdtn/accmdtn_04.jpg",
+                                                        "alt": ""
+                                                      }
+                                                    ]} />
           </AccordionCard>
 
           <AccordionCard title = 'Транспорт' className={styles.bg_primary}>
@@ -91,12 +108,50 @@ const Snowqueen = async () => {
               <p>Вылетая из Москвы вечером в четверг, вы прибудете в Норильск утром в пятницу, мы встретим вас в аэропорту и сразу отправимся в путешествие.</p>
               <p>Обратный вылет из Норильска будет утром понедельник. В Москву вы прибудете практически в тоже время, в которое вылетели из Норильска.</p>
               <p>По вашему желанию мы можем доставить вас в аэропорт Норильска ко времени обратного вылета на вертолёте прямо с усадьбы «Жар. Птица», либо организовать одну ночевку в гостинице в Норильске.</p>
-            {transport.photo ? <GallerySlider photos={transport.photo} /> : <span>Loading...</span>}
+            <GallerySlider photos={[
+                                                      {
+                                                          "path": "/img/snowqueen/transport/transport_01.jpg",                       
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/transport/transport_02.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/transport/transport_03.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/transport/transport_04.jpg",
+                                                          "alt": ""
+                                                      }
+                                                  ]} />
           </AccordionCard>
 
         </Section>
 
-         <PhotoBlock photos = {tour.tourPhoto}/>
+         <PhotoBlock photos = {[
+                                                      {
+                                                          "path": "/img/snowqueen/glr/1.jpg",                       
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/2.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/3.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/4.jpg",
+                                                          "alt": ""
+                                                      },
+                                                      {
+                                                          "path": "/img/snowqueen/glr/5.jpg",
+                                                          "alt": ""
+                                                      }
+                                                  ]}/>
 
         <RequestBlock bgImage = {'./img/snowqueen/snowqueen_req.jpg'} h2Text = {"Оставить заявку на тур"} h3Text = {"Заполните форму, и мы ответим Вам в ближайшее время!"}/>
     </main>

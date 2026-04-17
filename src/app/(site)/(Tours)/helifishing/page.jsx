@@ -83,7 +83,33 @@ const Helifishing = async () => {
                 <li>Спутниковое телевидение, телефон и интернет</li>
                 <li>Снаряжение для сапбординга, пакрафтинга, рыбалки</li>              
               </ul>
-              <GallerySlider photos={tour.tourPhoto} />
+              <GallerySlider photos={
+                                        [
+                                          {
+                                            "path": "/img/tr_ph01.jpg",
+                                            "alt": "Усадьба \"Жар. Птица\""
+                                          },
+                                          {
+                                            "path": "/img/tr_ph02.jpg",
+                                            "alt": ""
+                                          },
+                                          {
+                                            "path": "/img/tr_ph03.jpg",
+                                            "alt": ""
+                                          },
+                                          {
+                                            "path": "/img/tr_ph04.jpg",
+                                            "alt": ""
+                                          },
+                                          {
+                                            "path": "/img/tr_ph05.jpg",
+                                            "alt": ""
+                                          },
+                                          {
+                                            "path": "/img/tr_ph06.jpg",
+                                            "alt": ""
+                                          }
+                                        ]} />
             </AccordionCard>
 
             <AccordionCard title = 'Транспорт' className={styles.bg_primary}>
@@ -92,7 +118,24 @@ const Helifishing = async () => {
                 <p>Вылетая из Москвы вечером в четверг, вы прибудете в Норильск утром в пятницу, мы встретим вас в аэропорту и сразу отправимся в путешествие.</p>
                 <p>Обратный вылет из Норильска будет утром понедельник. В Москву вы прибудете практически в тоже время, в которое вылетели из Норильска.</p>
                 <p>По вашему желанию мы можем доставить вас в аэропорт Норильска ко времени обратного вылета на вертолёте прямо с усадьбы «Жар. Птица», либо организовать одну ночевку в гостинице в Норильске.</p>
-              {transport.photo ? <GallerySlider photos={transport.photo} /> : <span>Loading...</span>}
+              <GallerySlider photos={[
+                                                                        {
+                                                                            "path": "/img/helifishing/transport/transport_01.jpg",                       
+                                                                            "alt": ""
+                                                                        },
+                                                                        {
+                                                                            "path": "/img/helifishing/transport/transport_02.jpg",
+                                                                            "alt": ""
+                                                                        },
+                                                                        {
+                                                                            "path": "/img/helifishing/transport/transport_03.jpg",
+                                                                            "alt": ""
+                                                                        },
+                                                                        {
+                                                                            "path": "/img/helifishing/transport/transport_04.jpg",
+                                                                            "alt": ""
+                                                                        }
+                                                                    ]} />
             </AccordionCard>
 
             <AccordionCard title = 'Рекомендации по одежде и снаряжению' className={styles.bg_primary}>
