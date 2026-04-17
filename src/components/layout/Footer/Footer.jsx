@@ -24,6 +24,7 @@ const Footer = () => {
                 <a href="https://max.ru/u/f9LHodD0cOLZx13Hi2qAmbymgnwCI6NIwvhEI3Zm6JAns50ZFcZBSZIjDAw"><img className={styles["footer__icon"]} src="/img/max_ico.png"></img></a>
                 <a href="https://vk.cc/cmIUok"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/vk_ico.png"></img></a>
                 <a href="https://t.me/territoryputorana"><img className={styles["footer__icon"]} src="https://territoryputorana.ru/img/tlgrm_ico.png"></img></a>
+                <a href="mailto:lysovanton76@gmail.com"><img className = {styles["footer__icon"]} src="/img/email_ico.png"></img></a>
             </div>
             <div className={styles['footer__privacy']}>
                 {/* <a href = '/privacy'>Политика конфиденциальности</a> */}

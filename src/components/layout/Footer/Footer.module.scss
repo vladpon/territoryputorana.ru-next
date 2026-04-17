@@ -98,7 +98,7 @@
    
 
     #{&}__icon {
-        width: 35px;
+        height: 35px;
         @media (max-width: map.get(const.$breakpoints, lg)) {
             margin-left: 23px;
             width: 32px;
