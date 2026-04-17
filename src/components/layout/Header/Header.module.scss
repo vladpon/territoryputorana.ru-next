@@ -235,7 +235,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     }
 
     &__icon {
-        width: 35px;
+        height: 35px;
         @media (max-width: map.get(const.$breakpoints, lg)){
             width: 30px;
         }
