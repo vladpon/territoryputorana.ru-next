@@ -194,7 +194,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
         justify-content: space-around;
         align-items: center;
         @media (max-width: map.get(const.$breakpoints, lg)) {
-            flex-basis: 140px;
+            flex-basis: 175px;
         }
         @media (max-width: map.get(const.$breakpoints, md)) {
             justify-self: right;
@@ -237,7 +237,7 @@ $tour-page-header-background-color: rgba(200, 200, 200, 0.1);
     &__icon {
         height: 35px;
         @media (max-width: map.get(const.$breakpoints, lg)){
-            width: 30px;
+            // width: 30px;
         }
         @media (max-width: map.get(const.$breakpoints, md)){
             width: 22px;

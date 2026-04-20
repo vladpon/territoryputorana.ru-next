@@ -1,0 +1,131 @@
+
+
+
+
+{
+  _id: ObjectId,
+
+  tourId: "lostput",
+  slug: "lostput",
+  path: "/lostput",
+
+  title: "Затерянный мир Плато Путорана",
+  status: "published", // draft | published | archived
+
+  card: {
+    price: "от 285 000 ₽/чел.",
+    duration: "8 дней / 7 ночей",
+    season: "июнь-сентябрь",
+    img: {
+      src: "/img/lostput_cover_02.jpg",
+      alt: "Озеро и горы плато Путорана"
+    }
+  },
+
+  homePage: {
+    show: true,
+    order: 1
+  },
+
+  seo: {
+    metaTitle: "Затерянный мир Плато Путорана — тур на плато Путорана",
+    metaDescription: "Комфортный тур на плато Путорана: водопады, треккинг, база на озере Лама, северная кухня.",
+    keywords: [
+      "плато путорана",
+      "туры на плато путорана",
+      "туры путорана"
+    ],
+    canonicalUrl: "https://territoryputorana.ru/lostput"
+,
+    ogTitle: "Затерянный мир Плато Путорана",
+    ogDescription: "Комфортный тур с проживанием на озере Лама и прогулками к водопадам.",
+    ogImage: "/img/lostput_cover_02.jpg",
+    robots: {
+      index: true,
+      follow: true
+    }
+  },
+
+  sections: [
+  ],
+
+  createdAt: ISODate(),
+  updatedAt: ISODate(),
+  publishedAt: ISODate()
+}
+
+
+
+
+
+
+[
+  "hero",
+  "about",
+  "program",
+  "gallery",
+  "accordionGroup",
+  "ctaForm",
+  "note"
+]
+
+
+
+
+
+{
+  id: "hero",
+  type: "hero",
+  enabled: true,
+  order: 1,
+  backgroundTone: "dark",
+  data: {
+    title: "",
+    image: {
+      src: "",
+      alt: ""
+    }
+  }
+}
+
+
+{
+  id: "about",
+  type: "about",
+  enabled: true,
+  order: 2,
+  backgroundTone: "light",
+  data: {
+
+    aboutTour: {
+        title: "",
+        text: {
+        paragraphs: []
+      }
+    },
+
+    tourInfo: {        
+        facts: null,
+        details: {
+          summary: "что включено?",
+          content: [
+            {
+              id: "listTitle",
+              type: "text",
+              text: "Включено в стоимость",
+              bold: true
+            },
+            {
+              id: "list",
+              type: "list",
+              items: [
+                "размещение",
+                "питание"
+              ]
+            }
+          ]
+        }
+    } 
+
+  }
+}
