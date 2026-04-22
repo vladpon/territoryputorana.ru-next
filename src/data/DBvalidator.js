@@ -4,7 +4,6 @@ db.createCollection("tourPages", {
       bsonType: "object",
       required: [
         "tourId",
-        "slug",
         "path",
         "title",
         "status",
@@ -24,11 +23,6 @@ db.createCollection("tourPages", {
         tourId: {
           bsonType: "string",
           description: "Internal stable id of the tour page"
-        },
-
-        slug: {
-          bsonType: "string",
-          description: "URL slug without leading slash"
         },
 
         path: {
