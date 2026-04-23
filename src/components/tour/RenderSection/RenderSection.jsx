@@ -1,15 +1,16 @@
 import TourPageCover from "@/components/tour/TourPageCover/TourPageCover";
 import TourPageAbout from "@/components/tour/TourPageAbout/TourPageAbout";
 import TourPageProgram from "@/components/tour/TourPageProgram/TourPageProgram";
+import NoteBlock from "@/components/blocks/NoteBlock/NoteBlock";
 // import TourPageGallery from "@/components/tour/TourPageGallery/TourPageGallery";
 // import TourPageAccordionGroup from "@/components/tour/TourPageAccordionGroup/TourPageAccordionGroup";
 // import TourPageCtaForm from "@/components/tour/TourPageCtaForm/TourPageCtaForm";
 // import TourPageNote from "@/components/tour/TourPageNote/TourPageNote";
 
 const sectionComponentMap = {
-  hero: TourPageCover,
-  about: TourPageAbout,
-  program: TourPageProgram,
+    hero: TourPageCover,
+    about: TourPageAbout,
+//   program: TourPageProgram,
 //   gallery: TourPageGallery,
 //   accordionGroup: TourPageAccordionGroup,
 //   ctaForm: TourPageCtaForm,

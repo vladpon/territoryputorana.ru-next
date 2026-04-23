@@ -84,45 +84,87 @@
 
 
 
-.infoframe {
+// .infoframe {
     
-    &__note {
-        &::marker{
-            font-size: 0.6rem;;
-        }
+//     &__note {
+//         &::marker{
+//             font-size: 0.6rem;;
+//         }
 
-        & span {
-            font-style: italic;
-            font-size: 0.6rem; 
-        }
+//         & span {
+//             font-style: italic;
+//             font-size: 0.6rem; 
+//         }
         
-        &_included {
-            span {
-                border-bottom: 1px dotted;
-                cursor: pointer; 
-                // line-height: 2.35;  
-            }
-        }
+//         &_included {
+//             span {
+//                 border-bottom: 1px dotted;
+//                 cursor: pointer; 
+//                 // line-height: 2.35;  
+//             }
+//         }
                      
+//     }
+
+//     .modal__text {
+//     margin-top: 1em;
+//     color: color.adjust(white, $lightness: -35%);
+//     text-align: left;
+
+//     & p {
+//         margin: 0.4em;
+//     }
+
+//     & ul > li {
+//         font-size: 0.6rem;
+//         list-style: circle;
+//     }
+
+//     & ol > li {
+//         list-style: decimal;
+//         font-size: 0.6rem;
+//     }
+//     }
+// }
+
+
+
+.infoframe {
+  &__note {
+    &::marker {
+      font-size: 0.6rem;
     }
 
-    .modal__text {
-    margin-top: 1em;
-    color: color.adjust(white, $lightness: -35%);
-    text-align: left;
-
-    & p {
-        margin: 0.4em;
+    & span {
+      font-style: italic;
+      font-size: 0.6rem;
     }
 
-    & ul > li {
-        font-size: 0.6rem;
-        list-style: circle;
+    &_included {
+      span {
+        border-bottom: 1px dotted;
+        cursor: pointer;
+      }
     }
+  }
+}
 
-    & ol > li {
-        list-style: decimal;
-        font-size: 0.6rem;
-    }
-    }
+.modal__text {
+  margin-top: 1em;
+  color: color.adjust(white, $lightness: -35%);
+  text-align: left;
+
+  & p {
+    margin: 0.4em 0;
+  }
+
+  & ul > li {
+    font-size: 0.6rem;
+    list-style: circle;
+  }
+
+  & ol > li {
+    list-style: decimal;
+    font-size: 0.6rem;
+  }
 }

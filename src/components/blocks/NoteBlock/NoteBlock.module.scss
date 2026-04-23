@@ -1,0 +1,76 @@
+.note {
+  margin: 0 auto;
+  font-weight: 300;
+
+  &__title {
+    letter-spacing: 0.7;
+    font-size: 2.2em;
+    font-weight: 300;
+    margin: 0 0 0.8em;
+  }
+
+  &__content {
+    & a {
+      text-decoration: underline;
+    }
+  }
+
+  &__paragraph {
+    font-size: 0.8em;
+    line-height: 1.2;
+    letter-spacing: 0.1;
+    margin-bottom: 0.8em;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 0;
+  }
+
+  &__listItem {
+    list-style-type: disc;
+    padding-left: 0.5rem;
+    margin-left: 1em;
+    font-size: 0.8em;
+    text-align: inherit;
+
+    &::marker {
+      font-size: 1.2rem;
+    }
+  }
+
+  &_default {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  &_inverted {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 2rem;
+  }
+
+  &_accent {
+    background-color: #cdb58b;
+    color: #111111;
+    padding: 2rem;
+  }
+
+  &_muted {
+    background-color: #d9d9d9;
+    color: #111111;
+    padding: 2rem;
+  }
+
+  &_narrow {
+    max-width: 760px;
+  }
+
+  &_normal {
+    max-width: 1000px;
+  }
+
+  &_wide {
+    max-width: 1280px;
+  }
+}
