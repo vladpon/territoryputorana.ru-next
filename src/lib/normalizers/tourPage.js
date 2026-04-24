@@ -4,17 +4,17 @@ import {
   normalizeImage,
   normalizeNumber,
   normalizeString
-} from "./common"
-import { normalizeSection } from "./section"
+} from "./common";
+import { normalizeSection } from "./section";
 
 function normalizeStatus(value) {
   return ["draft", "published", "archived"].includes(value)
     ? value
-    : "draft"
+    : "draft";
 }
 
 export function normalizeTourPage(page) {
-  const safe = page && typeof page === "object" ? page : {}
+  const safe = page && typeof page === "object" ? page : {};
 
   return {
     _id: safe._id,
@@ -33,6 +33,18 @@ export function normalizeTourPage(page) {
     homePage: {
       show: normalizeBoolean(safe?.homePage?.show, false),
       order: normalizeNumber(safe?.homePage?.order, 0)
+    },
+
+    navigation: {
+      showInMainMenu: normalizeBoolean(
+        safe?.navigation?.showInMainMenu,
+        false
+      ),
+      mainMenuOrder: normalizeNumber(
+        safe?.navigation?.mainMenuOrder,
+        0
+      ),
+      menuTitle: normalizeString(safe?.navigation?.menuTitle)
     },
 
     seo: {
@@ -59,5 +71,5 @@ export function normalizeTourPage(page) {
     createdAt: safe.createdAt instanceof Date ? safe.createdAt : new Date(),
     updatedAt: safe.updatedAt instanceof Date ? safe.updatedAt : new Date(),
     publishedAt: safe.publishedAt instanceof Date ? safe.publishedAt : null
-  }
+  };
 }

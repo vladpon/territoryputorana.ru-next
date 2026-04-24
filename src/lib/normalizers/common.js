@@ -1,3 +1,8 @@
+export function normalizeText(value, fallback = "") {
+  return typeof value === "string" ? value : fallback
+}
+
+
 export function normalizeString(value, fallback = "") {
   return typeof value === "string" ? value.trim() : fallback
 }

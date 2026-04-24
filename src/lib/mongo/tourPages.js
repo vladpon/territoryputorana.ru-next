@@ -78,9 +78,9 @@ export async function getMainPageTourPages() {
     const collection = await getCollection();
     const docs = await collection
       .find({
+        status: "published",
         "homePage.show": true,
-        "homePage.order": { $gt: 0 },
-        status: "published"
+        "homePage.order": { $gt: 0 }
       })
       .sort({ "homePage.order": 1 })
       .toArray();
@@ -89,6 +89,25 @@ export async function getMainPageTourPages() {
   } catch (error) {
     console.error(error);
     throw new Error("Failed to fetch main page tour pages");
+  }
+}
+
+export async function getMainMenuTourPages() {
+  try {
+    const collection = await getCollection();
+    const docs = await collection
+      .find({
+        status: "published",
+        "navigation.showInMainMenu": true,
+        "navigation.mainMenuOrder": { $gte: 0 }
+      })
+      .sort({ "navigation.mainMenuOrder": 1 })
+      .toArray();
+
+    return docs.map(normalizeTourPage);
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to fetch main menu tour pages");
   }
 }
 
@@ -112,7 +131,6 @@ export async function createTourPage(doc) {
 export async function updateTourPage(tourId, updateData) {
   try {
     const collection = await getCollection();
-
     const existing = await collection.findOne({ tourId });
 
     if (!existing) {
@@ -147,9 +165,7 @@ export async function updateTourPage(tourId, updateData) {
 export async function upsertTourPageByTourId(tourId, doc) {
   try {
     const collection = await getCollection();
-
     const existing = await collection.findOne({ tourId });
-
     const now = new Date();
 
     const merged = {

@@ -1,11 +1,11 @@
-import { normalizeArray, normalizeString } from "./common"
+import { normalizeArray, normalizeString, normalizeText } from "./common"
 
 function normalizeTextNode(node) {
   const safe = node && typeof node === "object" ? node : {}
 
   return {
     type: "text",
-    text: normalizeString(safe.text),
+    text: normalizeText(safe.text),
     ...(safe.bold === true ? { bold: true } : {}),
     ...(safe.italic === true ? { italic: true } : {}),
     ...(safe.underline === true ? { underline: true } : {})
