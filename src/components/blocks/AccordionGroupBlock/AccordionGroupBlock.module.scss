@@ -1,0 +1,25 @@
+.group {
+  width: 100%;
+}
+
+.group__title {
+  margin: 0 0 1em;
+  font-size: 2.2em;
+  font-weight: 300;
+  letter-spacing: 0.7;
+}
+
+.group__items {
+  display: grid;
+  gap: 1.2em;
+}
+
+.group__card {
+  background-color: white;
+  color: black;
+}
+
+.group__slider {
+  margin-top: 1rem;
+  min-height: 320px;
+}

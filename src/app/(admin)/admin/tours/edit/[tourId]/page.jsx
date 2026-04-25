@@ -1,12 +1,26 @@
-import TourForm from "@/components/admin/TourForm"
+import { notFound } from "next/navigation";
+import AdminShell from "@/components/admin/AdminShell/AdminShell";
+import AdminPageHeader from "@/components/admin/AdminPageHeader/AdminPageHeader";
+import AdminTourPageForm from "@/components/admin/AdminTourPageForm/AdminTourPageForm";
+import { getTourPage } from "@/lib/mongo/tourPages";
+import { createTourPageInitialValues } from "@/lib/admin/tourPageInitialValues";
 
-export default async function EditTourPage({ params }) {
-    const { tourId } = await params
+export default async function AdminEditTourPage({ params }) {
+  const { tourId } = await params;
+  const page = await getTourPage(tourId);
 
-    return (
-        <main style={{ padding: "24px" }}>
-            <h1 style={{ marginBottom: "20px" }}>Редактирование тура</h1>
-            <TourForm tourId={tourId} />
-        </main>
-    )
+  if (!page) notFound();
+
+  return (
+    <AdminShell>
+      <AdminPageHeader
+        title={page.title || "Редактирование тура"}
+        subtitle={page.tourId}
+      />
+      <AdminTourPageForm
+        tourId={page.tourId}
+        initialData={createTourPageInitialValues(page)}
+      />
+    </AdminShell>
+  );
 }

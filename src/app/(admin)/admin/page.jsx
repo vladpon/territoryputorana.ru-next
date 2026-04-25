@@ -1,13 +1,5 @@
-import Link from "next/link"
+import { redirect } from "next/navigation";
 
 export default function AdminPage() {
-    return (
-        <main>
-            <h1 style={{ marginBottom: "16px" }}>Админка</h1>
-
-            <div style={{ display: "grid", gap: "12px", maxWidth: "420px" }}>
-                <Link href="/admin/tours">Перейти к турам</Link>
-            </div>
-        </main>
-    )
+  redirect("/admin/tours");
 }

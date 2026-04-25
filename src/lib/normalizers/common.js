@@ -2,7 +2,6 @@ export function normalizeText(value, fallback = "") {
   return typeof value === "string" ? value : fallback
 }
 
-
 export function normalizeString(value, fallback = "") {
   return typeof value === "string" ? value.trim() : fallback
 }
@@ -29,6 +28,6 @@ export function normalizeImage(value) {
 
   return {
     src: normalizeString(image.src),
-    alt: normalizeString(image.alt)
+    alt: normalizeText(image.alt)
   }
 }

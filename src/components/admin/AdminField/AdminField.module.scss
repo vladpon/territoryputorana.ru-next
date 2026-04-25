@@ -1,0 +1,16 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.field__hint {
+  font-size: 0.8rem;
+  color: #777;
+}

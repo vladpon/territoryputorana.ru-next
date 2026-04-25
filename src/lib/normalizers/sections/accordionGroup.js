@@ -2,8 +2,10 @@ import {
   normalizeArray,
   normalizeBackgroundTone,
   normalizeBoolean,
+  normalizeImage,
   normalizeNumber,
-  normalizeString
+  normalizeString,
+  normalizeText
 } from "../common"
 import { normalizeRichTextDocument } from "../richText"
 
@@ -12,20 +14,23 @@ export function normalizeAccordionGroupSection(section) {
   const data = safe.data && typeof safe.data === "object" ? safe.data : {}
 
   return {
-    id: "accordionGroup",
+    id: normalizeString(safe.id, "accordionGroup"),
     type: "accordionGroup",
     enabled: normalizeBoolean(safe.enabled, true),
     order: normalizeNumber(safe.order, 5),
     backgroundTone: normalizeBackgroundTone(safe.backgroundTone),
     data: {
-      title: normalizeString(data.title),
+      title: normalizeText(data.title),
       items: normalizeArray(data.items).map((item, index) => {
         const safeItem = item && typeof item === "object" ? item : {}
 
         return {
           id: normalizeString(safeItem.id, `item-${index + 1}`),
-          summary: normalizeString(safeItem.summary),
-          content: normalizeRichTextDocument(safeItem.content)
+          summary: normalizeText(safeItem.summary),
+          content: normalizeRichTextDocument(safeItem.content),
+          photos: normalizeArray(safeItem.photos)
+            .map(normalizeImage)
+            .filter((photo) => photo.src)
         }
       })
     }

@@ -6,13 +6,18 @@ import { notFound } from "next/navigation";
 import TourPageCover from "@/components/tour/TourPageCover/TourPageCover";
 import TourPageAbout from "@/components/tour/TourPageAbout/TourPageAbout";
 import TourPageProgram from "@/components/tour/TourPageProgram/TourPageProgram";
+import AccordionGroupBlock from "@/components/blocks/AccordionGroupBlock/AccordionGroupBlock";
 // import TourPageGallery from "@/components/tour/TourPageGallery/TourPageGallery";
-// import TourPageAccordionGroup from "@/components/tour/TourPageAccordionGroup/TourPageAccordionGroup";
-// import TourPageCtaForm from "@/components/tour/TourPageCtaForm/TourPageCtaForm";
+import PhotoBlock from "@/components/blocks/PhotoBlock/PhotoBlock";
 import NoteBlock from "@/components/blocks/NoteBlock/NoteBlock";
+import CtaFormBlock from "@/components/blocks/CtaFormBlock/CtaFormBlock";
 
-import { getTourPageByPath } from "@/lib/mongo/tourPages";
 import { buildTourPageMetadata } from "@/lib/metadata/tourPageMetadata";
+import { getTourPageByPath, getPublishedTourOptions } from "@/lib/mongo/tourPages";
+
+
+
+const tourOptions = await getPublishedTourOptions();
 
 const getPageData = cache(async (slug) => {
   const decodedSlug = decodeURIComponent(slug);
@@ -21,7 +26,7 @@ const getPageData = cache(async (slug) => {
   return await getTourPageByPath(path);
 });
 
-function renderSection(page, section) {
+function renderSection(page, section, tourOptions) {
   switch (section.type) {
     case "hero":
       return <TourPageCover page={page} section={section} />;
@@ -32,14 +37,31 @@ function renderSection(page, section) {
     case "program":
       return <TourPageProgram page={page} section={section} />;
 
-    // case "gallery":
-    //   return <TourPageGallery page={page} section={section} />;
 
-    // case "accordionGroup":
-    //   return <TourPageAccordionGroup page={page} section={section} />;
+    case "accordionGroup":
+        return (
+            <AccordionGroupBlock
+            title={section.data?.title || ""}
+            items={section.data?.items || []}
+            backgroundTone={section.backgroundTone}
+            />
+        );
 
-    // case "ctaForm":
-    //   return <TourPageCtaForm page={page} section={section} />;
+    case "gallery":
+      return <PhotoBlock photos={section.data?.photos || []} />;
+
+
+    case "ctaForm":
+      return <CtaFormBlock
+          backgroundTone={section.backgroundTone}
+          image={section.data.image}
+          title={section.data.title}
+          subtitle={section.data.subtitle}
+          buttonText={section.data.buttonText}
+          successMessage={section.data.successMessage}
+          tourOptions={tourOptions}
+          defaultTourValue={page.tourId}
+              />
 
     case "note":
       return (
@@ -67,7 +89,12 @@ export async function generateMetadata({ params }) {
 
 export default async function TourPage({ params }) {
   const { slug } = await params;
-  const page = await getPageData(slug);
+
+  const [page, tourOptions] = await Promise.all([
+    getPageData(slug),
+    getPublishedTourOptions()
+  ]);
+
 
   if (!page) notFound();
 
@@ -77,11 +104,13 @@ export default async function TourPage({ params }) {
 
   return (
     <main>
-      {sections.map((section) => (
-        <div key={section.id}>
-          {renderSection(page, section)}
-        </div>
-      ))}
+      {await Promise.all(
+        sections.map(async (section) => (
+          <div key={section.id}>
+            {await renderSection(page, section, tourOptions)}
+          </div>
+        ))
+      )}
     </main>
   );
 }

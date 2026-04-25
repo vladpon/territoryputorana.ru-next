@@ -202,3 +202,17 @@ export async function deleteTourPage(tourId) {
     throw new Error("Failed to delete tour page");
   }
 }
+
+export async function getPublishedTourOptions() {
+  try {
+    const pages = await getPublishedTourPages();
+
+    return pages.map((page) => ({
+      value: page.tourId,
+      label: page.navigation?.menuTitle || page.title
+    }));
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to fetch published tour options");
+  }
+}

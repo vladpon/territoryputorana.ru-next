@@ -1,0 +1,24 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge_draft {
+  background: #f2f2f2;
+  color: #444;
+}
+
+.badge_published {
+  background: #e7f7ea;
+  color: #1c6a2b;
+}
+
+.badge_archived {
+  background: #f4eaea;
+  color: #8a2f2f;
+}

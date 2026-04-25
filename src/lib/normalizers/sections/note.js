@@ -2,7 +2,8 @@ import {
   normalizeBackgroundTone,
   normalizeBoolean,
   normalizeNumber,
-  normalizeString
+  normalizeString,
+  normalizeText
 } from "../common"
 import { normalizeRichTextDocument } from "../richText"
 
@@ -27,13 +28,13 @@ export function normalizeNoteSection(section) {
   const appearance = data.appearance && typeof data.appearance === "object" ? data.appearance : {}
 
   return {
-    id: "note",
+    id: normalizeString(safe.id, "note"),
     type: "note",
     enabled: normalizeBoolean(safe.enabled, true),
     order: normalizeNumber(safe.order, 7),
     backgroundTone: normalizeBackgroundTone(safe.backgroundTone),
     data: {
-      title: normalizeString(data.title),
+      title: normalizeText(data.title),
       content: normalizeRichTextDocument(data.content),
       appearance: {
         colorScheme: normalizeColorScheme(appearance.colorScheme),

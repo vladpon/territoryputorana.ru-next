@@ -3,30 +3,31 @@ import {
   normalizeBoolean,
   normalizeImage,
   normalizeNumber,
-  normalizeString
-} from "./common";
-import { normalizeSection } from "./section";
+  normalizeString,
+  normalizeText
+} from "./common"
+import { normalizeSection } from "./section"
 
 function normalizeStatus(value) {
   return ["draft", "published", "archived"].includes(value)
     ? value
-    : "draft";
+    : "draft"
 }
 
 export function normalizeTourPage(page) {
-  const safe = page && typeof page === "object" ? page : {};
+  const safe = page && typeof page === "object" ? page : {}
 
   return {
     _id: safe._id,
     tourId: normalizeString(safe.tourId),
     path: normalizeString(safe.path),
-    title: normalizeString(safe.title),
+    title: normalizeText(safe.title),
     status: normalizeStatus(safe.status),
 
     card: {
-      price: normalizeString(safe?.card?.price),
-      duration: normalizeString(safe?.card?.duration),
-      season: normalizeString(safe?.card?.season),
+      price: normalizeText(safe?.card?.price),
+      duration: normalizeText(safe?.card?.duration),
+      season: normalizeText(safe?.card?.season),
       img: normalizeImage(safe?.card?.img)
     },
 
@@ -44,18 +45,18 @@ export function normalizeTourPage(page) {
         safe?.navigation?.mainMenuOrder,
         0
       ),
-      menuTitle: normalizeString(safe?.navigation?.menuTitle)
+      menuTitle: normalizeText(safe?.navigation?.menuTitle)
     },
 
     seo: {
-      metaTitle: normalizeString(safe?.seo?.metaTitle),
-      metaDescription: normalizeString(safe?.seo?.metaDescription),
+      metaTitle: normalizeText(safe?.seo?.metaTitle),
+      metaDescription: normalizeText(safe?.seo?.metaDescription),
       keywords: normalizeArray(safe?.seo?.keywords)
-        .map((item) => normalizeString(item))
+        .map((item) => normalizeText(item))
         .filter(Boolean),
       canonicalUrl: normalizeString(safe?.seo?.canonicalUrl),
-      ogTitle: normalizeString(safe?.seo?.ogTitle),
-      ogDescription: normalizeString(safe?.seo?.ogDescription),
+      ogTitle: normalizeText(safe?.seo?.ogTitle),
+      ogDescription: normalizeText(safe?.seo?.ogDescription),
       ogImage: normalizeString(safe?.seo?.ogImage),
       robots: {
         index: safe?.seo?.robots?.index === true,
@@ -71,5 +72,5 @@ export function normalizeTourPage(page) {
     createdAt: safe.createdAt instanceof Date ? safe.createdAt : new Date(),
     updatedAt: safe.updatedAt instanceof Date ? safe.updatedAt : new Date(),
     publishedAt: safe.publishedAt instanceof Date ? safe.publishedAt : null
-  };
+  }
 }

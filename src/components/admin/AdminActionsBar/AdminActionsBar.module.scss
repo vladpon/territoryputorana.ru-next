@@ -1,0 +1,56 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #ececec;
+}
+
+.bar__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.bar__button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.bar__messages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.bar__error {
+  color: #b42318;
+  font-size: 0.9rem;
+}
+
+.bar__success {
+  color: #067647;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bar__messages {
+    text-align: left;
+  }
+}

@@ -26,7 +26,7 @@ const PhotoBlock = (props) => {
     <div className = {styles['pb']}>
        {showPhoto && <div className = {styles['pb__big-photo']} onClick = {() => zoomOff()}><img src = {photo} /></div>}
         <div className = {styles['pb__container']}>
-            {photos && photos.map( (photo, index) => <div className = {styles['pb__img']} key = {index}><img src={photo.path} alt = {photo.alt} onClick={() => zoomOn(photo.path)} /></div>)}
+            {photos && photos.map( (photo, index) => <div className = {styles['pb__img']} key = {index}><img src={photo.src} alt = {photo.alt} onClick={() => zoomOn(photo.src)} /></div>)}
         </div>
     </div>
   )

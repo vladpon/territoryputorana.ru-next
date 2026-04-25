@@ -3,16 +3,17 @@ import {
   normalizeBackgroundTone,
   normalizeBoolean,
   normalizeNumber,
-  normalizeString
+  normalizeString,
+  normalizeText
 } from "../common"
-import { normalizeInlineNode, normalizeRichTextDocument } from "../richText"
+import { normalizeInlineNode } from "../richText"
 
 function normalizeFact(fact, index) {
   const safe = fact && typeof fact === "object" ? fact : {}
 
   return {
     id: normalizeString(safe.id, `fact-${index + 1}`),
-    label: normalizeString(safe.label),
+    label: normalizeText(safe.label),
     value: normalizeArray(safe.value)
       .map(normalizeInlineNode)
       .filter(Boolean)
@@ -67,27 +68,27 @@ export function normalizeAboutSection(section) {
   const details = tourInfo.details && typeof tourInfo.details === "object" ? tourInfo.details : {}
 
   return {
-    id: "about",
+    id: normalizeString(safe.id, "about"),
     type: "about",
     enabled: normalizeBoolean(safe.enabled, true),
     order: normalizeNumber(safe.order, 2),
     backgroundTone: normalizeBackgroundTone(safe.backgroundTone),
     data: {
       aboutTour: {
-        title: normalizeString(aboutTour.title),
+        title: normalizeText(aboutTour.title),
         text: {
           paragraphs: normalizeArray(aboutTour?.text?.paragraphs)
-            .map((item) => normalizeString(item))
+            .map((item) => normalizeText(item))
             .filter(Boolean)
         }
       },
       tourInfo: {
-        title: normalizeString(tourInfo.title),
+        title: normalizeText(tourInfo.title),
         facts: normalizeArray(tourInfo.facts)
           .map(normalizeFact)
           .filter((fact) => fact.label || fact.value.length > 0),
         details: {
-          summary: normalizeString(details.summary),
+          summary: normalizeText(details.summary),
           content: normalizeArray(details.content)
             .map(normalizeDetailsContentBlock)
             .filter(Boolean)

@@ -4,7 +4,8 @@ import {
   normalizeBoolean,
   normalizeImage,
   normalizeNumber,
-  normalizeString
+  normalizeString,
+  normalizeText
 } from "../common"
 
 export function normalizeGallerySection(section) {
@@ -12,13 +13,13 @@ export function normalizeGallerySection(section) {
   const data = safe.data && typeof safe.data === "object" ? safe.data : {}
 
   return {
-    id: "gallery",
+    id: normalizeString(safe.id, "gallery"),
     type: "gallery",
     enabled: normalizeBoolean(safe.enabled, true),
     order: normalizeNumber(safe.order, 4),
     backgroundTone: normalizeBackgroundTone(safe.backgroundTone),
     data: {
-      title: normalizeString(data.title),
+      title: normalizeText(data.title),
       photos: normalizeArray(data.photos)
         .map(normalizeImage)
         .filter((photo) => photo.src)
