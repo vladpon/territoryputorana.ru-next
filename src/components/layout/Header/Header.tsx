@@ -158,7 +158,7 @@ const Header = () => {
               <a href="https://vk.cc/cmIUok"><img className = {styles.header__icon} src="/img/vk_ico.png"></img></a>
               {/* <a href="https://wa.me/79039299383"><img className = {styles.header__icon} src="/img/wa_ico.png"></img></a> */}
               <a href="https://t.me/territoryputorana"><img className = {styles.header__icon} src="/img/tlgrm_ico.png"></img></a>
-              <a href="mailto:lysovanton76@gmail.com"><img className = {styles.header__icon} src="/img/email_ico.png"></img></a>
+              {/* <a href="mailto:lysovanton76@gmail.com"><img className = {styles.header__icon} src="/img/email_ico.png"></img></a> */}
           </div>
         </div> 
         <div className = {styles.header__home}>
