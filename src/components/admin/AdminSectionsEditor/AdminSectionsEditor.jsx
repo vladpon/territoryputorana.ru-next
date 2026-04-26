@@ -4,6 +4,12 @@ import { useState } from "react";
 import { sectionRegistry, sectionTypeOptions } from "@/lib/admin/sectionRegistry";
 import HeroSectionEditor from "@/components/admin/section-editors/HeroSectionEditor/HeroSectionEditor";
 import AboutSectionEditor from "@/components/admin/section-editors/AboutSectionEditor/AboutSectionEditor";
+import ProgramSectionEditor from "@/components/admin/section-editors/ProgramSectionEditor/ProgramSectionEditor";
+import GallerySectionEditor from "@/components/admin/section-editors/GallerySectionEditor/GallerySectionEditor";
+import CtaFormSectionEditor from "@/components/admin/section-editors/CtaFormSectionEditor/CtaFormSectionEditor";
+import NoteSectionEditor from "@/components/admin/section-editors/NoteSectionEditor/NoteSectionEditor";
+import AccordionGroupSectionEditor from "@/components/admin/section-editors/AccordionGroupSectionEditor/AccordionGroupSectionEditor";
+
 import styles from "./AdminSectionsEditor.module.scss";
 
 
@@ -34,6 +40,21 @@ function renderSectionEditor(section, onChange) {
 
     case "about":
       return <AboutSectionEditor section={section} onChange={onChange} />;
+
+    case "program":
+      return <ProgramSectionEditor section={section} onChange={onChange} />;
+
+    case "gallery":
+      return <GallerySectionEditor section={section} onChange={onChange} />;
+
+    case "ctaForm":
+      return <CtaFormSectionEditor section={section} onChange={onChange} />;
+
+    case "note":
+      return <NoteSectionEditor section={section} onChange={onChange} />;
+
+    case "accordionGroup":
+      return <AccordionGroupSectionEditor section={section} onChange={onChange} />;
 
     default:
       return null;
