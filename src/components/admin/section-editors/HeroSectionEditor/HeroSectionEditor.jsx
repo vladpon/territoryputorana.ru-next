@@ -1,7 +1,8 @@
 import AdminField from "@/components/admin/AdminField/AdminField";
+import AdminImageField from "../../AdminImageField/AdminImageField";
 import styles from "./HeroSectionEditor.module.scss";
 
-export default function HeroSectionEditor({ section, onChange }) {
+export default function HeroSectionEditor({ section, onChange, tourId }) {
   if (!section) return null;
 
   return (
@@ -24,12 +25,13 @@ export default function HeroSectionEditor({ section, onChange }) {
           />
         </AdminField>
 
-        <AdminField label="Изображение: src">
-          <input
-            value={section.data?.image?.src || ""}
-            onChange={(e) => onChange("data.image.src", e.target.value)}
+        <AdminImageField
+          label="Изображение hero"
+          value={section.data?.image}
+          tourId={tourId}
+          kind="hero"
+          onChange={(nextImage) => onChange("data.image", nextImage)}
           />
-        </AdminField>
 
         <AdminField label="Изображение: alt">
           <input

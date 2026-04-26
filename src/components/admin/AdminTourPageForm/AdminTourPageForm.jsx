@@ -322,6 +322,7 @@ export default function AdminTourPageForm({ tourId, initialData }) {
         <h2 className={styles.section__title}>Секции</h2>
 
         <AdminSectionsEditor
+          tourId={tourId}
           sections={formData.sections}
           onChange={(sections) => updateField("sections", sections)}
         />

@@ -33,10 +33,10 @@ function setByPath(object, path, value) {
   return result;
 }
 
-function renderSectionEditor(section, onChange) {
+function renderSectionEditor(section, onChange, tourId) {
   switch (section.type) {
     case "hero":
-      return <HeroSectionEditor section={section} onChange={onChange} />;
+      return <HeroSectionEditor section={section} onChange={onChange} tourId={tourId}/>;
 
     case "about":
       return <AboutSectionEditor section={section} onChange={onChange} />;
@@ -61,7 +61,11 @@ function renderSectionEditor(section, onChange) {
   }
 }
 
-export default function AdminSectionsEditor({ sections = [], onChange }) {
+export default function AdminSectionsEditor({
+      tourId,
+      sections = [],
+      onChange
+    }) {
   const [selectedType, setSelectedType] = useState("hero");
   const [expandedSectionId, setExpandedSectionId] = useState(null);
 
@@ -166,7 +170,8 @@ export default function AdminSectionsEditor({ sections = [], onChange }) {
 
                   {isExpanded
                     ? renderSectionEditor(section, (path, value) =>
-                        updateSectionByPath(index, path, value)
+                        updateSectionByPath(index, path, value),
+                        tourId
                       )
                     : null}
                 </div>
