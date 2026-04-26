@@ -11,6 +11,8 @@ import { getTour } from '@/lib/mongo/tours'
 
 import styles from './LostWaterfalls.module.scss'
 
+import transport from '../../../../data/transport.json'
+
 
 export const metadata = {
     title: 'VIP-тур',
@@ -20,7 +22,7 @@ export const metadata = {
 
 const LostWaterfalls = async () => {
     const tour = await getTour('lostwaterfalls')
-    const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
+    // const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
 
 
   return (

@@ -15,6 +15,8 @@ import { getMetadata, getPage } from '@/lib/mongo/pages'
 
 import styles from './Grilling.module.scss'
 
+import transport from '../../../../data/transport.json'
+
 const tourId = 'grilling'
 export async function generateMetadata()
   {     
@@ -27,10 +29,11 @@ export async function generateMetadata()
 
 
 
+
 const Grilling = async () => {
 
   const tour = await getTour(tourId)
-  const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
+  // const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
 
   return (
     <main>
