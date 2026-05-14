@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { createTourPageInitialValues } from "@/lib/admin/tourPageInitialValues";
 import AdminField from "@/components/admin/AdminField/AdminField";
+import AdminImageField from "@/components/admin/AdminImageField/AdminImageField";
 import AdminActionsBar from "@/components/admin/AdminActionsBar/AdminActionsBar";
 import AdminSectionsEditor from "@/components/admin/AdminSectionsEditor/AdminSectionsEditor";
 import styles from "./AdminTourPageForm.module.scss";
@@ -166,19 +167,28 @@ export default function AdminTourPageForm({ tourId, initialData }) {
             />
           </AdminField>
 
-          <AdminField label="Изображение карточки: src">
+          {/* <AdminField label="Изображение карточки: src">
             <input
               value={formData.card.img.src}
               onChange={(e) => updateField("card.img.src", e.target.value)}
             />
-          </AdminField>
+          </AdminField> */}
 
-          <AdminField label="Изображение карточки: alt">
+          {/* <AdminField label="Изображение карточки: alt">
             <input
               value={formData.card.img.alt}
               onChange={(e) => updateField("card.img.alt", e.target.value)}
             />
-          </AdminField>
+          </AdminField> */}
+          <AdminImageField
+            label="Изображение карточки тура"
+            value={formData.card?.img}
+            tourId={formData.tourId}
+            kind="card"
+            onChange={(nextImage) =>
+              updateField("card.img", nextImage)
+            }
+          />
         </div>
       </section>
 

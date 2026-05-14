@@ -1,7 +1,8 @@
 import AdminField from "@/components/admin/AdminField/AdminField";
 import styles from "./CtaFormSectionEditor.module.scss";
+import AdminImageField from "../../AdminImageField/AdminImageField";
 
-export default function CtaFormSectionEditor({ section, onChange }) {
+export default function CtaFormSectionEditor({ section, onChange, tourId }) {
   if (!section) return null;
 
   const data = section.data || {};
@@ -57,7 +58,7 @@ export default function CtaFormSectionEditor({ section, onChange }) {
         <h3 className={styles.section__title}>Изображение</h3>
 
         <div className={styles.grid}>
-          <AdminField label="Image src">
+          {/* <AdminField label="Image src">
             <input
               value={image.src || ""}
               onChange={(e) => onChange("data.image.src", e.target.value)}
@@ -69,7 +70,16 @@ export default function CtaFormSectionEditor({ section, onChange }) {
               value={image.alt || ""}
               onChange={(e) => onChange("data.image.alt", e.target.value)}
             />
-          </AdminField>
+          </AdminField> */}
+          <AdminImageField
+            label="Изображение CTA"
+            value={section.data?.image}
+            tourId={tourId}
+            kind="cta"
+            onChange={(nextImage) =>
+              onChange("data.image", nextImage)
+            }
+          />
         </div>
       </section>
     </div>

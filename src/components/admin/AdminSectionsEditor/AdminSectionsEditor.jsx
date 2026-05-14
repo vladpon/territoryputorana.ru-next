@@ -48,7 +48,7 @@ function renderSectionEditor(section, onChange, tourId) {
       return <GallerySectionEditor section={section} onChange={onChange} />;
 
     case "ctaForm":
-      return <CtaFormSectionEditor section={section} onChange={onChange} />;
+      return <CtaFormSectionEditor section={section} onChange={onChange} tourId={tourId}/>;
 
     case "note":
       return <NoteSectionEditor section={section} onChange={onChange} />;
