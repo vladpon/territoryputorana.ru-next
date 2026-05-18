@@ -18,10 +18,11 @@ export function normalizeTourPage(page) {
   const safe = page && typeof page === "object" ? page : {}
 
   return {
-    _id: safe._id,
+    _id: safe?._id?.toString?.() || "",
     tourId: normalizeString(safe.tourId),
     path: normalizeString(safe.path),
     title: normalizeText(safe.title),
+    brief: normalizeText(safe.brief),
     status: normalizeStatus(safe.status),
 
     card: {
@@ -65,12 +66,20 @@ export function normalizeTourPage(page) {
     },
 
     sections: normalizeArray(safe.sections)
-      .map(normalizeSection)
-      .filter(Boolean)
-      .sort((a, b) => a.order - b.order),
+        .map(normalizeSection)
+        .filter(Boolean)
+        .sort((a, b) => a.order - b.order),
 
-    createdAt: safe.createdAt instanceof Date ? safe.createdAt : new Date(),
-    updatedAt: safe.updatedAt instanceof Date ? safe.updatedAt : new Date(),
-    publishedAt: safe.publishedAt instanceof Date ? safe.publishedAt : null
+      createdAt: safe?.createdAt
+      ? new Date(safe.createdAt).toISOString()
+      : null,
+
+    updatedAt: safe?.updatedAt
+      ? new Date(safe.updatedAt).toISOString()
+      : null,
+
+    publishedAt: safe?.publishedAt
+      ? new Date(safe.publishedAt).toISOString()
+      : null
   }
 }

@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import classNames from 'classnames';
 import styles from './CardsBlock.module.scss'
 
@@ -25,16 +26,20 @@ const CardsBlock = (props) => {
                         if (index < numberOfCards) return (
                         <div className={styles["card-container__card"]} key = {index} onClick = {() => redirect(tour.href)} >
                             <div className={styles["card-container__bg"]}>
-                                <img src={tour.smallImg}></img>
+                                <Image 
+                                    src={tour.card.img.src} 
+                                    alt={tour.title} 
+                                    fill
+                                    />
                             </div>
                             <div className={styles["card-container__text-container"]}>
                                 <div className={styles["card-container__top-text"]}>                                    
                                     <div className={styles["card-container__title"]}>{tour.title}</div>
                                 </div>
                                 <div className={styles["card-container__bottom-text"]}>
-                                    <div className={styles["card-container__season"]}>{tour.season}</div>
+                                    <div className={styles["card-container__season"]}>{tour.card.season}</div>
                                     <div className={styles["card-container__days"]}> 
-                                        <span>{tour.time}</span>
+                                        <span>{tour.card.duration}</span>
                                     </div>
                                 </div>
                             </div>

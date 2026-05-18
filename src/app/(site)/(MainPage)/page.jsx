@@ -7,6 +7,7 @@ import RequestBlock from '../../../components/blocks/RequestBlock/RequestBlock'
 import styles from './MainPage.module.scss'
 import { getTours, getMainPageTours } from "@/lib/mongo/tours";
 import TextFewImages from './TextFewImages'
+import { getMainPageTourPages } from "@/lib/mongo/tourPages";
 
 
 
@@ -19,14 +20,14 @@ const textWord = {
 
 
 export default async function Home() {
-  const data = await getMainPageTours().then( res => JSON.parse(JSON.stringify(res)))
-  const tours = ('error' in data) ? null : data
+  const toursData = await getMainPageTourPages()
+  const mainPageTours = ('error' in toursData) ? null : toursData
 
   return (
     <main className={styles['main-page']}>
       <Cover />
       <TextWord text = {textWord.text} word = {textWord.word}/>
-      <CardsBlock tours = {tours} />
+      <CardsBlock tours = {mainPageTours} />
       <TextOneImage />
       <TextFewImages />
       <VideoBlock src = './img/putorana.m4v#t=0.001'/>      

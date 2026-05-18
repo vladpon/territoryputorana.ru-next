@@ -17,6 +17,20 @@ const Header = () => {
   const [pageClass, setPageClass] = useState('')
   const pathname = usePathname()
 
+  const headerMenu = MENU.map( item => 
+                      item.id === 'tours' ? {...item, items: [{
+                                                                  "id": "lostput",
+                                                                  "href": "/lostput",
+                                                                  "title": "Затерянный мир Плато Путорана"
+                                                              },            
+                                                              {
+                                                                  "id": "putoranatrails",
+                                                                  "href": "/putoranatrails",
+                                                                  "title": "Тропами Путорана: активный треккинг"
+                                                              }]} : item)
+    
+  
+
 
   useEffect( () => 
     {
@@ -149,8 +163,8 @@ const Header = () => {
         {/* <div className = {styles.header__phone}>
           <a href="tel:+79039299383"><img className = {styles.header__icon} src="/img/phone_ico.png"></img></a>
         </div>         */}
-        <MainMenu menu = {MENU} pageClass = {pageClass}/>
-        <BurgerMenu menu = {MENU} active = {burgermenuActive} setActive = {setBurgermenuActive}/>
+        <MainMenu menu = {headerMenu} pageClass = {pageClass}/>
+        <BurgerMenu menu = {headerMenu} active = {burgermenuActive} setActive = {setBurgermenuActive}/>
         <div className = {styles.header__contacts}>
           <a href="tel:+79039299383">+7 (903) 929-93-83</a>
           <div className = {styles.header__icons}>
