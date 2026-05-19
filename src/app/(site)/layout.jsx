@@ -4,6 +4,7 @@ import { Onest } from 'next/font/google'
 import '../globals.scss'
 import Header from '@/components/layout/Header/Header'
 import Footer from '@/components/layout/Footer/Footer'
+import { getMainMenuTourPages } from '@/lib/mongo/tourPages'
 
 // const raleway = Raleway({
 //   weight: ['400', '500', '600', '700'],
@@ -29,17 +30,16 @@ export const metadata = {
 
 
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default async function RootLayout({children}) {
+
+  const menuTours = await getMainMenuTourPages()
+  const menu = menuTours.map( ({tourId, path, title}) => ({id: tourId, href: path, title}))
 
   return (    
     <html lang="ru">    
       <body className={onest.className}>  
           <script src="https://vk.com/js/api/openapi.js?169"></script>      
-          <Header />
+          <Header menu = {menu} />
           {children}
           <Footer />
       </body>

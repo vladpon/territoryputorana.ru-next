@@ -11,23 +11,20 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 
-const Header = () => {
+
+////////////!!!!!!!!!!!!!! menu MENU переименовать!!!!!!!!!!!!!!!!!!! 
+
+const Header = ({menu}) => {
+
+  const menuTours = menu
+  console.log(menu)
 
   const [burgermenuActive, setBurgermenuActive] = useState(false)
   const [pageClass, setPageClass] = useState('')
   const pathname = usePathname()
 
   const headerMenu = MENU.map( item => 
-                      item.id === 'tours' ? {...item, items: [{
-                                                                  "id": "lostput",
-                                                                  "href": "/lostput",
-                                                                  "title": "Затерянный мир Плато Путорана"
-                                                              },            
-                                                              {
-                                                                  "id": "putoranatrails",
-                                                                  "href": "/putoranatrails",
-                                                                  "title": "Тропами Путорана: активный треккинг"
-                                                              }]} : item)
+                      item.id === 'tours' ? {...item, items: menu} : item)
     
   
 
