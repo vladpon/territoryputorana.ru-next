@@ -46,6 +46,8 @@ const TourPageAbout = ({ page, section }) => {
   const aboutTitle = aboutTour?.title || "";
   const paragraphs = aboutTour?.text?.paragraphs || [];
 
+ 
+
   return (
     <div
       className={`${styles["tp-about__container"]} ${
