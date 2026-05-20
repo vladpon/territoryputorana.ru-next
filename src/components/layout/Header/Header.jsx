@@ -14,17 +14,16 @@ import Link from 'next/link'
 
 ////////////!!!!!!!!!!!!!! menu MENU переименовать!!!!!!!!!!!!!!!!!!! 
 
-const Header = ({menu}) => {
+const Header = ({menuTours}) => {
 
-  const menuTours = menu
-  console.log(menu)
+
 
   const [burgermenuActive, setBurgermenuActive] = useState(false)
   const [pageClass, setPageClass] = useState('')
   const pathname = usePathname()
 
   const headerMenu = MENU.map( item => 
-                      item.id === 'tours' ? {...item, items: menu} : item)
+                      item.id === 'tours' ? {...item, items: menuTours} : item)
     
   
 

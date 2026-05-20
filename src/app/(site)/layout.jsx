@@ -32,14 +32,14 @@ export const metadata = {
 
 export default async function RootLayout({children}) {
 
-  const menuTours = await getMainMenuTourPages()
-  const menu = menuTours.map( ({tourId, path, title}) => ({id: tourId, href: path, title}))
+  const mainMenuTours = await getMainMenuTourPages()
+  const menuTours = mainMenuTours.map( ({tourId, path, title}) => ({id: tourId, href: path, title}))
 
   return (    
     <html lang="ru">    
       <body className={onest.className}>  
           <script src="https://vk.com/js/api/openapi.js?169"></script>      
-          <Header menu = {menu} />
+          <Header menuTours = {menuTours} />
           {children}
           <Footer />
       </body>
