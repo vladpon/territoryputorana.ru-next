@@ -130,3 +130,96 @@
 }
 
 
+.includedInfo {
+    display: grid;
+    gap: 24px;
+}
+
+.section {
+    display: grid;
+    gap: 16px;
+    padding-top: 1rem;
+    // border: 1px solid #d9dee5;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    // background: #ffffff;
+}
+
+.included {
+    // background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+
+.extra {
+    // background: linear-gradient(180deg, #ffffff 0%, #fffaf8 100%);
+}
+
+.title {
+    margin: 0;
+    font-size: .6rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.marker {
+    width: 10px;
+    height: 5px;
+    border-radius: 999px;
+    // background: #4d95be;
+    background: #ccc;
+    margin-top: 8px;
+}
+
+.extra .marker {
+    // background: #d97706;
+    background: #777;
+}
+
+.content {
+    line-height: 1.4;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: italic;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+}
+
+
+

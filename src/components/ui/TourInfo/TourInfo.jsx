@@ -194,7 +194,7 @@ export default function TourInfo({ tourInfo }) {
         ))}
       </div>
 
-      {details?.summary ? (
+      {/* {details?.summary ? (
         <details className={styles.infoframe}>
           <summary
             className={`${styles["infoframe__note"]} ${styles["infoframe__note_included"]}`}
@@ -208,7 +208,7 @@ export default function TourInfo({ tourInfo }) {
             )}
           </div>
         </details>
-      ) : null}
+      ) : null} */}
     </div>
   );
 }
