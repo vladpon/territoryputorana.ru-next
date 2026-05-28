@@ -194,21 +194,21 @@ export default function TourInfo({ tourInfo }) {
         ))}
       </div>
 
-      {/* {details?.summary ? (
-        <details className={styles.infoframe}>
+      {details?.summary ? (
+        <details className={styles.details}>
           <summary
-            className={`${styles["infoframe__note"]} ${styles["infoframe__note_included"]}`}
+            className={styles.details__summary}
           >
             <span>{details.summary}</span>
           </summary>
 
-          <div className={styles["modal__text"]}>
+          <div className={styles["details__content"]}>
             {(details.content || []).map((block, index) =>
               renderDetailsBlock(block, index)
             )}
           </div>
         </details>
-      ) : null} */}
+      ) : null}
     </div>
   );
 }

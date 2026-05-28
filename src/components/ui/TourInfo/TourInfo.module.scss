@@ -66,7 +66,7 @@
 }
 
 .listItem {
-    margin: 6px 0;
+    // margin: 6px 0;
     list-style-type: disc;
 }
 
@@ -84,53 +84,11 @@
 
 
 
-// .infoframe {
-    
-//     &__note {
-//         &::marker{
-//             font-size: 0.6rem;;
-//         }
-
-//         & span {
-//             font-style: italic;
-//             font-size: 0.6rem; 
-//         }
-        
-//         &_included {
-//             span {
-//                 border-bottom: 1px dotted;
-//                 cursor: pointer; 
-//                 // line-height: 2.35;  
-//             }
-//         }
-                     
-//     }
-
-//     .modal__text {
-//     margin-top: 1em;
-//     color: color.adjust(white, $lightness: -35%);
-//     text-align: left;
-
-//     & p {
-//         margin: 0.4em;
-//     }
-
-//     & ul > li {
-//         font-size: 0.6rem;
-//         list-style: circle;
-//     }
-
-//     & ol > li {
-//         list-style: decimal;
-//         font-size: 0.6rem;
-//     }
-//     }
-// }
 
 
 
-.infoframe {
-  &__note {
+.details {
+  &__summary {
     &::marker {
       font-size: 0.6rem;
     }
@@ -138,34 +96,123 @@
     & span {
       font-style: italic;
       font-size: 0.6rem;
-    }
-
-    &_included {
-      span {
-        border-bottom: 1px dotted;
-        cursor: pointer;
-      }
+      border-bottom: 1px dotted;
+      cursor: pointer;
     }
   }
-}
 
-.modal__text {
-  margin-top: 1em;
-  color: color.adjust(white, $lightness: -35%);
-  text-align: left;
-
+  &__content {
+    margin-top: 0.5em;
+    // font-size: 0.7rem;   
+    
+    
   & p {
-    margin: 0.4em 0;
+    margin: 1rem 0;
+    font-size: .7rem;
+    line-height: 1;
+    font-weight: 700;
   }
 
-  & ul > li {
-    font-size: 0.6rem;
-    list-style: circle;
+  & .list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      // gap: .4rem;
+      line-height: 1.15;
   }
 
-  & ol > li {
-    list-style: decimal;
-    font-size: 0.6rem;
+  & .listItem {
+      font-size: 0.6rem;
+
+      &::marker {
+          width: 10px;
+          height: 5px;
+          border-radius: 999px;
+          // background: #4d95be;
+          background: #ccc;
+          margin-top: 8px;
+      }
+  }
+
+
+.extra .marker {
+    // background: #d97706;
+    background: #777;
+}
+
+.content {
+    line-height: 1.4;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: italic;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+}
+
+
   }
 }
+
+// .modal__text {
+//   margin-top: 1em;
+//   // color: color.adjust(white, $lightness: -35%);
+//   text-align: left;
+
+//   & .list {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     display: grid;
+//     // gap: 0.1rem;
+//   }
+
+//   & .item {
+//     display: grid;
+//     grid-template-columns: 10px 1fr;
+//     // gap: 12px;
+//     align-items: start;
+//   }
+
+//   & p {
+//     // margin: 0.4em 0;
+//     margin: 0;
+//     font-size: .8rem;
+//     line-height: 1;
+//     font-weight: 700;
+//   }
+
+//   & ul > li {
+//     font-size: 0.6rem;
+//     list-style: circle;
+//   }
+
+//   & ol > li {
+//     list-style: decimal;
+//     font-size: 0.6rem;
+//   }
+// }
 
