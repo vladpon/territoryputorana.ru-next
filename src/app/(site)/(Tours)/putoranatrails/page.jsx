@@ -16,6 +16,8 @@ import AccordionCard from '@/components/ui/AccordionCard/AccordionCard'
 import styles from './PutoranaTrails.module.scss'
 import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
+import transport from '../../../../data/transport.json'
+
 // const txtTitle = {
 //   title: "Транспорт",
 //   text: [
@@ -32,7 +34,7 @@ export const metadata = {
 
 const PutoranaTrails = async () => {
     const tour = await getTour('putoranatrails')
-    const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
+    // const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
 
   return (
     <main>

@@ -15,7 +15,7 @@ import { getTour } from '@/lib/mongo/tours'
 import { getMetadata, getPage } from '@/lib/mongo/pages'
 import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
-
+import transport from '../../../../data/transport.json'
 
 const tourId = 'helifishing'
 export async function generateMetadata()
@@ -32,7 +32,7 @@ export async function generateMetadata()
 const Helifishing = async () => {
 
   const tour = await getTour(tourId)
-  const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
+  // const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
   
 
   return (

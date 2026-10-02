@@ -16,7 +16,7 @@ import { getMetadata, getPage } from '@/lib/mongo/pages'
 import styles from './Helipicnic.module.scss'
 import PhotoBlock from '@/components/blocks/PhotoBlock/PhotoBlock'
 
-
+import transport from '../../../../data/transport.json'
 
 const tourId = 'helipicnic'
 export async function generateMetadata()
@@ -33,7 +33,7 @@ export async function generateMetadata()
 const Helipicnic = async () => {
 
   const tour = await getTour(tourId)
-  const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
+  // const transport = await fetch('https://territoryputorana.ru/data/transport.json').then( (res => res.json()))
 
 
   return (
