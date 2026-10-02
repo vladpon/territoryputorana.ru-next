@@ -10,6 +10,7 @@ const eslintConfig = [
       ".next/**",
       "out/**",
       "build/**",
+      "public/3Dtours/**",
       "next-env.d.ts",
     ],
   },
